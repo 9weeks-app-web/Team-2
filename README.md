@@ -21,6 +21,40 @@ root/
 ├─ public/                 # 정적 파일 (이미지, 아이콘 등)
 └─ [기타 설정 파일]        # package.json, tsconfig.json, next.config.js 등
 
+.
+├── README.md
+├── git_hooks
+│   └── commit_convention.js
+├── public
+│   ├── next.svg
+│   └── vercel.svg
+├── src
+│   ├── app
+│   │   ├── RecoilRootWrapper.tsx
+│   │   ├── layout.tsx
+│   │   ├── login
+│   │   │   ├── components
+│   │   │   │   └── loginFrom.tsx
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   └── state
+│   │   │       └── loginState.ts
+│   │   └── page.tsx
+│   ├── components
+│   │   └── README.md
+│   ├── state
+│   │   ├── atom
+│   │   │   └── atom.ts
+│   │   └── selectors
+│   │       └── selectors.ts
+│   ├── styles
+│   │   ├── globals.css
+│   │   └── reset.css
+│   └── utils
+│       └── utils.ts
+├── test.md
+├── test1.md
+└── tsconfig.json
 
 
 
