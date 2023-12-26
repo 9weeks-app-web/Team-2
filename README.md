@@ -1,5 +1,4 @@
 # 프로젝트 이름
-
 스펙폴리오
 
 ## 디렉토리 구조
@@ -34,3 +33,9 @@ root/
 root/git_hooks/commit_convention.js -> 이름 표시된부분 본인 이름으로 바꾸고 커밋
 
 https://velog.io/@2juzzang/Github%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%98%91%EC%97%85%EC%97%90-%EA%B4%80%ED%95%98%EC%97%AC-part-2.-Commit-Convention-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EA%B8%B0-with.-lefthook
+
+## 팀원
+- 김재현
+- 이윤희
+- 김재하
+- 이하연
