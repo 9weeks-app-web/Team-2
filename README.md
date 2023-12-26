@@ -5,9 +5,9 @@
 
 root/  
 ├─ src/  
-│ ├─ app/  
-│ │ ├─ [특정 라우트]/  
-│ │ │ ├─ components/          # 해당 라우트 전용 로컬 컴포넌트  
+ │ ├─ app/  
+ │ │ ├─ [특정 라우트]/  
+ │ │ │ ├─ components/          # 해당 라우트 전용 로컬 컴포넌트  
 │ │ │ ├─ state/               # 로컬 상태 관리  
 │ │ │ └─ [기본 파일]            # 기본 page.tsx , layout.tsx  
 │ │ └─ [최상단 기본 파일]         # 기본 page.tsx , layout.tsx  
