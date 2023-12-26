@@ -1,7 +1,7 @@
 commit-msg:
 commands:
   validate:
-    run: npm run dev ./git_hooks/commit_convention.ts
+    run: node git_hooks/commit_convention.js {staged_files}
 # EXAMPLE USAGE:
 #
 #   Refer for explanation to following link:
