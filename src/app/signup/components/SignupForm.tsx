@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import { atom, useRecoilState } from "recoil";
-import { CarrierButton } from './CarrierButton';
+import CarrierButton from "./CarrierButton";
 
 // Recoil 상태 정의
 const phoneNumberState = atom({
@@ -41,16 +41,18 @@ export const SignupForm = () => {
       <InputBox label="비밀번호 확인" />
       <p>휴대폰 인증</p>
       <CarrierGroup>
-        {carriers.map((item, index) => {
+        {/* @TODO 버튼 중복으로 안눌리게 로직수정해야됨 */}
+        {/* {carriers.map((item, index) => {
           return (
-            <CarrierButton key={index}
+            <CarrierButton
+              key={index}
               handleClick={handleClick}
-              isSeleted={ isCarrierSelect[index]}
-              
-            >{item}</CarrierButton>
+              isSeleted={isCarrierSelect[index]}
+            >
+              {item}
+            </CarrierButton>
           );
-        })}
-        
+        })} */}
       </CarrierGroup>
       <AuthGroup>
         <Input width={"70%"} />
@@ -74,7 +76,6 @@ const CarrierGroup = styled.div`
   justify-content: space-around;
   gap: 10px;
 `;
-
 
 const AuthGroup = styled.div`
   display: flex;

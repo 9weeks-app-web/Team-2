@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 interface CarrierButtonProps {
-  key: React.Key; // React 요소의 Key
-  handleClick: (index: number) => void; // 클릭 핸들러 함수
-  isSelected: boolean; // 선택 상태
+  key: React.Key; 
+  handleClick: (index: number) => void; 
+  isSelected: boolean; 
 }
 
 export const CarrierButton: React.FC<CarrierButtonProps> = ({
@@ -12,7 +12,7 @@ export const CarrierButton: React.FC<CarrierButtonProps> = ({
   isSelected,
   key,
 }) => {
-  return <textCheckBox />;
+  return <div></div>;
 };
 
 const textCheckBox = styled.div`

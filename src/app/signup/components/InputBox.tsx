@@ -11,6 +11,10 @@ export const InputBox = ({ label }: { label: string }) => {
   );
 };
 
+
+
+
+
 const InputContainer = styled.div`
   width: 100%;
   height: 80px;
@@ -18,6 +22,7 @@ const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 5px;
+  
 `;
 
 const Label = styled.label`
