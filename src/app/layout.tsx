@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../styles/globals.css";
 import { RecoilRootWrapper } from "./RecoilRootWrapper";
-import StyledComponentsRegistry from "./registry";
+import StyledComponentsRegistry from "@/lib/StyledComponentRegistry";
+import StyledComponentsAntdRegistry from "@/lib/AntdRegistry";
 const pretendard = localFont({
   src: "../../public/PretendardVariable.woff2",
   display: "swap",
+  // weight: "variable",
 });
 
 // 메타데이터
@@ -23,7 +25,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={pretendard.className}>
         <RecoilRootWrapper>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          <StyledComponentsRegistry>
+            <StyledComponentsAntdRegistry>
+              {children}
+            </StyledComponentsAntdRegistry>
+          </StyledComponentsRegistry>
         </RecoilRootWrapper>
       </body>
     </html>
