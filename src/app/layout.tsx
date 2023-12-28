@@ -4,6 +4,8 @@ import "../styles/globals.css";
 import { RecoilRootWrapper } from "./RecoilRootWrapper";
 import StyledComponentsRegistry from "@/lib/StyledComponentRegistry";
 import StyledComponentsAntdRegistry from "@/lib/AntdRegistry";
+import { ConfigProvider } from "antd";
+import RootContainer from "@/components/RootContainer";
 const pretendard = localFont({
   src: "../../public/PretendardVariable.woff2",
   display: "swap",
@@ -27,7 +29,15 @@ export default function RootLayout({
         <RecoilRootWrapper>
           <StyledComponentsRegistry>
             <StyledComponentsAntdRegistry>
-              {children}
+              <ConfigProvider
+                theme={{
+                  token: {
+                    fontFamily: "", // 기본설정 없애면 next.js 폰트설정이 적용됨
+                  },
+                }}
+              >
+                <RootContainer>{children}</RootContainer>
+              </ConfigProvider>
             </StyledComponentsAntdRegistry>
           </StyledComponentsRegistry>
         </RecoilRootWrapper>
