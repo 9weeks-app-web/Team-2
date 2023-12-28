@@ -1,3 +1,5 @@
+import { colors } from "@/styles/colors";
+import { font_size } from "@/styles/typography";
 import React from "react";
 import styled from "styled-components";
 
@@ -13,6 +15,8 @@ const GalobalButton = styled.div<{ width: string }>`
   justify-content: center;
   align-items: center;
   height: 70px;
+  /* background-color: ${({ theme }) => theme.color}; */
+  background-color: var(${colors.NEUTRAL_10});
 `;
 
 export default Button;
