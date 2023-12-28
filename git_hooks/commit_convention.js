@@ -7,7 +7,7 @@ const main = () => {
   const commitMessage = fs.readFileSync(commitFile, "utf8");
 
   const regExp = new RegExp(
-    "(jaehyun|이름|이름|이름), (Feat|Update|Fix|!BREAKING CHANGE|!HOTFIX|Style|Refactor|Comment|Chore|Docs|Test|Rename|Remove)::.*(#\\d+)"
+    "(jaehyun|jaeha|이름|이름), (Feat|Update|Fix|!BREAKING CHANGE|!HOTFIX|Style|Refactor|Comment|Chore|Docs|Test|Rename|Remove)::.*(#\\d+)"
   );
 
   const valid = regExp.test(commitMessage);
