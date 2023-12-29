@@ -8,19 +8,26 @@ import { NewNoticeList } from "@/components/NewNotice/NewNoticeList";
 import { PopRecruitList } from "@/components/PopRecruit/PopRecruitList";
 import { PopTopicList } from "@/components/PopTopics/PopTopicList";
 
+import { CustomCarousel } from "@/components/CustomCarousel";
+import { ProjectIntro } from "./components/main/ProjectIntro";
+import { FindMyTeam } from "./components/main/FindMyTeam";
+import { CategoryVetical } from "@/components/Category/CategoryVetical";
 export default function Home() {
   return (
-    <Main>
-      <Text>dd</Text>
-      <H1_B_24>안녕하세요</H1_B_24>
-      <PopTopicList />
-      <PopRecruitList />
-      <NewNoticeList />
-    </Main>
+    <>
+      <CustomCarousel />
+      <ProjectIntro />
+      <FindMyTeam />
+      <div style={{ margin: "auto", width: "500px" }}>
+        <CategoryVetical />
+      </div>
+
+      {/* <Text>dd</Text>
+      <H1_B_24>안녕하세요</H1_B_24> */}
+    </>
   );
 }
 // 사용법
-
 const Text = styled.p`
   font-size: var(${font_size.FONT_SIZE_20});
   color: var(${colors.PRIMARY_100});
