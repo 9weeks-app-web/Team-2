@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "../styles/globals.css";
 import { RecoilRootWrapper } from "./RecoilRootWrapper";
-import StyledComponentsRegistry from "@/lib/StyledComponentRegistry";
-import StyledComponentsAntdRegistry from "@/lib/AntdRegistry";
-import { ConfigProvider } from "antd";
+
 import RootContainer from "@/components/RootContainer";
-const pretendard = localFont({
-  src: "../../public/PretendardVariable.woff2",
-  display: "swap",
-  // weight: "variable",
-});
+import ClientComponentContainer from "./ClientComponentContainer";
+import { NavTabs } from "@/components/Nav/NavTabs";
+import { Navigation } from "@/components/Nav/Navigation";
+// const pretendard = localFont({
+//   src: "../../public/PretendardVariable.woff2",
+//   display: "swap",
+// });
 
 // 메타데이터
 export const metadata: Metadata = {
@@ -20,26 +19,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  popularPortfoilo,
 }: {
   children: React.ReactNode;
+  popularPortfoilo: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={pretendard.className}>
+      <body>
         <RecoilRootWrapper>
-          <StyledComponentsRegistry>
-            <StyledComponentsAntdRegistry>
-              <ConfigProvider
-                theme={{
-                  token: {
-                    fontFamily: "", // 기본설정 없애면 next.js 폰트설정이 적용됨
-                  },
-                }}
-              >
-                <RootContainer>{children}</RootContainer>
-              </ConfigProvider>
-            </StyledComponentsAntdRegistry>
-          </StyledComponentsRegistry>
+          <ClientComponentContainer>
+            <RootContainer>
+              <NavTabs />
+              <Navigation />
+              {children}
+            </RootContainer>
+          </ClientComponentContainer>
         </RecoilRootWrapper>
       </body>
     </html>

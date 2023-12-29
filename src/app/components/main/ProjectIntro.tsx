@@ -10,7 +10,7 @@ export const ProjectIntro = () => {
     <ProjectIntroContainer>
       <ProjectIntroTitle
         TitleA="곧 마감!"
-        TitleB="실시간 인기 프로젝트"
+        TitleB="실시간 인기 포트폴리오"
         SeeMoreHref="#"
       />
       <Category />
