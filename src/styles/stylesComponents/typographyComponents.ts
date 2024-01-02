@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { font_size, font_weight, line_height } from "../typography";
+import { colors } from "../colors";
 
 export const H1_B_24 = styled.h1`
   font-size: var(${font_size.FONT_SIZE_24});
@@ -85,6 +86,9 @@ export const B2_M_12 = styled.p`
   font-size: var(${font_size.FONT_SIZE_12});
   font-weight: var(${font_weight.FONT_WEIGHT_500_M});
   line-height: var(${line_height.LINE_HEIGHT_100});
+  &.gray {
+    color: var(${colors.NEUTRAL_40});
+  }
 `;
 
 export const B2_L_12 = styled.p`

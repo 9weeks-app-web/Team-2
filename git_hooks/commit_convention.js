@@ -7,7 +7,7 @@ const main = () => {
   const commitMessage = fs.readFileSync(commitFile, "utf8");
 
   const regExp = new RegExp(
-    "(jaehyun|jaeha|이름|이름), (Feat|Update|Fix|!BREAKING CHANGE|!HOTFIX|Style|Refactor|Comment|Chore|Docs|Test|Rename|Remove)::.*(#\\d+)"
+    "(jaehyun|jaeha|이름|이름), (Feat|Update|Fix|!BREAKING CHANGE|!HOTFIX|Style|Refactor|Comment|Chore|Docs|Test|Rename|Remove|Merge)::.*(#\\d+)"
   );
 
   const valid = regExp.test(commitMessage);
@@ -38,6 +38,7 @@ const main = () => {
   Test::             빌드 업무 수정, 패키지 매니저 수정, 패키지 관리자 구성 등 업데이트, Production Code 변경 없음
   Rename::           파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우
   Remove::           파일을 삭제하는 작업만 수행한 경우
+  Merge::            파일 병합
 
 ==================================================================================
 

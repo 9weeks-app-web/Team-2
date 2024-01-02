@@ -17,7 +17,7 @@ export const Navigation = () => {
           <CustomLink href="#">스팩폴리오</CustomLink>
         </LinkWrapper>
         <LinkWrapper>
-          <CustomLink href="#">프로젝트</CustomLink>
+          <CustomLink href="/project">프로젝트</CustomLink>
         </LinkWrapper>
         <LinkWrapper>
           <CustomLink href="#">커뮤니티</CustomLink>

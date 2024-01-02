@@ -1,22 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const categoryInfo = [
-  {
-    title: "전체",
-    name: "Category",
-    id: "radioButton1",
-    value: "total",
-  },
-  {
-    title: "카테고리1",
-    name: "Category",
-    id: "radioButton2",
-    value: "category",
-  },
-];
-
-export const Category = () => {
+export const Category = ({ categoryList }: CategoryProps) => {
   const [selectedValue, setSelectedValue] = useState<string>("total");
   useEffect(() => {
     const fetchFn = async () => {
@@ -30,46 +15,23 @@ export const Category = () => {
   };
   return (
     <RadioButtonContainer>
-      <div>{selectedValue}</div>
-      <Label htmlFor="myRadioButton1" $selected={selectedValue === "total"}>
-        전체
-        <StyledRadioButton
-          id="myRadioButton1"
-          name="Category"
-          onChange={handleRadioChange}
-          value="total"
-        />
-      </Label>
-
-      <Label htmlFor="myRadioButton2" $selected={selectedValue === "category1"}>
-        카테고리1
-        <StyledRadioButton
-          id="myRadioButton2"
-          name="Category"
-          onChange={handleRadioChange}
-          value="category1"
-        />
-      </Label>
-
-      <Label htmlFor="myRadioButton3" $selected={selectedValue === "category2"}>
-        카테고리2
-        <StyledRadioButton
-          id="myRadioButton3"
-          name="Category"
-          onChange={handleRadioChange}
-          value="category2"
-        />
-      </Label>
-
-      <Label htmlFor="myRadioButton4" $selected={selectedValue === "category3"}>
-        카테고리3
-        <StyledRadioButton
-          id="myRadioButton4"
-          name="Category"
-          onChange={handleRadioChange}
-          value="category3"
-        />
-      </Label>
+      {categoryList.map((category) => {
+        return (
+          <Label
+            htmlFor={category.id}
+            $selected={selectedValue === category.value}
+            key={category.id}
+          >
+            {category.title}
+            <StyledRadioButton
+              id={category.id}
+              name={category.name}
+              onChange={handleRadioChange}
+              value={category.value}
+            />
+          </Label>
+        );
+      })}
     </RadioButtonContainer>
   );
 };

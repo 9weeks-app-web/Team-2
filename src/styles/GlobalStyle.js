@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     ${colors.NEUTRAL_70}: #4D4D4D;
     ${colors.NEUTRAL_60}: #666;
     ${colors.NEUTRAL_50}: #808080;
-    ${colors.NEUTRAL_40}: #999;
+    ${colors.NEUTRAL_40}: #999999;
     ${colors.NEUTRAL_30}: #B3B3B3;
     ${colors.NEUTRAL_20}: #CCC;
     ${colors.NEUTRAL_10}: #E6E6E6;
@@ -40,6 +40,10 @@ const GlobalStyle = createGlobalStyle`
     ${colors.SYSTEM_WARNING}: #F00;
     ${colors.SYSTEM_SUCCESS}: #07A320;
 
+    /* border-color */
+
+    ${colors.BORDER_COLOR} : #EDEDED;
+
     /* Font */
     ${font_size.FONT_SIZE_24} : 24px;
     ${font_size.FONT_SIZE_20} : 20px;
@@ -57,8 +61,10 @@ const GlobalStyle = createGlobalStyle`
     ${font_weight.FONT_WEIGHT_300_L} : 300;
     
     /* line_height */
-    ${line_height.LINE_HEIGHT_100} : 100;
-    ${line_height.LINE_HEIGHT_100} : 140;
+    ${line_height.LINE_HEIGHT_100} : 100%;
+    ${line_height.LINE_HEIGHT_140} : 140%;
+
+    
   
 
   }
