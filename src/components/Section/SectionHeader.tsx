@@ -16,7 +16,11 @@ const SectionHeader = ({
   headerText2,
   seeMoreHref,
   categoryList,
+  currentPage,
+  totalPage,
   filterList,
+  goToNextPage,
+  goToPrevPage,
 }: SectionHeaderProps) => {
   return (
     <>
@@ -32,7 +36,12 @@ const SectionHeader = ({
       {categoryList ? (
         <MenuPanelContainer>
           <Category categoryList={categoryList}></Category>
-          <PageNavController></PageNavController>
+          <PageNavController
+            goToNextPage={goToNextPage}
+            goToPrevPage={goToPrevPage}
+            currentPage={currentPage}
+            totalPage={totalPage}
+          />
         </MenuPanelContainer>
       ) : null}
 

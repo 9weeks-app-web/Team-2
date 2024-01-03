@@ -5,7 +5,13 @@ import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
 import Tag from "./Tag";
-const MemberCard: React.FC<Member> = ({ ...member }) => {
+
+// 한 번에 보여질 최대 스킬 수
+const MAX_SKILLS_DISPLAY = 3;
+
+const MemberCard: React.FC<Member> = ({ skills, ...member }) => {
+  const visibleSkills = skills.slice(0, MAX_SKILLS_DISPLAY);
+  const remainingSkillsCount = skills.length - MAX_SKILLS_DISPLAY;
   return (
     <MemberContainer>
       <ImgContainer></ImgContainer>
@@ -38,9 +44,12 @@ const MemberCard: React.FC<Member> = ({ ...member }) => {
           <B2_M_12 className="neutral20">스킬</B2_M_12>
           <SkillContainer>
             {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
-            {member.skills.map((tag) => {
+            {visibleSkills.map((tag) => {
               return <Tag text={tag} />;
             })}
+            {remainingSkillsCount > 0 && (
+              <Tag text={`+${remainingSkillsCount}`} />
+            )}
           </SkillContainer>
         </InfoContainer>
       </ProfileContainer>

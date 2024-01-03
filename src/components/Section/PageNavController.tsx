@@ -5,16 +5,29 @@ import {
 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
-const PageNavController = () => {
+
+interface PageNavControllerProps {
+  goToNextPage: () => void;
+  goToPrevPage: () => void;
+  currentPage: number;
+  totalPage: number;
+}
+
+const PageNavController: React.FC<PageNavControllerProps> = ({
+  goToNextPage,
+  goToPrevPage,
+  currentPage,
+  totalPage,
+}) => {
   return (
     <PageNavContainer>
-      <Btn>{"<"}</Btn>
+      <Btn onClick={goToPrevPage}>{"<"}</Btn>
       <TextBox>
-        <B2_M_14>1</B2_M_14>
+        <B2_M_14>{currentPage + 1}</B2_M_14>
         <B2_R_14 className="gray">/</B2_R_14>
-        <B2_R_14 className="gray">3</B2_R_14>
+        <B2_R_14 className="gray">{totalPage}</B2_R_14>
       </TextBox>
-      <Btn>{">"}</Btn>
+      <Btn onClick={goToNextPage}>{">"}</Btn>
     </PageNavContainer>
   );
 };
