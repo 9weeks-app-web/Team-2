@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BigCard from "../BigCard";
+import BigCard from "../Section1Card";
 import SectionHeader from "../../../../components/Section/SectionHeader";
 
 const SectionProgressProjects = () => {

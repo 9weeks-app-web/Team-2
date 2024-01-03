@@ -2,7 +2,7 @@ import { flexColumn } from "@/components/Flex/flexStyle";
 
 import React from "react";
 import styled from "styled-components";
-import BigCard from "./BigCard";
+import BigCard from "./Section1Card";
 import SectionHeader from "../../../components/Section/SectionHeader";
 import SectionProgressProjects from "./Section/SectionProgressProjects";
 import SectionMemberRecomm from "./Section/SectionMemberRecomm";

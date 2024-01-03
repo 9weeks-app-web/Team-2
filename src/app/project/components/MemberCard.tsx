@@ -2,9 +2,9 @@ import { CardRadius } from "@/components/Card/cardStyle";
 import { flexColumn } from "@/components/Flex/flexStyle";
 import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+import Tag from "./Tag";
 const MemberCard = () => {
   return (
     <MemberContainer>
@@ -26,38 +26,18 @@ const MemberCard = () => {
             </B2_M_12>
           </RowContainer>
           <WorkContainer>
-            <Tag>
-              <B2_M_12>계획은 필수예요</B2_M_12>
-            </Tag>
-            <Tag>
-              <B2_M_12>계획은 필수예요</B2_M_12>
-            </Tag>
-            <Tag>
-              <B2_M_12>계획은 필수예요</B2_M_12>
-            </Tag>
-            <Tag>
-              <B2_M_12>계획은 필수예요</B2_M_12>
-            </Tag>
-            <Tag>
-              <B2_M_12>계획은 필수예요</B2_M_12>
-            </Tag>
-            <Tag>
-              <B2_M_12>계획은 필수예요</B2_M_12>
-            </Tag>
+            {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
+            <Tag text={"통찰력있는"} />
+            <Tag text={"계획적인"} />
+            <Tag text={"주도적인"} />
+            <Tag text={"관찰이 뛰어난"} />
           </WorkContainer>
           {/* 스킬 */}
           <B2_M_12 className="neutral20">스킬</B2_M_12>
           <SkillContainer>
             {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
-            <Tag>
-              <B2_M_12>Notion</B2_M_12>
-            </Tag>
-            <Tag>
-              <B2_M_12>Slack</B2_M_12>
-            </Tag>
-            <Tag>
-              <B2_M_12>Figma</B2_M_12>
-            </Tag>
+            <Tag text={"Notion"} />
+            <Tag text={"Slack"} />
           </SkillContainer>
         </InfoContainer>
       </ProfileContainer>
@@ -135,22 +115,13 @@ const InfoContainer = styled.div`
 
 const WorkContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
   gap: 0.25rem;
-  height: 3.25rem;
-  overflow: hidden;
+  align-self: stretch;
+  flex-wrap: wrap;
 `;
 
-const Tag = styled.div`
-  display: flex;
-  padding: 0.375rem 0.5rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.25rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--Neutral-10, #e6e6e6);
-  background: var(--Neutral-white, #fff);
-`;
 const RowContainer = styled.div`
   display: flex;
   justify-content: space-between;

@@ -7,7 +7,7 @@ import {
 import { font_weight } from "@/styles/typography";
 import React from "react";
 import styled from "styled-components";
-const BigCard = () => {
+const Section1Card = () => {
   return (
     <CardContainer>
       <CardInfo>
@@ -27,7 +27,7 @@ const BigCard = () => {
   );
 };
 
-export default BigCard;
+export default Section1Card;
 
 const CardContainer = styled.div`
   flex-shrink: 0;
