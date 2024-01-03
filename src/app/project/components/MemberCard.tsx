@@ -72,6 +72,7 @@ const MemberContainer = styled.div`
   ${CardRadius};
   width: 15.6rem;
   height: 17.4rem;
+  flex-shrink: 0;
 `;
 const ImgContainer = styled.div`
   display: flex;

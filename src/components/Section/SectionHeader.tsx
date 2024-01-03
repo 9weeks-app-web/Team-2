@@ -8,13 +8,16 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import PageNavController from "./PageNavController";
+import Filter from "@/app/project/components/Filter";
+import Sort from "@/app/project/components/Sort";
 
 const SectionHeader = ({
   headerText1,
   headerText2,
   seeMoreHref,
   categoryList,
-}: sectionHeaderProps) => {
+  filterList,
+}: SectionHeaderProps) => {
   return (
     <>
       <HeaderContainer>
@@ -31,6 +34,13 @@ const SectionHeader = ({
           <Category categoryList={categoryList}></Category>
           <PageNavController></PageNavController>
         </MenuPanelContainer>
+      ) : null}
+
+      {filterList ? (
+        <FilterMenuPanelContainer>
+          <Filter filterList={filterList} />
+          <Sort />
+        </FilterMenuPanelContainer>
       ) : null}
     </>
   );
@@ -61,4 +71,11 @@ const MenuPanelContainer = styled.div`
   /* height: 100%; */
   display: flex;
   justify-content: space-between;
+`;
+
+const FilterMenuPanelContainer = styled.div`
+  /* height: 100%; */
+  display: flex;
+  justify-content: space-between;
+  margin: 1.62rem 0;
 `;

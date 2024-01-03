@@ -40,6 +40,9 @@ const SectionMemberRecomm = () => {
       ></SectionHeader>
       <ContentContainer>
         <MemberCard />
+        <MemberCard />
+        <MemberCard />
+        <MemberCard />
       </ContentContainer>
     </Section2>
   );
@@ -49,6 +52,10 @@ export default SectionMemberRecomm;
 const Section2 = styled.section``;
 
 const ContentContainer = styled.div`
+  width: 49.375rem;
   display: flex;
   gap: 1.25rem;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  
 `;
