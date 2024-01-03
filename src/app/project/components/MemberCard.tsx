@@ -5,7 +5,7 @@ import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
 import Tag from "./Tag";
-const MemberCard = () => {
+const MemberCard: React.FC<Member> = ({ ...member }) => {
   return (
     <MemberContainer>
       <ImgContainer></ImgContainer>
@@ -14,30 +14,33 @@ const MemberCard = () => {
           <Avatar />
         </Profile>
         <TextBox>
-          <B2_M_12>프로 리더형</B2_M_12>
-          <p className="subTxt">기획자 | 김잇기</p>
+          <B2_M_12>{member.type}</B2_M_12>
+          <p className="subTxt">
+            {member.role} / {member.name}
+          </p>
         </TextBox>
         <InfoContainer>
           {/* 업무성향 */}
           <RowContainer>
             <B2_M_12 className="neutral20">업무성향</B2_M_12>
             <B2_M_12 className="neutral40">
+              {/* @TODO 매칭률 계산 해야됨 */}
               매칭률 <span className="neutral100">98%</span>
             </B2_M_12>
           </RowContainer>
           <WorkContainer>
             {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
-            <Tag text={"통찰력있는"} />
-            <Tag text={"계획적인"} />
-            <Tag text={"주도적인"} />
-            <Tag text={"관찰이 뛰어난"} />
+            {member.workTendency.map((tag) => {
+              return <Tag text={tag} />;
+            })}
           </WorkContainer>
           {/* 스킬 */}
           <B2_M_12 className="neutral20">스킬</B2_M_12>
           <SkillContainer>
             {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
-            <Tag text={"Notion"} />
-            <Tag text={"Slack"} />
+            {member.skills.map((tag) => {
+              return <Tag text={tag} />;
+            })}
           </SkillContainer>
         </InfoContainer>
       </ProfileContainer>

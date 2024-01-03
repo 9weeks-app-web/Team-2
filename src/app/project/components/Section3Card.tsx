@@ -16,8 +16,9 @@ const Section3Card = () => {
       <Info>
         <Title>기 개발된 사이트의 고도화 디자인, 개발</Title>
         <Desc>
-          {/* 일정 글자수 이상시 더보기 처리  */}
-          기존에 개발된 프로그램 및 디자인의 재개발 프로젝트입니다. 제작기간은
+          {/* 3글자 이상 ... 으로 처리   */}
+          이미 운영 중인 인지 훈련 웹사이트가 있고, 그 내용을 어플로 제작하고
+          싶습니다. 보유 중인 소스코드는 없으며, 모바일 기획부터 어쩌구 저쩌구
         </Desc>
       </Info>
       <MemberQuota>
@@ -86,12 +87,17 @@ const Title = styled.div`
   line-height: var(${line_height.LINE_HEIGHT_140});
 `;
 const Desc = styled.div`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* 원하는 줄 수를 여기에 설정 */
   height: 3.1875rem;
   flex: 1 0 0;
   font-size: var(${font_size.FONT_SIZE_12});
   font-weight: var(${font_weight.FONT_WEIGHT_400_R});
   color: var(${colors.NEUTRAL_50});
   line-height: var(${line_height.LINE_HEIGHT_140});
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const MemberQuota = styled.div`

@@ -22,6 +22,11 @@ const SectionAllProjects = () => {
       ></SectionHeader>
       <ContentContainer>
         <Section3Card />
+        <Section3Card />
+        <Section3Card />
+        <Section3Card />
+        <Section3Card />
+        <Section3Card />
       </ContentContainer>
     </Section3>
   );

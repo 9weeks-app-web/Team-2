@@ -3,3 +3,7 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  margin-bottom: 6.88rem;
+}
