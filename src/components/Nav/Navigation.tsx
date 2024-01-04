@@ -4,6 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import Link from "next/link";
 import { SearchBar } from "@/components/Nav/SearchBar";
+import { colors } from "@/styles/colors";
 export const Navigation = () => {
   return (
     <NavContainer>
@@ -27,10 +28,18 @@ export const Navigation = () => {
         </LinkWrapper>
       </UlContainer>
       <SearchBar />
-      <Button $bgColor="#f9f9f9" $Color="#B3B3B3" href="#">
+      <Button
+        $bgColor={`${colors.NEUTRAL_WHITE}`}
+        $Color={`${colors.PRIMARY_80}`}
+        href="#"
+      >
         로그인
       </Button>
-      <Button $bgColor="#3B3B3B" $Color="#FFFFFF" href="#">
+      <Button
+        $Color={`${colors.NEUTRAL_WHITE}`}
+        $bgColor={`${colors.PRIMARY_80}`}
+        href="#"
+      >
         회원가입
       </Button>
     </NavContainer>
@@ -73,14 +82,15 @@ const CustomLink = styled(Link)`
 //높이 넓의 임의설정, 차후 수정예상
 const Button = styled(Link)<{ $bgColor: string; $Color: string }>`
   width: 90px;
+  height: 33px;
   padding: 8px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
-  background-color: ${(props) => props.$bgColor};
-  color: ${(props) => props.$Color};
+  background-color: ${(props) => `var(${props.$bgColor})`};
+  color: ${(props) => `var(${props.$Color})`};
   margin-left: 18px;
   text-decoration: none;
 `;

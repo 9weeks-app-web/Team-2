@@ -23,6 +23,6 @@ export const font_weight = {
 
 // 줄 높이
 export const line_height = {
-  LINE_HEIGHT_100: "--line_height-100",
-  LINE_HEIGHT_140: "--line_height-140",
+  LINE_HEIGHT_100: "--line-height-100",
+  LINE_HEIGHT_140: "--line-height-140",
 };

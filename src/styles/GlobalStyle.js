@@ -57,8 +57,8 @@ const GlobalStyle = createGlobalStyle`
     ${font_weight.FONT_WEIGHT_300_L} : 300;
     
     /* line_height */
-    ${line_height.LINE_HEIGHT_100} : 100;
-    ${line_height.LINE_HEIGHT_100} : 140;
+    ${line_height.LINE_HEIGHT_100} : 100%;
+    ${line_height.LINE_HEIGHT_100} : 140%;
   
 
   }

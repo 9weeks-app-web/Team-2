@@ -19,10 +19,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  popularPortfoilo,
 }: {
   children: React.ReactNode;
-  popularPortfoilo: React.ReactNode;
 }) {
   return (
     <html lang="en">
