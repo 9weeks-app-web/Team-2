@@ -6,36 +6,53 @@ import { font_size, font_weight, line_height } from "@/styles/typography";
 import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import { flexColumn } from "@/components/Flex/flexStyle";
-const Section3Card = () => {
+
+const Section3Card: React.FC<{ project: Project }> = ({ project }) => {
+  // D-Day 계산 함수
+  const calculateDDay = (deadline: Date) => {
+    const today = new Date();
+    const timeDiff = deadline.getTime() - today.getTime();
+    const dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+    return dayDiff >= 0 ? `D-${dayDiff}` : `D+${Math.abs(dayDiff)}`;
+  };
+
+  // D-Day 혹은 '모집시 마감' 표시
+
+  const displayRecruitmentStatus = project.recruitmentStatus
+    ? calculateDDay(project.recruitmentStatus)
+    : "모집시 마감";
   return (
     <CardContainer>
       <Header>
-        <Tag text={"모집시 마감"} />
-        <Tag text={"1주"} />
+        <Tag text={displayRecruitmentStatus} />
+        <Tag text={project.recruitmentPeriod} />
       </Header>
       <Info>
-        <Title>기 개발된 사이트의 고도화 디자인, 개발</Title>
+        <Title>{project.title}</Title>
         <Desc>
           {/* 3글자 이상 ... 으로 처리   */}
-          이미 운영 중인 인지 훈련 웹사이트가 있고, 그 내용을 어플로 제작하고
-          싶습니다. 보유 중인 소스코드는 없으며, 모바일 기획부터 어쩌구 저쩌구
+          {project.description}
         </Desc>
       </Info>
       <MemberQuota>
         <B2_M_12 className="neutral50">모집 인원</B2_M_12>
         <TagContainer>
-          <Tag text={"프론트 2"} />
-          <Tag text={"디자이너 2"} />
+          {Object.entries(project.memberQuota).map(([role, count]) => (
+            <Tag key={role} text={`${role} ${count}`} />
+          ))}
+          {/* <Tag text={project.memberQuota[0].toString()} /> */}
+          {/* <Tag text={"디자이너 2"} /> */}
         </TagContainer>
       </MemberQuota>
       <Footer>
         <TextContainer>
           <B2_M_12 className="neutral50">현재 인원</B2_M_12>
-          <B2_M_12>2/4</B2_M_12>
+          <B2_M_12>{`${project.currentMemberCount}/${project.totalMemberCount} `}</B2_M_12>
         </TextContainer>
         <TextContainer>
           <B2_M_12 className="neutral50">업무성향 매칭률</B2_M_12>
-          <B2_M_12 className="primary80">98%</B2_M_12>
+          <B2_M_12 className="primary80">{`${project.workTendencyMatchingRate}%`}</B2_M_12>
         </TextContainer>
       </Footer>
     </CardContainer>

@@ -37,10 +37,10 @@ const SectionHeader = ({
         <MenuPanelContainer>
           <Category categoryList={categoryList}></Category>
           <PageNavController
-            goToNextPage={goToNextPage}
-            goToPrevPage={goToPrevPage}
-            currentPage={currentPage}
-            totalPage={totalPage}
+            goToNextPage={goToNextPage!}
+            goToPrevPage={goToPrevPage!}
+            currentPage={currentPage!}
+            totalPage={totalPage!}
           />
         </MenuPanelContainer>
       ) : null}

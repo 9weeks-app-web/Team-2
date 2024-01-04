@@ -13,6 +13,10 @@ interface PageNavControllerProps {
   totalPage: number;
 }
 
+/** 페이지네비게이션
+ * 사용할페이지의 현재페이지 , 전체페이지 , 이전페이지, 다음페이지 를 Props 로 넘겨주면된다.
+ */
+
 const PageNavController: React.FC<PageNavControllerProps> = ({
   goToNextPage,
   goToPrevPage,
