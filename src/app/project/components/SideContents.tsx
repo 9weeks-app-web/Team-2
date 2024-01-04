@@ -66,8 +66,6 @@ export const SideContents: React.FC<{ user: User }> = ({ user }) => {
           ))}
         </CategoryContainer>
         <BtmContent>
-          {/* { user.myProjects.map(project => )} */}
-
           {membersToShow.map((member) => (
             <UserProfile
               key={member.id}

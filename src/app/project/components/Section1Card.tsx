@@ -6,13 +6,14 @@ import {
 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
+import Avatar from "./Avatar";
 const Section1Card: React.FC<{ project: MyProject }> = ({ project }) => {
   return (
-    <CardContainer>
+    <CardContainer style={{ backgroundImage: `url(${project.coverImg})` }}>
       <CardInfo>
         <AvatarContainer>
           {project.members.map((member) => {
-            return <Avatar />;
+            return <Avatar imgPath={member.avatarImage} />;
           })}
         </AvatarContainer>
         <TextContainer>
@@ -36,7 +37,10 @@ const CardContainer = styled.div`
   width: 35rem;
   border-radius: 0.625rem;
   background-color: #ededed;
+  background-size: cover;
+  background-position: center; // 배경 이미지가 중앙에 위치하도록 설정
 `;
+const CoverImg = styled.img``;
 
 const CardInfo = styled.div`
   display: flex;
@@ -48,18 +52,6 @@ const CardInfo = styled.div`
 const AvatarContainer = styled.div`
   position: relative;
   display: flex;
-`;
-
-const Avatar = styled.div`
-  width: 3rem;
-  height: 3rem;
-  flex-shrink: 0;
-  border-radius: 50%;
-  border: 1px solid #bcbcbc;
-  background: #d1d1d1;
-  &:not(:first-child) {
-    margin-left: -1.75rem; /* 겹치는 정도를 조절 */
-  }
 `;
 
 const TextContainer = styled.div`

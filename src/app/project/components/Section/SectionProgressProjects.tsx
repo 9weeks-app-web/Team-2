@@ -4,11 +4,11 @@ import BigCard from "../Section1Card";
 import SectionHeader from "../../../../components/Section/SectionHeader";
 import { _myProjects } from "../../data/mockupData";
 
-const SectionProgressProjects = () => {
+const SectionProgressProjects: React.FC<{ user: User }> = ({ user }) => {
   return (
     <Section1>
       <SectionHeader
-        headerText1={"이닷코님의"}
+        headerText1={`${user.name}님의`}
         headerText2={"진행 중인 프로젝트"}
         seeMoreHref={"#"}
       ></SectionHeader>

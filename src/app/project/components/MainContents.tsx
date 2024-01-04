@@ -11,8 +11,8 @@ import SectionAllProjects from "./Section/SectionAllProjects";
 export const MainContents: React.FC<{ user: User }> = ({ user }) => {
   return (
     <MainConainer>
-      <SectionProgressProjects />
-      <SectionMemberRecomm />
+      <SectionProgressProjects user={user} />
+      <SectionMemberRecomm user={user} />
       <SectionAllProjects />
     </MainConainer>
   );

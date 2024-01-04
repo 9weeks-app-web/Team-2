@@ -5,19 +5,22 @@ import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
 import Tag from "./Tag";
+import Avatar from "./Avatar";
 
 // 한 번에 보여질 최대 스킬 수
 const MAX_SKILLS_DISPLAY = 3;
 
 const MemberCard: React.FC<Member> = ({ skills, ...member }) => {
-  const visibleSkills = skills.slice(0, MAX_SKILLS_DISPLAY);
-  const remainingSkillsCount = skills.length - MAX_SKILLS_DISPLAY;
+  const visibleSkills = skills?.slice(0, MAX_SKILLS_DISPLAY);
+  const remainingSkillsCount = skills ? skills.length - MAX_SKILLS_DISPLAY : 0;
   return (
     <MemberContainer>
-      <ImgContainer></ImgContainer>
+      <CoverImgContainer
+        style={{ backgroundImage: `url(${member.coverImage})` }}
+      ></CoverImgContainer>
       <ProfileContainer>
         <Profile>
-          <Avatar />
+          <Avatar imgPath={member.avatarImage} />
         </Profile>
         <TextBox>
           <B2_M_12>{member.type}</B2_M_12>
@@ -30,21 +33,22 @@ const MemberCard: React.FC<Member> = ({ skills, ...member }) => {
           <RowContainer>
             <B2_M_12 className="neutral20">업무성향</B2_M_12>
             <B2_M_12 className="neutral40">
-              {/* @TODO 매칭률 계산 해야됨 */}
               매칭률 <span className="neutral100">98%</span>
             </B2_M_12>
           </RowContainer>
           <WorkContainer>
             {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
-            {member.workTendency.map((tag) => {
-              return <Tag text={tag} />;
-            })}
+            {member.workTendency
+              ? member.workTendency.map((tag) => {
+                  return <Tag text={tag} />;
+                })
+              : null}
           </WorkContainer>
           {/* 스킬 */}
           <B2_M_12 className="neutral20">스킬</B2_M_12>
           <SkillContainer>
             {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
-            {visibleSkills.map((tag) => {
+            {visibleSkills?.map((tag) => {
               return <Tag text={tag} />;
             })}
             {remainingSkillsCount > 0 && (
@@ -65,8 +69,9 @@ const MemberContainer = styled.div`
   width: 15.6rem;
   height: 17.4rem;
   flex-shrink: 0;
+  overflow: hidden;
 `;
-const ImgContainer = styled.div`
+const CoverImgContainer = styled.div`
   display: flex;
   height: 5.25rem;
   padding: 0.75rem;
@@ -74,7 +79,9 @@ const ImgContainer = styled.div`
   align-items: flex-start;
   gap: 0.625rem;
   align-self: stretch;
-  background: #ededed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 const ProfileContainer = styled.div`
   position: relative;
@@ -86,12 +93,7 @@ const Profile = styled.div`
   top: -2rem;
   left: 0.75rem;
 `;
-const Avatar = styled.div`
-  width: 4rem;
-  height: 4rem;
-  border-radius: 6.25rem;
-  background: #d9d9d9;
-`;
+
 const TextBox = styled.div`
   position: absolute;
   ${flexColumn}
@@ -121,7 +123,7 @@ const InfoContainer = styled.div`
     color: var(${colors.NEUTRAL_40});
   }
   & .neutral100 {
-    color: var(${colors.NEUTRAL_100});
+    color: var(${colors.PRIMARY_80});
   }
 `;
 

@@ -4,7 +4,7 @@ import SectionHeader from "../../../../components/Section/SectionHeader";
 import MemberCard from "../MemberCard";
 import { _membersData } from "../../data/mockupData";
 
-const SectionMemberRecomm = () => {
+const SectionMemberRecomm: React.FC<{ user: User }> = ({ user }) => {
   // 섹션 2 팀원추천 페이지에 필요한 카테고리 목업 데이터
   const categoryList = [
     {
@@ -42,7 +42,6 @@ const SectionMemberRecomm = () => {
     (currentPage + 1) * CARDS_PER_PAGE
   );
 
-  const firstPage = 1;
   const totalPage = Math.floor(_membersData.length / 3 + 1);
 
   // 페이지 변경 함수
@@ -61,7 +60,7 @@ const SectionMemberRecomm = () => {
   return (
     <Section2>
       <SectionHeader
-        headerText1={"이닷코 님과 잘 맞는"}
+        headerText1={`${user.name} 님과 잘 맞는`}
         headerText2={"팀원을 추천해 드려요!"}
         seeMoreHref={""}
         categoryList={categoryList}
@@ -74,10 +73,6 @@ const SectionMemberRecomm = () => {
         {currentMembers.map((member: Member) => (
           <MemberCard key={member.id} {...member} />
         ))}
-        {/* <MemberCard />
-        <MemberCard />
-        <MemberCard />
-        <MemberCard /> */}
       </ContentContainer>
     </Section2>
   );
