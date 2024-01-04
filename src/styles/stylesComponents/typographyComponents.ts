@@ -6,7 +6,7 @@ import { font_size, font_weight, line_height } from "../typography";
 export const H1_B_24 = styled.h1`
   font-size: var(${font_size.FONT_SIZE_24});
   font-weight: var(${font_weight.FONT_WEIGHT_700_B});
-  line-height: var(${line_height.LINE_HEIGHT_140});
+  line-height: var(${line_height.LINE_HEIGHT_100});
 `;
 
 export const H1_SB_24 = styled.h1`

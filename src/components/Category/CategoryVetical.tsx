@@ -1,20 +1,47 @@
-"use client";
-import React from "react";
+import { colors } from "@/styles/colors";
+import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
+import React, { useEffect, useState } from "react";
+import { RecoilState, useRecoilState } from "recoil";
 import styled from "styled-components";
-export const CategoryVetical = () => {
+interface CartegoryObjProps {
+  title: string;
+  name: string;
+  id: string;
+  value: string;
+}
+interface CartegoryProps {
+  categoryInfo: CartegoryObjProps[];
+  recoilState: RecoilState<string>;
+}
+
+export const CategoryVetical = ({
+  categoryInfo,
+  recoilState,
+}: CartegoryProps) => {
+  const [selectedValue, setSelectedValue] = useRecoilState(recoilState);
+  // const [selectedValue, setSelectedValue] = useState<string>("planner");
+
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedValue(() => event.target.value);
+  };
   return (
     <RadioButtonContainer>
-      <StyledRadioButton id="RadioButton1" name="Category2" defaultChecked />
-      <label htmlFor="RadioButton1">서비스 기획자</label>
-
-      <StyledRadioButton id="RadioButton2" name="Category2" />
-      <label htmlFor="RadioButton2">디자이너</label>
-
-      <StyledRadioButton id="RadioButton3" name="Category2" />
-      <label htmlFor="RadioButton3">프론트 개발자</label>
-
-      <StyledRadioButton id="RadioButton4" name="Category2" />
-      <label htmlFor="RadioButton4">백엔드 개발자</label>
+      {categoryInfo &&
+        categoryInfo.map((el) => (
+          <Label
+            key={el.id}
+            htmlFor={el.id}
+            $selected={selectedValue === `${el.value}`}
+          >
+            <B2_M_14>{el.title}</B2_M_14>
+            <RadioButton
+              id={el.id}
+              name={el.name}
+              value={el.value}
+              onChange={handleRadioChange}
+            />
+          </Label>
+        ))}
     </RadioButtonContainer>
   );
 };
@@ -22,32 +49,26 @@ export const CategoryVetical = () => {
 const RadioButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-right: 32px;
+  height: 178px;
+  justify-content: space-between;
+`;
+const Label = styled.label<{ $selected: boolean }>`
+  text-align: center;
+  display: inline-block;
+  width: 110px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  color: ${(props) =>
+    props.$selected ? `var(${colors.PRIMARY_5})` : `var(${colors.NEUTRAL_50})`};
+  background: ${(props) =>
+    props.$selected ? `var(${colors.PRIMARY_70})` : "inherit"};
+  cursor: pointer;
 `;
 
-const StyledRadioButton = styled.input.attrs({ type: "radio" })`
-  /* Hide the default radio button */
+const RadioButton = styled.input.attrs({ type: "radio" })`
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
-
-  /* Style the custom button appearance */
-  + label {
-    display: inline-block;
-    width: 110px;
-    padding: 10px 14px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #b3b3b3;
-    border-radius: 4px;
-    margin-bottom: 14px;
-    background-color: inherit;
-    cursor: pointer;
-  }
-
-  /* Style when the radio button is checked */
-  &:checked + label {
-    color: #000;
-    background: #ededed;
-  }
 `;
