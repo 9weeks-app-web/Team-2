@@ -6,13 +6,36 @@ import {
   B2_M_12,
   H1_SB_24,
 } from "@/styles/stylesComponents/typographyComponents";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import UserProfile from "./UserProfile";
 import { CardRadius } from "@/components/Card/cardStyle";
 import Category from "./SideCategory";
 
-export const SideContents = () => {
+export const SideContents: React.FC<{ user: User }> = ({ user }) => {
+  // 현재 선택된 프로젝트 ID를 추적하는 상태
+  const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
+    null
+  );
+
+  // 선택된 프로젝트 ID에 따른 멤버 데이터를 필터링하는 함수
+  const getMembersByProjectId = (projectId: number): Member[] => {
+    const project = user.myProjects.find((project) => project.id === projectId);
+    return project ? project.members : [];
+  };
+
+  // 선택된 프로젝트의 멤버 데이터를 상태로 관리
+  const [membersToShow, setMembersToShow] = useState<Member[]>(
+    user.myProjects[0].members
+  );
+
+  // 프로젝트 카테고리 클릭 핸들러
+  const handleProjectClick = (projectId: number) => {
+    setSelectedProjectId(projectId);
+    const members = getMembersByProjectId(projectId);
+    setMembersToShow(members);
+  };
+
   return (
     <SideContainer>
       <TopContentContainer>
@@ -20,7 +43,7 @@ export const SideContents = () => {
         <TopContent>
           <div>
             <B2_M_12 className="gray">팀원 모집</B2_M_12>
-            <H1_SB_24>1</H1_SB_24>
+            <H1_SB_24>{user.recruitingMembers.length}</H1_SB_24>
           </div>
           <div>
             <B2_M_12 className="gray">종료</B2_M_12>
@@ -34,17 +57,26 @@ export const SideContents = () => {
           <B1_M_16>팀원 평가</B1_M_16>
         </Title>
         <CategoryContainer>
-          <Category></Category>
-          <Category></Category>
+          {user.myProjects.map((project, index) => (
+            <Category
+              key={project.id}
+              index={index}
+              onClick={() => handleProjectClick(project.id)}
+            />
+          ))}
         </CategoryContainer>
         <BtmContent>
-          <UserProfile
-            imageUrl={"IMG"}
-            userName={"김연주"}
-            onFollow={function (): void {
-              throw new Error("Function not implemented.");
-            }}
-          />
+          {/* { user.myProjects.map(project => )} */}
+
+          {membersToShow.map((member) => (
+            <UserProfile
+              key={member.id}
+              member={member}
+              onFollow={() => {
+                console.log("평가하기 클릭");
+              }}
+            />
+          ))}
         </BtmContent>
       </BtmContentContainer>
     </SideContainer>

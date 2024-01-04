@@ -4,11 +4,12 @@ import React from "react";
 import styled from "styled-components";
 import SideContents from "./components/SideContents";
 import MainContents from "./components/MainContents";
+import { _user } from "./data/mockupData";
 export const ProjectPage = () => {
   return (
     <Inner>
-      <SideContents />
-      <MainContents />
+      <SideContents user={_user} />
+      <MainContents user={_user} />
     </Inner>
   );
 };

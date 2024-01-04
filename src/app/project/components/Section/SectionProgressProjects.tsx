@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BigCard from "../Section1Card";
 import SectionHeader from "../../../../components/Section/SectionHeader";
+import { _myProjects } from "../../data/mockupData";
 
 const SectionProgressProjects = () => {
   return (
@@ -12,10 +13,9 @@ const SectionProgressProjects = () => {
         seeMoreHref={"#"}
       ></SectionHeader>
       <ContentContainer>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
-        <BigCard></BigCard>
+        {_myProjects.map((project) => (
+          <BigCard key={project.id} project={project}></BigCard>
+        ))}
       </ContentContainer>
     </Section1>
   );

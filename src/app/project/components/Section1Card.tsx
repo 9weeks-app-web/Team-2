@@ -4,23 +4,20 @@ import {
   B2_M_14,
   H3_M_18,
 } from "@/styles/stylesComponents/typographyComponents";
-import { font_weight } from "@/styles/typography";
 import React from "react";
 import styled from "styled-components";
-const Section1Card = () => {
+const Section1Card: React.FC<{ project: MyProject }> = ({ project }) => {
   return (
     <CardContainer>
       <CardInfo>
         <AvatarContainer>
-          <Avatar></Avatar>
-          <Avatar></Avatar>
-          <Avatar></Avatar>
-          <Avatar></Avatar>
-          <Avatar></Avatar>
+          {project.members.map((member) => {
+            return <Avatar />;
+          })}
         </AvatarContainer>
         <TextContainer>
-          <H3_M_18>포트폴리오 아카이빙 서비스 개발</H3_M_18>
-          <B2_M_14 className="sub">Team. YooHoo</B2_M_14>
+          <H3_M_18>{project.title}</H3_M_18>
+          <B2_M_14 className="sub">{`Team. ${project.teamName}`}</B2_M_14>
         </TextContainer>
       </CardInfo>
     </CardContainer>
@@ -33,9 +30,6 @@ const CardContainer = styled.div`
   flex-shrink: 0;
   ${flexColumn}
   position: relative;
-  /* align-items: flex-end;
-  align-content: flex-end;
-  justify-content: space-between; */
   row-gap: 16.0625rem;
   padding: 1.25rem;
   height: 22.5rem;

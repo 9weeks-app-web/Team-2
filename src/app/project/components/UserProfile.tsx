@@ -8,23 +8,18 @@ import styled from "styled-components";
 
 // TypeScript 인터페이스 정의
 interface UserProfileProps {
-  imageUrl: string;
-  userName: string;
+  member: Member;
   onFollow: () => void;
 }
 
 // UserProfile 컴포넌트
-const UserProfile: React.FC<UserProfileProps> = ({
-  imageUrl,
-  userName,
-  onFollow,
-}) => {
+const UserProfile: React.FC<UserProfileProps> = ({ member, onFollow }) => {
   return (
     <UserProfileContainer>
-      <ProfileImage src={imageUrl} alt="" />
+      <ProfileImage src={member.avatarImage} alt="" />
       <TextBox>
-        <B1_M_16>{userName}</B1_M_16>
-        <B2_M_12 className="gray">프론트 엔드</B2_M_12>
+        <B1_M_16>{member.name}</B1_M_16>
+        <B2_M_12 className="gray">{member.role}</B2_M_12>
       </TextBox>
       <EvaluationBtn onClick={onFollow}>평가하기</EvaluationBtn>
     </UserProfileContainer>

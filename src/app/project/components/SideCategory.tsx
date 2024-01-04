@@ -3,14 +3,21 @@ import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
-export const SideCategory = () => {
+export const SideCategory = ({
+  index,
+  onClick,
+}: {
+  index: number;
+  onClick: () => void;
+}) => {
   return (
-    <CategoryItem>
-      <B2_M_12>프로젝트 1</B2_M_12>
+    <CategoryItem onClick={onClick}>
+      <B2_M_12>프로젝트 {index + 1}</B2_M_12>
     </CategoryItem>
   );
 };
 
+// (index + 1).toString();
 export default SideCategory;
 
 const CategoryItem = styled.div`

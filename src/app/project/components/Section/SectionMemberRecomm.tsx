@@ -2,50 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import SectionHeader from "../../../../components/Section/SectionHeader";
 import MemberCard from "../MemberCard";
-
-// MemberCard 데이터 배열 예시(가정)
-const membersData: Member[] = [
-  {
-    id: 1,
-    avatarImage: "",
-    coverImage: "",
-    name: "김아영",
-    type: "예리한 분석가형",
-    role: "개발자",
-    workTendency: ["통찰력있는", "계획적인", "주도적인", "관찰력이뛰어난"],
-    skills: ["notion", "slack"],
-  },
-  {
-    id: 2,
-    avatarImage: "",
-    coverImage: "",
-    name: "전여빈",
-    type: "프로 리더형",
-    role: "디자이너",
-    workTendency: ["추진력 있는", "전략적인", "주도적인", "통제를 잘하는"],
-    skills: ["notion", "Figma", "Photoshop", "React", "여러가지"],
-  },
-  {
-    id: 3,
-    avatarImage: "",
-    coverImage: "",
-    name: "전여빈",
-    type: "프로 리더형",
-    role: "디자이너",
-    workTendency: ["추진력 있는", "전략적인", "주도적인", "통제를 잘하는"],
-    skills: ["notion", "Figma", "Photoshop", "React", "여러가지"],
-  },
-  {
-    id: 4,
-    avatarImage: "",
-    coverImage: "",
-    name: "전여빈",
-    type: "프로 리더형",
-    role: "디자이너",
-    workTendency: ["추진력 있는", "전략적인", "주도적인", "통제를 잘하는"],
-    skills: ["notion", "Figma", "Photoshop", "React", "여러가지"],
-  },
-];
+import { _membersData } from "../../data/mockupData";
 
 const SectionMemberRecomm = () => {
   // 섹션 2 팀원추천 페이지에 필요한 카테고리 목업 데이터
@@ -80,13 +37,13 @@ const SectionMemberRecomm = () => {
   const [currentPage, setCurrentPage] = useState<number>(0);
   const CARDS_PER_PAGE = 3; // 한 페이지에 보여질 카드의 수
 
-  const currentMembers = membersData.slice(
+  const currentMembers = _membersData.slice(
     currentPage * CARDS_PER_PAGE,
     (currentPage + 1) * CARDS_PER_PAGE
   );
 
   const firstPage = 1;
-  const totalPage = Math.floor(membersData.length / 3 + 1);
+  const totalPage = Math.floor(_membersData.length / 3 + 1);
 
   // 페이지 변경 함수
   const goToNextPage = () => {
@@ -111,7 +68,7 @@ const SectionMemberRecomm = () => {
         goToNextPage={goToNextPage}
         goToPrevPage={goToPrevPage}
         currentPage={currentPage}
-        totalPage={Math.floor(membersData.length / 3 + 1)}
+        totalPage={Math.floor(_membersData.length / 3 + 1)}
       ></SectionHeader>
       <ContentContainer>
         {currentMembers.map((member: Member) => (

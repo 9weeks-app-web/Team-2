@@ -8,7 +8,7 @@ import SectionProgressProjects from "./Section/SectionProgressProjects";
 import SectionMemberRecomm from "./Section/SectionMemberRecomm";
 import SectionAllProjects from "./Section/SectionAllProjects";
 
-export const MainContents = () => {
+export const MainContents: React.FC<{ user: User }> = ({ user }) => {
   return (
     <MainConainer>
       <SectionProgressProjects />
