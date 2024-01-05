@@ -3,6 +3,14 @@ import styled from "styled-components";
 import BigCard from "../Section1Card";
 import SectionHeader from "../../../../components/Section/SectionHeader";
 import { _myProjects } from "../../data/mockupData";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const SectionProgressProjects: React.FC<{ user: User }> = ({ user }) => {
   return (
@@ -13,9 +21,21 @@ const SectionProgressProjects: React.FC<{ user: User }> = ({ user }) => {
         seeMoreHref={"#"}
       ></SectionHeader>
       <ContentContainer>
-        {_myProjects.map((project) => (
-          <BigCard key={project.id} project={project}></BigCard>
-        ))}
+        <Swiper
+          modules={[Autoplay, Navigation, Pagination, Scrollbar]}
+          slidesPerView={1.3}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+        >
+          {_myProjects.map((project) => (
+            <SwiperSlide key={project.id}>
+              <BigCard project={project}></BigCard>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </ContentContainer>
     </Section1>
   );

@@ -4,7 +4,7 @@ export const _myProjects: MyProject[] = [
     id: 1,
     title: "포트폴리오 아카이빙 서비스 개발",
     teamName: "YooHoo",
-    coverImg: "https://source.unsplash.com/random/560x360?technology&sig=1",
+    coverImg: "https://source.unsplash.com/random/560x360?technology&sig=5",
     members: [
       {
         id: 1,
@@ -39,10 +39,10 @@ export const _myProjects: MyProject[] = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "핀테크 모바일 앱서비스 제안",
     teamName: "죽밥",
-    coverImg: "https://source.unsplash.com/random/560x360?technology&sig=2",
+    coverImg: "https://source.unsplash.com/random/560x360?technology&sig=3",
     members: [
       {
         id: 4,
@@ -99,6 +99,44 @@ export const _myProjects: MyProject[] = [
           "원리원칙을중시하는",
         ],
         skills: ["node.js", "database design"],
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "포트폴리오 아카이빙 서비스 개발",
+    teamName: "YooHoo",
+    coverImg: "https://source.unsplash.com/random/560x360?technology&sig=1",
+    members: [
+      {
+        id: 1,
+        avatarImage: "https://source.unsplash.com/random/300x300?person",
+        coverImage: "https://source.unsplash.com/random/400x300?office",
+        name: "김아영",
+        type: "예리한 분석가형",
+        role: "개발자",
+        workTendency: ["통찰력있는", "계획적인", "주도적인", "관찰력이뛰어난"],
+        skills: ["notion", "slack"],
+      },
+      {
+        id: 2,
+        avatarImage: "https://source.unsplash.com/random/300x300?woman",
+        coverImage: "https://source.unsplash.com/random/400x300?tech",
+        name: "이준호",
+        type: "혁신적인 창조형",
+        role: "디자이너",
+        workTendency: ["창의적인", "직관적인", "개방적인", "융통성있는"],
+        skills: ["photoshop", "illustrator"],
+      },
+      {
+        id: 3,
+        avatarImage: "https://source.unsplash.com/random/300x300?man",
+        coverImage: "https://source.unsplash.com/random/400x300?business",
+        name: "박수진",
+        type: "목표지향적 전략가형",
+        role: "마케터",
+        workTendency: ["체계적인", "분석적인", "목표지향적인", "결과중심적인"],
+        skills: ["google analytics", "SEO"],
       },
     ],
   },
