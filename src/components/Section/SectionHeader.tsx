@@ -19,6 +19,7 @@ const SectionHeader = ({
   currentPage,
   totalPage,
   filterList,
+  isSort,
   goToNextPage,
   goToPrevPage,
 }: SectionHeaderProps) => {
@@ -51,6 +52,8 @@ const SectionHeader = ({
           <Sort />
         </FilterMenuPanelContainer>
       ) : null}
+
+      {/* {isSort && <RightContainer></RightContainer>} */}
     </>
   );
 };
@@ -87,4 +90,9 @@ const FilterMenuPanelContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 1.62rem 0;
+`;
+
+const RightContainer = styled.div`
+  display: flex;
+  align-items: end;
 `;

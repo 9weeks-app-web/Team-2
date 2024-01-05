@@ -6,6 +6,7 @@ interface SectionHeaderProps {
   currentPage?: number;
   totalPage?: number;
   filterList?: Filter[];
+  isSort?: boolean;
   goToNextPage?: () => void;
   goToPrevPage?: () => void;
 }

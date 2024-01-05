@@ -3,7 +3,22 @@ import styled from "styled-components";
 import SectionHeader from "../../../../components/Section/SectionHeader";
 import Section3Card from "../ProjectCard";
 import { _allprojects } from "../../data/mockupData";
+import { useRecoilValue } from "recoil";
+import { sortState } from "../../state/\bsortState";
 const SectionAllProjects = () => {
+  const sortOrder = useRecoilValue(sortState);
+
+  // Recoil 정렬 상태에 따라 프로젝트 목록 정렬
+  const sortedProjects = React.useMemo(() => {
+    return [..._allprojects].sort((a, b) => {
+      if (sortOrder === "asc") {
+        return a.workTendencyMatchingRate - b.workTendencyMatchingRate;
+      } else {
+        return b.workTendencyMatchingRate - a.workTendencyMatchingRate;
+      }
+    });
+  }, [sortOrder, _allprojects]);
+
   const filterList = [
     {
       title: "직무",
@@ -23,7 +38,7 @@ const SectionAllProjects = () => {
         filterList={filterList}
       ></SectionHeader>
       <ContentContainer>
-        {_allprojects.map((project) => {
+        {sortedProjects.map((project) => {
           return <Section3Card key={project.id} project={project} />;
         })}
       </ContentContainer>

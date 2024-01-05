@@ -2,17 +2,32 @@ import { colors } from "@/styles/colors";
 import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
 import Image from "next/image";
 import React from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { sortState } from "../state/\bsortState";
 const Sort = () => {
+  const [ascending, setAscending] = useRecoilState(sortState);
+
+  const handleSortClick = () => {
+    setAscending(ascending === "asc" ? "desc" : "asc"); // 정렬 상태 토글
+  };
+
+  // 정렬 아이콘 변경
+  const arrowIcon =
+    ascending === "asc" ? "/icons/up_arrow.svg" : "/icons/down_arrow.svg";
+  const arrowAltText = ascending === "asc" ? "위로 화살표" : "아래로 화살표";
+
   return (
-    <ButtonContainer>
+    <ButtonContainer onClick={handleSortClick}>
       <B2_M_14>매칭률</B2_M_14>
-      <Image
-        src={"/icons/down_arrow.svg"}
-        alt={"아래화살표"}
-        width={14}
-        height={14}
-      ></Image>
+      <ArrowIconContainer isUp={ascending}>
+        <Image
+          src={"/icons/down_arrow.svg"}
+          alt={"아래화살표"}
+          width={14}
+          height={14}
+        />
+      </ArrowIconContainer>
     </ButtonContainer>
   );
 };
@@ -25,7 +40,15 @@ const ButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
+  cursor: pointer;
   & {
     color: var(${colors.PRIMARY_70});
   }
+`;
+const ArrowIconContainer = styled.div<{ isUp: string }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  transform: ${({ isUp }) => (isUp === "asc" ? "scaleY(-1)" : "scaleY(1)")};
 `;
