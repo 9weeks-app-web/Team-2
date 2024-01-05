@@ -46,13 +46,14 @@ const PageNavContainer = styled.div`
 
 const Btn = styled.div`
   display: flex;
-  width: 2.75rem;
-  height: 2.125rem;
+  width: 1.875rem;
+  height: 1.875rem;
   padding: 0.5rem 0.8125rem;
   justify-content: center;
   align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   border: 1px solid var(--Neutral-10, #e6e6e6);
+  color: var(${colors.PRIMARY_50});
   background: #fff;
   cursor: pointer;
 `;
