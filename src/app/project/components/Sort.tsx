@@ -15,7 +15,7 @@ const Sort = () => {
   return (
     <ButtonContainer onClick={handleSortClick}>
       <B2_M_14>매칭률</B2_M_14>
-      <ArrowIconContainer isUp={ascending === "asc"}>
+      <ArrowIconContainer $isUp={ascending === "asc"}>
         <Image
           src={"/icons/down_arrow.svg"}
           alt={"아래화살표"}
@@ -40,11 +40,11 @@ const ButtonContainer = styled.div`
     color: var(${colors.PRIMARY_70});
   }
 `;
-const ArrowIconContainer = styled.div<{ isUp: boolean }>`
+const ArrowIconContainer = styled.div<{ $isUp: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease-in-out;
   /* isUp prop을 이용한 조건부 스타일링 */
-  ${({ isUp }) => isUp && `transform: scaleY(-1);`}
+  ${({ $isUp }) => $isUp && `transform: scaleY(-1);`}
 `;
