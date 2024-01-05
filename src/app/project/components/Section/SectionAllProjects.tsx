@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import SectionHeader from "../../../../components/Section/SectionHeader";
 import Section3Card from "../ProjectCard";
-import { _allprojects } from "../../data/mockupData";
+import { _allprojects } from "../../../../constant/_[project]mockup";
 import { useRecoilValue } from "recoil";
-import { sortState } from "../../state/\bsortState";
+import { sortState } from "@/state/atom/atom";
 const SectionAllProjects = () => {
   const sortOrder = useRecoilValue(sortState);
 

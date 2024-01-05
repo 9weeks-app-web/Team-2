@@ -1,4 +1,3 @@
-import { Category } from "@/components/Category/Category";
 import { flexColumn } from "@/components/Flex/flexStyle";
 import {
   H1_L_24,
@@ -10,6 +9,8 @@ import styled from "styled-components";
 import PageNavController from "./PageNavController";
 import Filter from "@/app/project/components/Filter";
 import Sort from "@/app/project/components/Sort";
+import { SectionMemberRecommCategoryState } from "@/state/atom/atom";
+import { Category } from "../Category/Category";
 
 const SectionHeader = ({
   headerText1,
@@ -36,7 +37,11 @@ const SectionHeader = ({
       </HeaderContainer>
       {categoryList ? (
         <MenuPanelContainer>
-          <Category categoryList={categoryList}></Category>
+          <Category
+            categoryInfo={categoryList}
+            recoilState={SectionMemberRecommCategoryState}
+            radius={"0.625rem"}
+          ></Category>
           <PageNavController
             goToNextPage={goToNextPage!}
             goToPrevPage={goToPrevPage!}
@@ -63,6 +68,7 @@ export default SectionHeader;
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1.62rem;
 `;
 
 const Header = styled.div`

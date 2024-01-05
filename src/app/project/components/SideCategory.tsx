@@ -1,4 +1,4 @@
-import { CardRadius } from "@/components/Card/cardStyle";
+import { CardRadius } from "@/styles/stylesComponents/cardStyle";
 import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";

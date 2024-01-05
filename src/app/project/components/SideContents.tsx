@@ -9,7 +9,7 @@ import {
 import React, { useState } from "react";
 import styled from "styled-components";
 import UserProfile from "./UserProfile";
-import { CardRadius } from "@/components/Card/cardStyle";
+import { CardRadius } from "@/styles/stylesComponents/cardStyle";
 import Category from "./SideCategory";
 
 export const SideContents: React.FC<{ user: User }> = ({ user }) => {

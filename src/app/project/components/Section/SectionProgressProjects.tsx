@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BigCard from "../Section1Card";
 import SectionHeader from "../../../../components/Section/SectionHeader";
-import { _myProjects } from "../../data/mockupData";
+import { _myProjects } from "../../../../constant/_[project]mockup";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
 

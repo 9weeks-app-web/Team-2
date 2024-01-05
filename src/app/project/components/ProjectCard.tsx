@@ -1,4 +1,4 @@
-import { CardRadius } from "@/components/Card/cardStyle";
+import { CardRadius } from "@/styles/stylesComponents/cardStyle";
 import React from "react";
 import styled from "styled-components";
 import Tag from "./Tag";

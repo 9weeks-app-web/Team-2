@@ -11,7 +11,7 @@ import { PopTopicList } from "@/components/PopTopics/PopTopicList";
 import { CustomCarousel } from "@/components/CustomCarousel";
 import { ProjectIntro } from "./components/main/ProjectIntro";
 import { FindMyTeam } from "./components/main/FindMyTeam";
-import { CategoryVetical } from "@/components/Category/CategoryVetical";
+import { CategoryVetical } from "@/components/Category/CategoryVertical";
 export default function Home() {
   return (
     <>

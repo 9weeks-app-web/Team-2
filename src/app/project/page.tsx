@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import SideContents from "./components/SideContents";
 import MainContents from "./components/MainContents";
-import { _user } from "./data/mockupData";
+import { _user } from "../../constant/_[project]mockup";
 import { colors } from "@/styles/colors";
 import FloatingBtn from "./components/FloatingBtn";
 export const ProjectPage = () => {

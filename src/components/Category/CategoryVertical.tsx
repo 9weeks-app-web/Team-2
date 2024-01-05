@@ -1,7 +1,7 @@
-import React from "react";
 import { colors } from "@/styles/colors";
 import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
-import { RecoilState, atom, useRecoilState } from "recoil";
+import React, { useEffect, useState } from "react";
+import { RecoilState, useRecoilState } from "recoil";
 import styled from "styled-components";
 interface CartegoryObjProps {
   title: string;
@@ -12,13 +12,11 @@ interface CartegoryObjProps {
 interface CartegoryProps {
   categoryInfo: CartegoryObjProps[];
   recoilState: RecoilState<string>;
-  radius?: string;
 }
 
-export const Category = ({
+export const CategoryVertical = ({
   categoryInfo,
   recoilState,
-  radius,
 }: CartegoryProps) => {
   const [selectedValue, setSelectedValue] = useRecoilState(recoilState);
 
@@ -26,11 +24,10 @@ export const Category = ({
     setSelectedValue(() => event.target.value);
   };
   return (
-    <RadioContainer>
-      {selectedValue &&
+    <RadioButtonContainer>
+      {categoryInfo &&
         categoryInfo.map((el) => (
           <Label
-            radius={radius}
             key={el.id}
             htmlFor={el.id}
             $selected={selectedValue === `${el.value}`}
@@ -44,30 +41,27 @@ export const Category = ({
             />
           </Label>
         ))}
-    </RadioContainer>
+    </RadioButtonContainer>
   );
 };
 
-const RadioContainer = styled.div`
-  display: inline-block;
-  margin-bottom: 24px;
+const RadioButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 32px;
+  height: 178px;
+  justify-content: space-between;
 `;
-
-const Label = styled.label<{ $selected: boolean; radius?: string }>`
-  display: inline-block;
-  padding: 10px 14px;
-  border: 1px solid var(${colors.PRIMARY_50});
-  color: ${(props) =>
-    props.$selected
-      ? `var(${colors.NEUTRAL_WHITE})`
-      : `var(${colors.PRIMARY_50})`};
-  background: ${(props) =>
-    props.$selected
-      ? `var(${colors.PRIMARY_70})`
-      : `var(${colors.NEUTRAL_WHITE})`};
+const Label = styled.label<{ $selected: boolean }>`
   text-align: center;
-  border-radius: ${(props) => props.radius || "50px"};
-  margin-right: 8px;
+  display: inline-block;
+  width: 110px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  color: ${(props) =>
+    props.$selected ? `var(${colors.PRIMARY_5})` : `var(${colors.NEUTRAL_50})`};
+  background: ${(props) =>
+    props.$selected ? `var(${colors.PRIMARY_70})` : "inherit"};
   cursor: pointer;
 `;
 

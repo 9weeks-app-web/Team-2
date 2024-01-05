@@ -1,7 +1,7 @@
+import React, { useState } from "react";
+import styled from "styled-components";
 import { colors } from "@/styles/colors";
 import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
 
 interface FloatingBtnProps {
   title: string;
@@ -13,14 +13,15 @@ const FloatingBtn: React.FC<FloatingBtnProps> = ({ title }) => {
   const toggleFloatingBtn = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <FloatingContainer>
-      <CreateProject isOpen={isOpen}>
+      <CreateProject open={isOpen}>
         <B2_M_14>{title}</B2_M_14>
       </CreateProject>
 
       {/* 아이콘 넣으면됨 */}
-      <Button onClick={toggleFloatingBtn} isOpen={isOpen}>
+      <Button onClick={toggleFloatingBtn} open={isOpen}>
         +
       </Button>
     </FloatingContainer>
@@ -38,10 +39,9 @@ const FloatingContainer = styled.div`
   bottom: 5rem;
   right: 5.25rem;
 `;
-const Button = styled.button<{ isOpen: boolean }>`
-  padding: 0.625rem;
-  gap: 0.625rem;
 
+const Button = styled.button<{ open: boolean }>`
+  padding: 0.625rem;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
@@ -53,14 +53,14 @@ const Button = styled.button<{ isOpen: boolean }>`
   font-size: 1.5rem;
   z-index: 1000;
 
-  transform: ${({ isOpen }) => (isOpen ? "rotate(45deg)" : "rotate(0)")};
+  transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
   transition: transform 0.3s ease-in-out;
 `;
 
-const CreateProject = styled.div<{ isOpen: boolean }>`
+const CreateProject = styled.div<{ open: boolean }>`
   display: flex;
   height: 3.5rem;
-  padding: 0rem 1.5rem;
+  padding: 0 1.5rem;
   justify-content: flex-end;
   align-items: center;
   gap: 0.625rem;
@@ -70,8 +70,8 @@ const CreateProject = styled.div<{ isOpen: boolean }>`
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.14);
   cursor: pointer;
 
-  pointer-events: ${({ isOpen }) => (isOpen ? "auto" : "none")};
-  opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-  transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
+  pointer-events: ${({ open }) => (open ? "auto" : "none")};
+  opacity: ${({ open }) => (open ? 1 : 0)};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
 `;

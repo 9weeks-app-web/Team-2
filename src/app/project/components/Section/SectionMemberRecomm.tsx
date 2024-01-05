@@ -2,37 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import SectionHeader from "../../../../components/Section/SectionHeader";
 import MemberCard from "../MemberCard";
-import { _membersData } from "../../data/mockupData";
-
+import { _membersData } from "../../../../constant/_[project]mockup";
+import { SectionMemberRecommCategoryList } from "@/constant/category";
 const SectionMemberRecomm: React.FC<{ user: User }> = ({ user }) => {
-  // 섹션 2 팀원추천 페이지에 필요한 카테고리 목업 데이터
-  const categoryList = [
-    {
-      title: "전체",
-      name: "total",
-      id: "radioButton1",
-      value: "total",
-    },
-    {
-      title: "기획자",
-      name: "productManager",
-      id: "radioButton2",
-      value: "productManager",
-    },
-    {
-      title: "디자이너",
-      name: "designer",
-      id: "radioButton3",
-      value: "designer",
-    },
-    {
-      title: "개발자",
-      name: "developer",
-      id: "radioButton4",
-      value: "developer",
-    },
-  ];
-
   // 페이지 상태 및 상수 설정
   const [currentPage, setCurrentPage] = useState<number>(0);
   const CARDS_PER_PAGE = 3; // 한 페이지에 보여질 카드의 수
@@ -63,7 +35,7 @@ const SectionMemberRecomm: React.FC<{ user: User }> = ({ user }) => {
         headerText1={`${user.name} 님과 잘 맞는`}
         headerText2={"팀원을 추천해 드려요!"}
         seeMoreHref={""}
-        categoryList={categoryList}
+        categoryList={SectionMemberRecommCategoryList}
         goToNextPage={goToNextPage}
         goToPrevPage={goToPrevPage}
         currentPage={currentPage}

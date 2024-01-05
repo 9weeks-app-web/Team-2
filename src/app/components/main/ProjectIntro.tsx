@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ProjectIntroTitle } from "@/app/components/main/ProjectIntroTitle";
-import { Category } from "@/components/Category/Category";
+import { Category } from "@/components/Category/CategoryVertical";
 import { ProjectIntroImages } from "./ProjectIntroImages";
 import Image from "next/image";
 export const ProjectIntro = () => {

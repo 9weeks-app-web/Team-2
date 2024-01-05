@@ -1,4 +1,4 @@
-import { CardRadius } from "@/components/Card/cardStyle";
+import { CardRadius } from "@/styles/stylesComponents/cardStyle";
 import { flexColumn } from "@/components/Flex/flexStyle";
 import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
@@ -6,6 +6,10 @@ import React from "react";
 import styled from "styled-components";
 import Tag from "./Tag";
 import Avatar from "./Avatar";
+
+
+
+
 
 // 한 번에 보여질 최대 스킬 수
 const MAX_SKILLS_DISPLAY = 3;
