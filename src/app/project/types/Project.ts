@@ -1,5 +1,5 @@
 interface Project {
-  id: number;
+  id: string;
   title: string;
   description: string;
   recruitmentStatus?: Date; // "모집시 마감"과 같은 상태 문자열

@@ -1,13 +1,15 @@
 /** SectionProgressProjects 에서 사용 */
+import { v4 as uuidv4 } from "uuid";
+
 export const _myProjects: MyProject[] = [
   {
-    id: 1,
+    id: uuidv4(),
     title: "포트폴리오 아카이빙 서비스 개발",
     teamName: "YooHoo",
     coverImg: "https://source.unsplash.com/random/560x360?technology&sig=5",
     members: [
       {
-        id: 1,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?person",
         coverImage: "https://source.unsplash.com/random/400x300?office",
         name: "김아영",
@@ -17,7 +19,7 @@ export const _myProjects: MyProject[] = [
         skills: ["notion", "slack"],
       },
       {
-        id: 2,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?woman",
         coverImage: "https://source.unsplash.com/random/400x300?tech",
         name: "이준호",
@@ -27,7 +29,7 @@ export const _myProjects: MyProject[] = [
         skills: ["photoshop", "illustrator"],
       },
       {
-        id: 3,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?man",
         coverImage: "https://source.unsplash.com/random/400x300?business",
         name: "박수진",
@@ -39,13 +41,13 @@ export const _myProjects: MyProject[] = [
     ],
   },
   {
-    id: 3,
+    id: uuidv4(),
     title: "핀테크 모바일 앱서비스 제안",
     teamName: "죽밥",
     coverImg: "https://source.unsplash.com/random/560x360?technology&sig=3",
     members: [
       {
-        id: 4,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?person&sig=4",
         coverImage:
           "https://source.unsplash.com/random/400x300?workplace&sig=4",
@@ -56,7 +58,7 @@ export const _myProjects: MyProject[] = [
         skills: ["linux", "shell scripting"],
       },
       {
-        id: 5,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?person&sig=5",
         coverImage: "https://source.unsplash.com/random/400x300?computer&sig=5",
         name: "최유리",
@@ -66,7 +68,7 @@ export const _myProjects: MyProject[] = [
         skills: ["jira", "scrum"],
       },
       {
-        id: 6,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?person&sig=6",
         coverImage: "https://source.unsplash.com/random/400x300?meeting&sig=6",
         name: "김태현",
@@ -76,7 +78,7 @@ export const _myProjects: MyProject[] = [
         skills: ["communication", "team building"],
       },
       {
-        id: 7,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?person&sig=7",
         coverImage: "https://source.unsplash.com/random/400x300?strategy&sig=7",
         name: "황보미",
@@ -86,7 +88,7 @@ export const _myProjects: MyProject[] = [
         skills: ["SQL", "data analysis"],
       },
       {
-        id: 8,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?person&sig=8",
         coverImage: "https://source.unsplash.com/random/400x300?coding&sig=8",
         name: "서하준",
@@ -103,13 +105,13 @@ export const _myProjects: MyProject[] = [
     ],
   },
   {
-    id: 1,
+    id: uuidv4(),
     title: "포트폴리오 아카이빙 서비스 개발",
     teamName: "YooHoo",
     coverImg: "https://source.unsplash.com/random/560x360?technology&sig=1",
     members: [
       {
-        id: 1,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?person",
         coverImage: "https://source.unsplash.com/random/400x300?office",
         name: "김아영",
@@ -119,7 +121,7 @@ export const _myProjects: MyProject[] = [
         skills: ["notion", "slack"],
       },
       {
-        id: 2,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?woman",
         coverImage: "https://source.unsplash.com/random/400x300?tech",
         name: "이준호",
@@ -129,7 +131,7 @@ export const _myProjects: MyProject[] = [
         skills: ["photoshop", "illustrator"],
       },
       {
-        id: 3,
+        id: uuidv4(),
         avatarImage: "https://source.unsplash.com/random/300x300?man",
         coverImage: "https://source.unsplash.com/random/400x300?business",
         name: "박수진",
@@ -145,7 +147,7 @@ export const _myProjects: MyProject[] = [
 /** SectionAllProjects 에서 사용 */
 export const _allprojects: Project[] = [
   {
-    id: 1,
+    id: uuidv4(),
     title: "기 개발된 사이트의 고도화 디자인, 개발",
     description:
       "이미 운영 중인 인지 훈련 웹사이트가 있고, 그 내용을 어플로 제작하고 싶습니다. 보유 중인 소스코드는 없으며, 모바일 기획부터 어려움을 느껴",
@@ -157,7 +159,7 @@ export const _allprojects: Project[] = [
     workTendencyMatchingRate: 98,
   },
   {
-    id: 2,
+    id: uuidv4(),
     title: "새로운 모바일 앱 UI/UX 디자인",
     description:
       "혁신적인 사용자 경험을 제공할 모바일 앱의 UI/UX 디자인 프로젝트입니다. 사용자 중심의 디자인을 추구하며, 창의적인 아이디어가 많은 디자이너를 기다립니다.",
@@ -169,7 +171,7 @@ export const _allprojects: Project[] = [
     workTendencyMatchingRate: 92,
   },
   {
-    id: 3,
+    id: uuidv4(),
     title: "웹 기반 데이터 분석 플랫폼 개발",
     description:
       "데이터 분석을 위한 웹 기반 플랫폼 개발 프로젝트입니다. 빅데이터 처리와 분석에 관심이 있는 백엔드 개발자와 데이터 과학자를 찾고 있습니다.",
@@ -187,7 +189,7 @@ export const _allprojects: Project[] = [
 /** SectionMemberRecomm 에서 사용 */
 export const _membersData: Member[] = [
   {
-    id: 1,
+    id: uuidv4(),
     avatarImage: "https://source.unsplash.com/random/300x300?person",
     coverImage: "https://source.unsplash.com/random/400x300?office",
     name: "김아영",
@@ -197,7 +199,7 @@ export const _membersData: Member[] = [
     skills: ["notion", "slack"],
   },
   {
-    id: 2,
+    id: uuidv4(),
     avatarImage: "https://source.unsplash.com/random/300x300?woman",
     coverImage: "https://source.unsplash.com/random/400x300?tech",
     name: "이준호",
@@ -207,7 +209,7 @@ export const _membersData: Member[] = [
     skills: ["photoshop", "illustrator"],
   },
   {
-    id: 3,
+    id: uuidv4(),
     avatarImage: "https://source.unsplash.com/random/300x300?man",
     coverImage: "https://source.unsplash.com/random/400x300?business",
     name: "박수진",
@@ -217,7 +219,7 @@ export const _membersData: Member[] = [
     skills: ["google analytics", "SEO"],
   },
   {
-    id: 4,
+    id: uuidv4(),
     avatarImage: "https://source.unsplash.com/random/300x300?person&sig=4",
     coverImage: "https://source.unsplash.com/random/400x300?workplace&sig=4",
     name: "장민준",
@@ -227,7 +229,7 @@ export const _membersData: Member[] = [
     skills: ["linux", "shell scripting"],
   },
   {
-    id: 5,
+    id: uuidv4(),
     avatarImage: "https://source.unsplash.com/random/300x300?person&sig=5",
     coverImage: "https://source.unsplash.com/random/400x300?computer&sig=5",
     name: "최유리",
@@ -237,7 +239,7 @@ export const _membersData: Member[] = [
     skills: ["jira", "scrum"],
   },
   {
-    id: 6,
+    id: uuidv4(),
     avatarImage: "https://source.unsplash.com/random/300x300?person&sig=6",
     coverImage: "https://source.unsplash.com/random/400x300?meeting&sig=6",
     name: "김태현",
@@ -247,7 +249,7 @@ export const _membersData: Member[] = [
     skills: ["communication", "team building"],
   },
   {
-    id: 7,
+    id: uuidv4(),
     avatarImage: "https://source.unsplash.com/random/300x300?person&sig=7",
     coverImage: "https://source.unsplash.com/random/400x300?strategy&sig=7",
     name: "황보미",
@@ -257,7 +259,7 @@ export const _membersData: Member[] = [
     skills: ["SQL", "data analysis"],
   },
   {
-    id: 8,
+    id: uuidv4(),
     avatarImage: "https://source.unsplash.com/random/300x300?person&sig=8",
     coverImage: "https://source.unsplash.com/random/400x300?coding&sig=8",
     name: "서하준",
@@ -270,13 +272,13 @@ export const _membersData: Member[] = [
 
 /** user 에서 사용 */
 export const _user: User = {
-  id: 1,
+  id: uuidv4(),
   name: "이닷코",
   avatar: "https://source.unsplash.com/random/300x300?person&sig=8",
   myProjects: [..._myProjects],
   recruitingMembers: [
     {
-      id: 1,
+      id: uuidv4(),
       avatarImage: "",
       coverImage: "",
       name: "김아영",
@@ -286,7 +288,7 @@ export const _user: User = {
       skills: ["notion", "slack"],
     },
     {
-      id: 2,
+      id: uuidv4(),
       avatarImage: "",
       coverImage: "",
       name: "전여빈",

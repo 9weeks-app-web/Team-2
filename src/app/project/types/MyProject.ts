@@ -1,5 +1,5 @@
 interface MyProject {
-  id: number;
+  id: string;
   title: string;
   coverImg: string;
   teamName: string;

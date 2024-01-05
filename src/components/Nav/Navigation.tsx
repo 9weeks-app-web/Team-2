@@ -10,7 +10,13 @@ export const Navigation = () => {
       <UlContainer>
         <LogoWrapper>
           <CustomLink href="/">
-            <Image src="/logo.svg" alt="logo" width={108} height={28} />
+            <Image
+              src="/logo.svg"
+              alt="logo"
+              width={108}
+              height={28}
+              priority
+            />
           </CustomLink>
         </LogoWrapper>
         <LinkWrapper>

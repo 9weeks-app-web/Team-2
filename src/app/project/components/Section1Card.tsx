@@ -13,7 +13,7 @@ const Section1Card: React.FC<{ project: MyProject }> = ({ project }) => {
       <CardInfo>
         <AvatarContainer>
           {project.members.map((member) => {
-            return <Avatar imgPath={member.avatarImage} />;
+            return <Avatar key={member.id} imgPath={member.avatarImage} />;
           })}
         </AvatarContainer>
         <TextContainer>

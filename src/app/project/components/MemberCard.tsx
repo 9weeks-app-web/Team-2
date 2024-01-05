@@ -7,9 +7,16 @@ import styled from "styled-components";
 import Tag from "./Tag";
 import Avatar from "./Avatar";
 
-
-
-
+interface Member {
+  id: number;
+  avatarImage: string;
+  coverImage?: string;
+  name?: string;
+  type?: string; // "프로 리더형" | "예리한 분석가형" | "행동대장형";
+  role?: string; // "개발자" | "디자이너" | "기획자";
+  workTendency?: string[]; // "통찰력있는" | "계획적인" | "주도적인" | "관찰력이뛰어난"
+  skills?: string[]; // "notion" | "slack"
+}
 
 // 한 번에 보여질 최대 스킬 수
 const MAX_SKILLS_DISPLAY = 3;
@@ -41,10 +48,10 @@ const MemberCard: React.FC<Member> = ({ skills, ...member }) => {
             </B2_M_12>
           </RowContainer>
           <WorkContainer>
-            {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
             {member.workTendency
-              ? member.workTendency.map((tag) => {
-                  return <Tag text={tag} />;
+              ? member.workTendency.map((tag, index) => {
+                  // tag 문자열과 index를 결합하여 고유한 key 생성
+                  return <Tag key={tag + index} text={tag} />;
                 })
               : null}
           </WorkContainer>
@@ -52,8 +59,9 @@ const MemberCard: React.FC<Member> = ({ skills, ...member }) => {
           <B2_M_12 className="neutral20">스킬</B2_M_12>
           <SkillContainer>
             {/* @TODO 범위 초과시  외 몇명 구현해야됨 */}
-            {visibleSkills?.map((tag) => {
-              return <Tag text={tag} />;
+            {visibleSkills?.map((skill, index) => {
+              // skill 문자열과 index를 결합하여 고유한 key 생성
+              return <Tag key={skill + index} text={skill} />;
             })}
             {remainingSkillsCount > 0 && (
               <Tag text={`+${remainingSkillsCount}`} />

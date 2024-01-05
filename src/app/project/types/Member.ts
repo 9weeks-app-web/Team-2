@@ -1,5 +1,5 @@
 interface Member {
-  id: number;
+  id: string;
   avatarImage: string;
   coverImage?: string;
   name?: string;

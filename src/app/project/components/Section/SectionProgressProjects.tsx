@@ -32,7 +32,7 @@ const SectionProgressProjects: React.FC<{ user: User }> = ({ user }) => {
         >
           {_myProjects.map((project) => (
             <SwiperSlide key={project.id}>
-              <BigCard project={project}></BigCard>
+              <BigCard  project={project}></BigCard>
             </SwiperSlide>
           ))}
         </Swiper>

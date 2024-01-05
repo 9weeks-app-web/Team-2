@@ -45,5 +45,6 @@ const ArrowIconContainer = styled.div<{ isUp: boolean }>`
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease-in-out;
-  transform: ${({ isUp }) => (isUp ? "scaleY(-1)" : "scaleY(1)")};
+  /* isUp prop을 이용한 조건부 스타일링 */
+  ${({ isUp }) => isUp && `transform: scaleY(-1);`}
 `;
