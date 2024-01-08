@@ -7,9 +7,8 @@ import { useRecoilValue } from "recoil";
 import { SectionAllProjectsCategoryState, sortState } from "@/state/atom/atom";
 import { SectionAllProjectsCategoryList } from "@/constant/category";
 const SectionAllProjects = () => {
-  const sortOrder = useRecoilValue(sortState);
-
   // Recoil 정렬 상태에 따라 프로젝트 목록 정렬
+  const sortOrder = useRecoilValue(sortState);
   const sortedProjects = React.useMemo(() => {
     return [..._allprojects].sort((a, b) => {
       if (sortOrder === "mating") {
@@ -27,6 +26,28 @@ const SectionAllProjects = () => {
     });
   }, [sortOrder, _allprojects]);
 
+  // 카테고리 변환 로직
+  const categoryRoleMap: { [key: string]: string | null } = {
+    total: null,
+    productManager: "기획자",
+    designer: "디자이너",
+    FEdeveloper: "프론트",
+    BEdeveloper: "백엔드",
+  };
+
+  // 카테고리 로직
+  //@TODO 없으면 데이터 없는 페이지 개발 필요
+  const categoryState = useRecoilValue(SectionAllProjectsCategoryState);
+  const filteredProjects = React.useMemo(() => {
+    if (categoryState === "total") return sortedProjects;
+    else {
+      const role = categoryRoleMap[categoryState];
+      return sortedProjects.filter(
+        (project) => project.memberQuota[role!] !== undefined
+      );
+    }
+  }, [categoryState, sortedProjects]);
+
   return (
     <Section3>
       <SectionHeader
@@ -37,7 +58,7 @@ const SectionAllProjects = () => {
         recoilState={SectionAllProjectsCategoryState}
       ></SectionHeader>
       <ContentContainer>
-        {sortedProjects.map((project) => {
+        {filteredProjects.map((project) => {
           return <Section3Card key={project.id} project={project} />;
         })}
       </ContentContainer>
