@@ -6,15 +6,29 @@ import {
 } from "@/styles/stylesComponents/typographyComponents";
 import styled from "styled-components";
 import Avatar from "./Avatar";
+import { useState } from "react";
+import EvaluationModal from "./EvaluationModal";
 
-// TypeScript 인터페이스 정의
 interface UserProfileProps {
+  projectName: string;
   member: Member;
-  onFollow: () => void;
+  handleEvaluation: () => void;
 }
 
-// UserProfile 컴포넌트
-const UserProfile: React.FC<UserProfileProps> = ({ member, onFollow }) => {
+const UserProfile: React.FC<UserProfileProps> = ({
+  member,
+  handleEvaluation,
+  projectName,
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const handleOpenModal = (): void => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = (): void => {
+    setIsModalOpen(false);
+  };
+
   return (
     <UserProfileContainer>
       <Avatar imgPath={member.avatarImage} />
@@ -22,7 +36,14 @@ const UserProfile: React.FC<UserProfileProps> = ({ member, onFollow }) => {
         <B1_M_16>{member.name}</B1_M_16>
         <B2_M_12 className="gray">{member.role}</B2_M_12>
       </TextBox>
-      <EvaluationBtn onClick={onFollow}>평가하기</EvaluationBtn>
+      <EvaluationBtn onClick={handleOpenModal}>평가하기</EvaluationBtn>
+      {isModalOpen && (
+        <EvaluationModal
+          onClose={handleCloseModal}
+          member={member}
+          projectName={projectName}
+        />
+      )}
     </UserProfileContainer>
   );
 };
@@ -40,17 +61,12 @@ const TextBox = styled.div`
   gap: 0.25rem;
 `;
 
-// 사용자 이름 스타일
-// const UserName = styled.span`
-//   flex-grow: 1;
-// `;
-
-// 팔로우 버튼 스타일
+// 평가버튼
 const EvaluationBtn = styled.button`
   padding: 0.5rem 0.62rem;
-  border: 1px solid var(${colors.BORDER_COLOR});
-  background-color: var(${colors.NEUTRAL_WHITE});
-  color: var(${colors.NEUTRAL_30});
+  border: none;
+  background-color: var(${colors.PRIMARY_10});
+  color: var(${colors.PRIMARY_80});
   border-radius: 0.5rem;
   cursor: pointer;
 `;

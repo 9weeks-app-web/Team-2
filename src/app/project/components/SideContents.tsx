@@ -13,13 +13,11 @@ import { CardRadius } from "@/styles/stylesComponents/cardStyle";
 import Category from "./SideCategory";
 
 export const SideContents: React.FC<{ user: User }> = ({ user }) => {
-  // 현재 선택된 프로젝트 ID를 추적하는 상태
-  const [selectedProjectId, setSelectedProjectId] = useState<number | null>(
-    null
+  const [selectedProjectName, setSelectedProjectName] = useState<string>(
+    user.myProjects[0].title
   );
-
   // 선택된 프로젝트 ID에 따른 멤버 데이터를 필터링하는 함수
-  const getMembersByProjectId = (projectId: number): Member[] => {
+  const getMembersByProjectId = (projectId: string): Member[] => {
     const project = user.myProjects.find((project) => project.id === projectId);
     return project ? project.members : [];
   };
@@ -30,9 +28,9 @@ export const SideContents: React.FC<{ user: User }> = ({ user }) => {
   );
 
   // 프로젝트 카테고리 클릭 핸들러
-  const handleProjectClick = (projectId: number) => {
-    setSelectedProjectId(projectId);
+  const handleProjectClick = (projectId: string, projectName: string) => {
     const members = getMembersByProjectId(projectId);
+    setSelectedProjectName(projectId);
     setMembersToShow(members);
   };
 
@@ -61,7 +59,7 @@ export const SideContents: React.FC<{ user: User }> = ({ user }) => {
             <Category
               key={project.id}
               index={index}
-              onClick={() => handleProjectClick(project.id)}
+              onClick={() => handleProjectClick(project.id, project.title)}
             />
           ))}
         </CategoryContainer>
@@ -70,9 +68,10 @@ export const SideContents: React.FC<{ user: User }> = ({ user }) => {
             <UserProfile
               key={member.id}
               member={member}
-              onFollow={() => {
+              handleEvaluation={() => {
                 console.log("평가하기 클릭");
               }}
+              projectName={selectedProjectName}
             />
           ))}
         </BtmContent>
@@ -125,6 +124,7 @@ const CategoryContainer = styled.div`
   display: flex;
   margin: 0 0.25rem;
   position: absolute;
+  cursor: pointer;
   top: 35px;
 `;
 

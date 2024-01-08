@@ -32,4 +32,8 @@ export const sortState = atom({
   default: "desc",
 });
 
-
+// 팀원평가 키워드
+export const evaluationKeywordTagState = atom<Record<string, string[]>>({
+  key: "evaluationKeywordTagState",
+  default: {},
+});
