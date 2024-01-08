@@ -5,7 +5,12 @@ import styled from "styled-components";
 import Link from "next/link";
 import { SearchBar } from "@/components/Nav/SearchBar";
 import { colors } from "@/styles/colors";
+import { useSession, signOut } from "next-auth/react";
 export const Navigation = () => {
+  // const { data: session } = useSession();
+  // console.log(session);
+  // const userImage = "https://placehold.co/379x320/png";
+
   return (
     <NavContainer>
       <UlContainer>
@@ -28,20 +33,39 @@ export const Navigation = () => {
         </LinkWrapper>
       </UlContainer>
       <SearchBar />
-      <Button
-        $bgColor={`${colors.NEUTRAL_WHITE}`}
-        $Color={`${colors.PRIMARY_80}`}
-        href="#"
-      >
-        로그인
-      </Button>
-      <Button
-        $Color={`${colors.NEUTRAL_WHITE}`}
-        $bgColor={`${colors.PRIMARY_80}`}
-        href="#"
-      >
-        회원가입
-      </Button>
+      {/* {session && session.user ? (
+        <>
+          <div>
+            <Image
+              src={userImage as string}
+              alt="유저 이미지"
+              width={45}
+              height={45}
+            />
+          </div>
+          <div>
+            <button onClick={() => signOut()}>로그아웃</button>
+          </div>
+        </>
+      ) : ( */}
+      <>
+        <Button
+          $bgColor={`${colors.NEUTRAL_WHITE}`}
+          $Color={`${colors.PRIMARY_80}`}
+          href="/auth/login"
+        >
+          로그인
+        </Button>
+
+        <Button
+          $Color={`${colors.NEUTRAL_WHITE}`}
+          $bgColor={`${colors.PRIMARY_80}`}
+          href="/auth/signup/terms"
+        >
+          회원가입
+        </Button>
+      </>
+      {/* )} */}
     </NavContainer>
   );
 };
