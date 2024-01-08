@@ -9,8 +9,8 @@ import styled from "styled-components";
 import PageNavController from "./PageNavController";
 import Filter from "@/app/project/components/Filter";
 import Sort from "@/app/project/components/Sort";
-import { SectionMemberRecommCategoryState } from "@/state/atom/atom";
 import { Category } from "../Category/Category";
+import { SectionHeaderProps } from "@/app/project/types/SectionHeader.props";
 
 const SectionHeader = ({
   headerText1,
@@ -20,7 +20,9 @@ const SectionHeader = ({
   currentPage,
   totalPage,
   filterList,
+  recoilState,
   isSort,
+  isPageNav,
   onCategoryChange,
   goToNextPage,
   goToPrevPage,
@@ -36,19 +38,22 @@ const SectionHeader = ({
           <SeeMoreLink href={seeMoreHref}>더보기</SeeMoreLink>
         ) : null}
       </HeaderContainer>
-      {categoryList ? (
+      {categoryList && recoilState ? (
         <MenuPanelContainer>
           <Category
             categoryInfo={categoryList}
-            recoilState={SectionMemberRecommCategoryState}
+            recoilState={recoilState}
             radius={"0.625rem"}
           ></Category>
-          <PageNavController
-            goToNextPage={goToNextPage!}
-            goToPrevPage={goToPrevPage!}
-            currentPage={currentPage!}
-            totalPage={totalPage!}
-          />
+          {isSort && <Sort />}
+          {isPageNav && (
+            <PageNavController
+              goToNextPage={goToNextPage!}
+              goToPrevPage={goToPrevPage!}
+              currentPage={currentPage!}
+              totalPage={totalPage!}
+            />
+          )}
         </MenuPanelContainer>
       ) : null}
 
@@ -88,6 +93,7 @@ const SeeMoreLink = styled(Link)`
 
 const MenuPanelContainer = styled.div`
   /* height: 100%; */
+  margin: 1.62rem 0;
   display: flex;
   justify-content: space-between;
 `;

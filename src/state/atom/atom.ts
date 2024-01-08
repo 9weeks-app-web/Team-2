@@ -26,10 +26,15 @@ export const SectionMemberRecommCategoryState = atom({
   default: "total",
 });
 
+export const SectionAllProjectsCategoryState = atom({
+  key: "SectionAllProjectsCategoryState",
+  default: "total",
+});
+
 // 정렬
 export const sortState = atom({
   key: "sortState",
-  default: "desc",
+  default: "mating",
 });
 
 // 팀원평가 키워드

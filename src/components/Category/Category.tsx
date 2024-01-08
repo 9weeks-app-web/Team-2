@@ -51,7 +51,6 @@ export const Category = ({
 
 const RadioContainer = styled.div`
   display: inline-block;
-  margin-bottom: 24px;
 `;
 
 const Label = styled.label<{ $selected: boolean; radius?: string }>`

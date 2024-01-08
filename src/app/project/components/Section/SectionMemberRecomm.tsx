@@ -18,7 +18,8 @@ const SectionMemberRecomm: React.FC<{ user: User }> = ({ user }) => {
     total: null,
     productManager: "기획자",
     designer: "디자이너",
-    developer: "개발자",
+    FEdeveloper: "프론트 개발자",
+    BEdeveloper: "백엔드 개발자",
   };
 
   useEffect(() => {
@@ -59,10 +60,12 @@ const SectionMemberRecomm: React.FC<{ user: User }> = ({ user }) => {
         headerText2={"팀원을 추천해 드려요!"}
         seeMoreHref={""}
         categoryList={SectionMemberRecommCategoryList}
+        recoilState={SectionMemberRecommCategoryState}
         goToNextPage={goToNextPage}
         goToPrevPage={goToPrevPage}
         currentPage={currentPage}
         totalPage={totalPage}
+        isPageNav={true}
       ></SectionHeader>
       <ContentContainer>
         {currentMembers.map((member: Member) => (
