@@ -25,8 +25,8 @@ const Section3Card: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <CardContainer>
       <Header>
-        <Tag text={displayRecruitmentStatus} />
-        <Tag text={project.recruitmentPeriod} />
+        <Tag blueTag={true} text={displayRecruitmentStatus} />
+        <Tag blueTag={true} text={project.recruitmentPeriod} />
       </Header>
       <Info>
         <Title>{project.title}</Title>

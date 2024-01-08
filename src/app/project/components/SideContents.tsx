@@ -104,7 +104,7 @@ const TopContent = styled.div`
   & > div {
     flex: 1;
     border-radius: 0.5rem;
-    background-color: var(${colors.BACKGROUND_5});
+    background-color: var(${colors.BACKGROUND_BLUE});
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
