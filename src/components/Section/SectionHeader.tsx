@@ -21,6 +21,7 @@ const SectionHeader = ({
   totalPage,
   filterList,
   isSort,
+  onCategoryChange,
   goToNextPage,
   goToPrevPage,
 }: SectionHeaderProps) => {

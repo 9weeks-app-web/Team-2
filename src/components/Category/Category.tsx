@@ -23,6 +23,7 @@ export const Category = ({
   const [selectedValue, setSelectedValue] = useRecoilState(recoilState);
 
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value);
     setSelectedValue(() => event.target.value);
   };
   return (
