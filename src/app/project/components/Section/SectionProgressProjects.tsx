@@ -11,6 +11,7 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { User } from "../../types/User";
 
 const SectionProgressProjects: React.FC<{ user: User }> = ({ user }) => {
   return (
@@ -23,7 +24,7 @@ const SectionProgressProjects: React.FC<{ user: User }> = ({ user }) => {
       <ContentContainer>
         <Swiper
           modules={[Autoplay, Navigation, Pagination, Scrollbar]}
-          slidesPerView={1.3}
+          slidesPerView={1.35}
           pagination={{ clickable: true }}
           autoplay={{
             delay: 5000,
@@ -32,7 +33,7 @@ const SectionProgressProjects: React.FC<{ user: User }> = ({ user }) => {
         >
           {_myProjects.map((project) => (
             <SwiperSlide key={project.id}>
-              <BigCard  project={project}></BigCard>
+              <BigCard project={project}></BigCard>
             </SwiperSlide>
           ))}
         </Swiper>

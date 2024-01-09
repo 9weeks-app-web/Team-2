@@ -32,12 +32,13 @@ export default FloatingBtn;
 
 const FloatingContainer = styled.div`
   position: fixed;
+
   display: inline-flex;
   justify-content: flex-end;
   align-items: center;
   gap: 0.5rem;
   bottom: 5rem;
-  right: 20.3rem;
+  right: 11.88rem;
   z-index: 10;
 `;
 

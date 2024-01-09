@@ -2,18 +2,20 @@ import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
 import KeywordTag from "./KeywordTag";
-import { evaluationKeywordTagState } from "@/state/atom/atom";
-import { useRecoilState } from "recoil";
+import { RecoilState, useRecoilState } from "recoil";
 
 interface KeywordCardProps {
   title: string;
   keywords: string[];
+  RecolieState: RecoilState<Record<string, string[]>>;
 }
 
-const KeywordCard: React.FC<KeywordCardProps> = ({ title, keywords }) => {
-  const [selectedKeywords, setSelectedKeywords] = useRecoilState(
-    evaluationKeywordTagState
-  );
+const KeywordCard: React.FC<KeywordCardProps> = ({
+  title,
+  keywords,
+  RecolieState,
+}) => {
+  const [selectedKeywords, setSelectedKeywords] = useRecoilState(RecolieState);
 
   const handleKeywordClick = (keyword: string) => {
     const keywords = selectedKeywords[title] || [];

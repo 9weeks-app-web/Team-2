@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Avatar from "./Avatar";
 import { useState } from "react";
 import EvaluationModal from "./EvaluationModal";
+import { Member } from "../types/Member";
 
 interface UserProfileProps {
   projectName: string;

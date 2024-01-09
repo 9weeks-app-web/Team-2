@@ -6,6 +6,7 @@ import React from "react";
 import styled from "styled-components";
 import Tag from "./Tag";
 import Avatar from "./Avatar";
+import { Member } from '../types/Member';
 
 // 한 번에 보여질 최대 스킬 수
 const MAX_SKILLS_DISPLAY = 3;

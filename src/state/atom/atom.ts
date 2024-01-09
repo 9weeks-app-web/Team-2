@@ -42,3 +42,8 @@ export const evaluationKeywordTagState = atom<Record<string, string[]>>({
   key: "evaluationKeywordTagState",
   default: {},
 });
+
+export const recommendKeywordTagState = atom<Record<string, string[]>>({
+  key: "recommendKeywordTagState",
+  default: {},
+});

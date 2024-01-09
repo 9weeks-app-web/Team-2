@@ -14,6 +14,7 @@ import { _evaluationKeywordList } from "@/constant/_[project]mockup";
 import { useRecoilValue } from "recoil";
 import { evaluationKeywordTagState } from "@/state/atom/atom";
 import { font_weight } from "@/styles/typography";
+import { Member } from "../types/Member";
 interface EvaluationModalProps {
   projectName: string;
   member: Member;
@@ -60,7 +61,12 @@ const EvaluationModal: React.FC<EvaluationModalProps> = ({
         </HeaderWrap>
         <KeywordWrap>
           {Object.entries(_evaluationKeywordList).map(([title, keywords]) => (
-            <KeywordCard key={title} title={title} keywords={keywords} />
+            <KeywordCard
+              key={title}
+              title={title}
+              keywords={keywords}
+              RecolieState={evaluationKeywordTagState}
+            />
           ))}
         </KeywordWrap>
         <SaveBtn

@@ -12,7 +12,7 @@ export const ProjectPage = () => {
       <Inner>
         <SideContents user={_user} />
         <MainContents user={_user} />
-        <FloatingBtn title={"새 프로젝트 업로드"} />
+        
       </Inner>
     </>
   );

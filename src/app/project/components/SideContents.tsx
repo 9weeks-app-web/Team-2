@@ -11,6 +11,8 @@ import styled from "styled-components";
 import UserProfile from "./UserProfile";
 import { CardRadius } from "@/styles/stylesComponents/cardStyle";
 import Category from "./SideCategory";
+import { User } from "../types/User";
+import { Member } from "../types/Member";
 
 export const SideContents: React.FC<{ user: User }> = ({ user }) => {
   const [selectedProjectName, setSelectedProjectName] = useState<string>(

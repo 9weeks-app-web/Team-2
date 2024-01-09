@@ -5,6 +5,8 @@ import styled from "styled-components";
 import SectionProgressProjects from "./Section/SectionProgressProjects";
 import SectionMemberRecomm from "./Section/SectionMemberRecomm";
 import SectionAllProjects from "./Section/SectionAllProjects";
+import { User } from "../types/User";
+import FloatingBtn from "./FloatingBtn";
 
 export const MainContents: React.FC<{ user: User }> = ({ user }) => {
   return (
@@ -12,6 +14,7 @@ export const MainContents: React.FC<{ user: User }> = ({ user }) => {
       <SectionProgressProjects user={user} />
       <SectionMemberRecomm user={user} />
       <SectionAllProjects />
+      <FloatingBtn title={"새 프로젝트 업로드"} />
     </MainConainer>
   );
 };
