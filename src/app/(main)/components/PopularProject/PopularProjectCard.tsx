@@ -20,7 +20,7 @@ export const PopularProjectCard = ({
   imageUrl,
 }: PopularProjectCardProps) => {
   return (
-    <CardContainer linkPath="#" $width="340px" $borderColor={colors.STROKE_5}>
+    <CardContainer linkUrl="#" $width="340px" $borderColor={colors.STROKE_5}>
       <StyledImage
         width={339}
         height={185}

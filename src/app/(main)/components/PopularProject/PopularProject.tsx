@@ -17,9 +17,7 @@ export const PopularProject = () => {
 
   useEffect(() => {
     const fetchFn = async () => {
-      const response = await fetch(
-        `http://localhost:3000/api/main/popularproject/${projectValue}`
-      );
+      const response = await fetch(`/api/main/popularproject/${projectValue}`);
       if (!response.ok) {
         throw Error("something went wrong, please check again portfolio value");
       }
@@ -33,7 +31,7 @@ export const PopularProject = () => {
       <SectionTitle
         titleA="곧 마감!"
         titleB="실시간 인기 프로젝트"
-        linkPath="#"
+        linkUrl="#"
       />
       <Category
         categoryInfo={categoryInfo}

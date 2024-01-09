@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { colors } from "@/styles/colors";
 import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";

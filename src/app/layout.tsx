@@ -28,6 +28,8 @@ export default function RootLayout({
         <RecoilRootWrapper>
           <ClientComponentContainer>
             <RootContainer>
+              <div id="modal" />
+              <div id="backdrop" />
               <NavTabs />
               <Navigation />
               {children}

@@ -17,7 +17,7 @@ export const PopularRecruitmentCard = ({
   title,
 }: PopularRecruitmentObjProps) => {
   return (
-    <CardContainer linkPath="#" $width={`190px`}>
+    <CardContainer linkUrl="#" $width={`190px`}>
       <CardTextContainer $BgColor={colors.NEUTRAL_WHITE}>
         <Tag $setBgColor={colors.BACKGROUND_BLUE} $setColor={colors.PRIMARY_80}>
           {getDDay(deadline)}

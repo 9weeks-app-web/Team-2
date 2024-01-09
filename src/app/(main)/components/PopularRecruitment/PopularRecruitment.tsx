@@ -18,7 +18,7 @@ export const PopularRecruitment = () => {
   useEffect(() => {
     const fetchFn = async () => {
       const response = await fetch(
-        `http://localhost:3000/api/main/popularrecruitment/${recruitmentValue}`
+        `/api/main/popularrecruitment/${recruitmentValue}`
       );
       if (!response.ok) {
         throw Error("something went wrong, please check again portfolio value");
@@ -31,7 +31,7 @@ export const PopularRecruitment = () => {
   return (
     <Container>
       <SectionContainer>
-        <SectionTitle linkPath="#" titleB="직무별 인기 채용 공고" />
+        <SectionTitle linkUrl="#" titleB="직무별 인기 채용 공고" />
         <FlexRow>
           <CategoryVetical
             categoryInfo={categoryVerticalInfo}

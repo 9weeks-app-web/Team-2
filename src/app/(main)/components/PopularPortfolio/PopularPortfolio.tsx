@@ -20,7 +20,7 @@ export const PopularPortfolio = () => {
   useEffect(() => {
     const fetchFn = async () => {
       const response = await fetch(
-        `http://localhost:3000/api/main/popularportfolio/${portfolioValue}`
+        `/api/main/popularportfolio/${portfolioValue}`
       );
       if (!response.ok) {
         throw Error("something went wrong, please check again portfolio value");
@@ -36,7 +36,7 @@ export const PopularPortfolio = () => {
       <SectionTitle
         titleA="2023년 1월"
         titleB="이 달의 BEST 포트폴리오"
-        linkPath="#"
+        linkUrl="#"
       />
       <Category
         categoryInfo={categoryInfo}

@@ -24,11 +24,7 @@ export const NewsCard = ({
   time,
 }: NewCardProps) => {
   return (
-    <CardContainer
-      linkPath={"#"}
-      $width="340px"
-      $borderColor={colors.PRIMARY_5}
-    >
+    <CardContainer linkUrl={"#"} $width="340px" $borderColor={colors.PRIMARY_5}>
       <div>
         <StyledImage
           unoptimized

@@ -1,4 +1,5 @@
 export interface PopularPortfolioImagesObjProps {
+  id: string;
   likes: number;
   bookmark: number;
   category: string;

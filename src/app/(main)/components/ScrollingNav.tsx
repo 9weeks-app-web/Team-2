@@ -44,7 +44,7 @@ export const ScrollingNav = () => {
   );
 };
 const Container = styled.div`
-  z-index: 100;
+  z-index: 10;
   width: 138px;
   height: 191px;
   position: fixed;

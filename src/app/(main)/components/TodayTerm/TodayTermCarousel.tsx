@@ -32,7 +32,7 @@ export const TodayTermCarousel = ({
   };
   return (
     <Div>
-      <SwiperFixed
+      <StyledSwiper
         modules={[Navigation]}
         spaceBetween={0}
         slidesPerView={3}
@@ -71,7 +71,7 @@ export const TodayTermCarousel = ({
             </CardContainer>
           </SwiperSlide>
         ))}
-      </SwiperFixed>
+      </StyledSwiper>
       <CustomButton className="custom-button-prev">&lt;</CustomButton>
       <CustomButton className="custom-button-next">&gt;</CustomButton>
     </Div>
@@ -98,7 +98,7 @@ const Div = styled.div`
   }
 `;
 
-const SwiperFixed = styled(Swiper)`
+const StyledSwiper = styled(Swiper)`
   .swiper-slide {
     display: flex;
     justify-content: center;

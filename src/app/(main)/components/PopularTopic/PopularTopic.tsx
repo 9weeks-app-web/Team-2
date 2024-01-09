@@ -10,7 +10,7 @@ export const PopularTopic = () => {
       id: 1,
       userName: "오유석",
       userJob: "서비스 기획자",
-      userImageUrl: "",
+      userImageUrl: "/mainPageImg/avatar-mainTopic-1.png",
       tag: ["#개발", "#디자인", "#협업"],
       heading: "개발자와 디자이너 소통 방식 질문",
       description:
@@ -23,7 +23,7 @@ export const PopularTopic = () => {
       id: 2,
       userName: "박영희",
       userJob: "디자이너",
-      userImageUrl: "",
+      userImageUrl: "/mainPageImg/avatar-mainTopic-2.png",
       tag: ["#정보 공유", "#취업", "#디자인", "#UX"],
       heading: "바닥부터 시작한 프로덕트 디자이너 취업 과정",
       description:
@@ -36,7 +36,7 @@ export const PopularTopic = () => {
       id: 3,
       userName: "이민호",
       userJob: "마케터",
-      userImageUrl: "",
+      userImageUrl: "/mainPageImg/avatar-mainTopic-3.png",
       tag: ["#상식", "#정보 공유", "#업무"],
       heading: "내가 올린 보고서는 왜 상사에게 반려당할까?",
       description:
@@ -48,7 +48,7 @@ export const PopularTopic = () => {
   ];
   return (
     <SectionContainer>
-      <SectionTitle linkPath="#" titleA="커뮤니티" titleB="실시간 인기 토픽" />
+      <SectionTitle linkUrl="#" titleA="커뮤니티" titleB="실시간 인기 토픽" />
       <Body>
         {topics.map((el, idx) => (
           <PopularTopicCard key={idx} {...el} />
