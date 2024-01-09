@@ -3,6 +3,7 @@ import React from "react";
 import { Tabs, ConfigProvider } from "antd";
 import type { TabsProps } from "antd";
 import styled from "styled-components";
+import { colors } from "@/styles/colors";
 
 const onChange = (key: string) => {
   console.log(key);
@@ -22,14 +23,13 @@ const items: TabsProps["items"] = [
 export const NavTabs: React.FC = () => (
   <ConfigProvider
     theme={{
-      token: { borderRadius: 0, colorBorder: "#B3B3B3", lineWidth: 0 },
+      token: { borderRadius: 6, colorBorder: "#B3B3B3", lineWidth: 0 },
       components: {
         Tabs: {
-          cardBg: "#F9F9F9;",
           cardGutter: 8,
-          itemColor: "#B3B3B3",
-          itemSelectedColor: "#000",
-          itemHoverColor: "#000",
+          itemColor: `var(${colors.NEUTRAL_WHITE})`,
+          itemSelectedColor: `var(${colors.PRIMARY_80})`,
+          itemHoverColor: `var(${colors.NEUTRAL_WHITE})`,
         },
       },
     }}
@@ -41,7 +41,7 @@ export const NavTabs: React.FC = () => (
 const CustomTab = styled(Tabs)`
   width: 100%;
   .ant-tabs-nav-wrap {
-    background-color: #f9f9f9;
+    background-color: var(${colors.PRIMARY_70});
     padding-top: 1em;
     padding-left: 16em;
   }

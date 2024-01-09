@@ -4,34 +4,17 @@ import { Carousel } from "antd";
 import Image from "next/image";
 import styled from "styled-components";
 export const CustomCarousel = () => {
-  const onChange = (currentSlide: number) => {
-    console.log(currentSlide);
-  };
+  const onChange = (currentSlide: number) => {};
   return (
-    <CarouseWrapper afterChange={onChange}>
+    <CarouseWrapper afterChange={onChange} autoplay>
       <div>
-        <Image
-          width={1060}
-          height={160}
-          src={"https://placehold.co/1060x160/png"}
-          alt="image"
-        />
+        <Image width={1060} height={160} src={"/bannerImage.png"} alt="image" />
       </div>
       <div>
-        <Image
-          width={1060}
-          height={160}
-          src={"https://placehold.co/1060x160/png"}
-          alt="image"
-        />
+        <Image width={1060} height={160} src={"/bannerImage.png"} alt="image" />
       </div>
       <div>
-        <Image
-          width={1060}
-          height={160}
-          src={"https://placehold.co/1060x160/png"}
-          alt="image"
-        />
+        <Image width={1060} height={160} src={"/bannerImage.png"} alt="image" />
       </div>
     </CarouseWrapper>
   );

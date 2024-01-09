@@ -7,7 +7,7 @@ const main = () => {
   const commitMessage = fs.readFileSync(commitFile, "utf8");
 
   const regExp = new RegExp(
-    "(jaehyun|jaeha|이름|이름), (Feat|Update|Fix|!BREAKING CHANGE|!HOTFIX|Style|Refactor|Comment|Chore|Docs|Test|Rename|Remove|Merge)::.*(#\\d+)"
+    "(hayeon|jaehyun|jaeha|이름), (Feat|Update|Fix|!BREAKING CHANGE|!HOTFIX|Style|Refactor|Comment|Chore|Docs|Test|Rename|Remove|Merge)::.*(#\\d+)"
   );
 
   const valid = regExp.test(commitMessage);
@@ -18,7 +18,7 @@ const main = () => {
 ------------------------------------------------------
 " <작업자 이름>, <Prefix>:: 커밋 내용 #{issue number}"
 
-" jaehyun, Feat:: 구글 로그인 기능 추가 #123" 
+" hayeon, Feat:: 구글 로그인 기능 추가 #123" 
 ------------------------------------------------------
 
 사용가능한 commit의 Prefix는 아래와 같습니다.

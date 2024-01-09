@@ -51,6 +51,8 @@ export const Category = ({
 
 const RadioContainer = styled.div`
   display: inline-block;
+  /* margin-bottom: 24px; */
+  // @TODO 레이아웃 수정 시 필요함
 `;
 
 const Label = styled.label<{ $selected: boolean; radius?: string }>`
