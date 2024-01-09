@@ -1,4 +1,4 @@
-interface Member {
+export interface Member {
   id: string;
   avatarImage: string;
   coverImage?: string;

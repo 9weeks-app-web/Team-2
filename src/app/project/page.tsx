@@ -5,7 +5,6 @@ import styled from "styled-components";
 import SideContents from "./components/SideContents";
 import MainContents from "./components/MainContents";
 import { _user } from "../../constant/_[project]mockup";
-import { colors } from "@/styles/colors";
 import FloatingBtn from "./components/FloatingBtn";
 export const ProjectPage = () => {
   return (
@@ -26,6 +25,6 @@ const Inner = styled.div`
   /* width: 100%; */
   display: flex;
   justify-content: center;
-  
+
   gap: 1.37rem;
 `;
