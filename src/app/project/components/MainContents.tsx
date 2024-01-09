@@ -21,4 +21,5 @@ const MainConainer = styled.div`
   flex: 3;
   ${flexColumn}
   gap : 5rem;
+  max-width: 790px;
 `;

@@ -25,5 +25,7 @@ const Inner = styled.div`
   margin: 2.25rem 11.88rem;
   /* width: 100%; */
   display: flex;
+  justify-content: center;
+  
   gap: 1.37rem;
 `;

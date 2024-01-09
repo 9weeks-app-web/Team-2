@@ -37,7 +37,8 @@ const FloatingContainer = styled.div`
   align-items: center;
   gap: 0.5rem;
   bottom: 5rem;
-  right: 5.25rem;
+  right: 20.3rem;
+  z-index: 10;
 `;
 
 const Button = styled.button<{ open: boolean }>`
@@ -51,7 +52,6 @@ const Button = styled.button<{ open: boolean }>`
   background: var(${colors.PRIMARY_70});
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.14);
   font-size: 1.5rem;
-  z-index: 1000;
 
   transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
   transition: transform 0.3s ease-in-out;

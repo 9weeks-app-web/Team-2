@@ -83,9 +83,9 @@ export const SideContents: React.FC<{ user: User }> = ({ user }) => {
 export default SideContents;
 
 const SideContainer = styled.div`
-  margin-top: 5.63rem;
   margin-bottom: 5.91rem;
   flex: 1;
+  max-width: 250px;
 
   display: flex;
   flex-direction: column;
