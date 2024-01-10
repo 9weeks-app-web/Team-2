@@ -1,14 +1,6 @@
+import { UserCardProps } from "@/types";
 import Image from "next/image";
 import styled from "styled-components";
-interface UserCardProps {
-  onlyAvatar?: boolean;
-  userName?: React.ReactElement;
-  userJob?: React.ReactElement;
-  avatarSrc: string;
-  avatarSize: number;
-  $flexDirection?: "row" | "column";
-  $flexGap?: string;
-}
 
 /**
  * @component

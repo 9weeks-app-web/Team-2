@@ -2,18 +2,9 @@
 import React from "react";
 import { colors } from "@/styles/colors";
 import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
-import { RecoilState, atom, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
-interface CartegoryObjProps {
-  title: string;
-  name: string;
-  id: string;
-  value: string;
-}
-interface CartegoryProps {
-  categoryInfo: CartegoryObjProps[];
-  recoilState: RecoilState<string>;
-}
+import { CartegoryProps } from "@/types";
 
 export const Category = ({ categoryInfo, recoilState }: CartegoryProps) => {
   const [selectedValue, setSelectedValue] = useRecoilState(recoilState);

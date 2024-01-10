@@ -1,3 +1,5 @@
+import { RecoilState } from "recoil";
+
 export interface PopularPortfolioImagesObjProps {
   id: string;
   likes: number;
@@ -30,4 +32,65 @@ export interface PopularRecruitmentObjProps {
   company: string;
   category: string;
   views: number;
+}
+
+export interface NewsCardProps {
+  imageUrl: string;
+  label: string;
+  heading: string;
+  company: string;
+  time: string;
+}
+
+export interface PopularTopicCardProps {
+  userName: string;
+  userJob: string;
+  userImageUrl: string;
+  tag: Array<string>;
+  heading: string;
+  description: string;
+  likes: number;
+  comments: number;
+  createdAt: string;
+}
+
+export interface UserCardProps {
+  onlyAvatar?: boolean;
+  userName?: React.ReactElement;
+  userJob?: React.ReactElement;
+  avatarSrc: string;
+  avatarSize: number;
+  $flexDirection?: "row" | "column";
+  $flexGap?: string;
+}
+
+export interface CartegoryObjProps {
+  title: string;
+  name: string;
+  id: string;
+  value: string;
+}
+export interface CartegoryProps {
+  categoryInfo: CartegoryObjProps[];
+  recoilState: RecoilState<string>;
+}
+
+export interface TodayTermCarouselProps {
+  id: string;
+  label: string;
+  category: string;
+  title: string;
+  description: string;
+}
+
+export interface PortfolioProps {
+  id: string;
+  likes: number;
+  bookmark: number;
+  category: string;
+  label: string;
+  username: string;
+  title: string;
+  src: string;
+  avatarSrc: string;
 }

@@ -1,18 +1,8 @@
 import { colors } from "@/styles/colors";
 import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
-import React, { useEffect, useState } from "react";
-import { RecoilState, useRecoilState } from "recoil";
+import { CartegoryProps } from "@/types";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
-interface CartegoryObjProps {
-  title: string;
-  name: string;
-  id: string;
-  value: string;
-}
-interface CartegoryProps {
-  categoryInfo: CartegoryObjProps[];
-  recoilState: RecoilState<string>;
-}
 
 export const CategoryVetical = ({
   categoryInfo,

@@ -8,23 +8,12 @@ import {
   B1_M_16,
   B2_M_14,
 } from "@/styles/stylesComponents/typographyComponents";
-import { HeartOutlined, MessageOutlined } from "@ant-design/icons";
 import { font_size, font_weight } from "@/styles/typography";
 import { dateDiff } from "@/utils/utils";
 import { UserCard } from "@/components/UserCard/UserCard";
 import HeartIcon from "../../../../../public/Icon/Icon_heart.svg";
 import CommentIcon from "../../../../../public/Icon/Icon_comments.svg";
-interface PopularTopicCardProps {
-  userName: string;
-  userJob: string;
-  userImageUrl: string;
-  tag: Array<string>;
-  heading: string;
-  description: string;
-  likes: number;
-  comments: number;
-  createdAt: string;
-}
+import { PopularTopicCardProps } from "@/types";
 
 export const PopularTopicCard = ({
   userName,

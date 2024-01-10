@@ -2,7 +2,7 @@ import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
-
+// 미완성
 export const ScrollingNav = () => {
   return (
     <Container>

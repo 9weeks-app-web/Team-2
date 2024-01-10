@@ -11,14 +11,7 @@ import {
   H1_SB_24,
 } from "@/styles/stylesComponents/typographyComponents";
 import Image from "next/image";
-
-interface TodayTermCarouselProps {
-  id: string;
-  label: string;
-  category: string;
-  title: string;
-  description: string;
-}
+import { TodayTermCarouselProps } from "@/types";
 
 export const TodayTermCarousel = ({
   termsInfo,

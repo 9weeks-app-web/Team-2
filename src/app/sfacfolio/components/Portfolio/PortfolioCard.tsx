@@ -11,7 +11,9 @@ import React from "react";
 import styled from "styled-components";
 import HeartIcon from "../../../../../public/Icon/Icon_heart.svg";
 import BookmarkIcon from "../../../../../public/Icon/Icon_sidebar/Icon_bookmark.svg";
-interface PortfolioPropsOriginal {
+import { PortfolioProps } from "@/types";
+//temp 사용 x
+interface temp {
   id: string;
   imageUrl: string;
   title: string;
@@ -25,17 +27,6 @@ interface PortfolioPropsOriginal {
   mainImageUrl: string;
 }
 
-interface PortfolioProps {
-  id: string;
-  likes: number;
-  bookmark: number;
-  category: string;
-  label: string;
-  username: string;
-  title: string;
-  src: string;
-  avatarSrc: string;
-}
 export const PortfolioCard = ({
   avatarSrc,
   bookmark,

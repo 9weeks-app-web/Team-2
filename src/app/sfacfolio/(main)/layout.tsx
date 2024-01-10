@@ -1,5 +1,5 @@
 import { UploadButton } from "../components/Button/UploadButton";
-import { HotCreatorCarousel } from "../components/HotCreatorCarousel";
+import { HotCreatorCarousel } from "../components/HotCreator/HotCreatorCarousel";
 import { Portfolio } from "../components/Portfolio/Portfolio";
 import { Recommend } from "../components/RecommendPortfolio/Recommend";
 import { SearchBarPortfolio } from "../components/SearchBarPortfolio";

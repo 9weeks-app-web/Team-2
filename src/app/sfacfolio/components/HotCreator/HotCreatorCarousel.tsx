@@ -9,11 +9,15 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { colors } from "@/styles/colors";
 import { HotCreatorCard } from "./HotCreatorCard";
 import { hotCreatorCarouselData } from "@/constant/mock";
+import FireIcon from "../../../../../public/Icon/Icon_fire.svg";
 export const HotCreatorCarousel = () => {
   return (
     <CarouselContainer>
       <CarouselInnerContainer>
-        <CarouselTitle>실시간 HOT 크리에이터</CarouselTitle>
+        <CarouselTitle>
+          실시간 HOT 크리에이터
+          <FireIcon />
+        </CarouselTitle>
         <StyledSwiper
           // onAutoplayPause={(swiper) => swiper.autoplay.resume()}
           // modules={[Autoplay]}
@@ -47,6 +51,9 @@ const CarouselTitle = styled.div`
   line-height: 100%;
   margin-bottom: 26px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 const StyledSwiperSlide = styled(SwiperSlide)`
   margin-right: 20px;
