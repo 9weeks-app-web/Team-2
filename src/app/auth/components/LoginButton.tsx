@@ -45,7 +45,7 @@ const LoginButton = () => {
         </button>
         <button onClick={() => handleSignIn("google")}>
           <Image
-            src={"/authImg/kakao.svg"}
+            src={"/authImg/google.svg"}
             alt="구글 로그인"
             width={58}
             height={58}
