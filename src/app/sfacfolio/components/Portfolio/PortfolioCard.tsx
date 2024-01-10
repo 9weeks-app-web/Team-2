@@ -4,7 +4,6 @@ import {
   B2_M_14,
   B2_R_12,
 } from "@/styles/stylesComponents/typographyComponents";
-import { HeartOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

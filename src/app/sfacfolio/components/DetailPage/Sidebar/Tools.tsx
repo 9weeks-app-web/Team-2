@@ -43,7 +43,8 @@ const Container = styled.div`
   z-index: 11;
   background-color: var(${colors.NEUTRAL_WHITE});
   border-radius: 28px;
-  right: 120px;
+  right: 11px;
+  top: 120px;
   /* border: 1px solid var(${colors.NEUTRAL_10}); */
 `;
 
