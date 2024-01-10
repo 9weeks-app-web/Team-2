@@ -2,7 +2,7 @@ import React from "react";
 import TabMenu from "@/components/TabMenu";
 import { MyPortfolio } from "../../MyPortfolio";
 import MyProject from "../../MyProject";
-
+import MyCommunity from "../../MyCommunity";
 const TabBody = () => {
   const tabData = [
     {
@@ -15,7 +15,7 @@ const TabBody = () => {
     },
     {
       title: "커뮤니티",
-      content: <div></div>,
+      content: <MyCommunity />,
     },
     {
       title: "학습일지",

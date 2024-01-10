@@ -1,0 +1,191 @@
+import { CommunityPost } from "@/types/community";
+import { v4 as uuidv4 } from "uuid";
+export const CommunityData: CommunityPost[] = [
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    avatar: "/authImg/userImg.svg",
+    job: "UXUI",
+    experience: "주니어",
+    postTitle: "하 직장 생활이 고민이 많네요",
+    postContent:
+      "저는 마케팅팀이고 팀내에 디자이너는 저 포함 2명이에요. 메인/서브 역할을 굳이 나누자면 제가 메인디자이너구요 찍어내기 식의 업무를 다른 디자이너분이 주로 했어요 근데 제가 최근 포지션 변경이 있으면서 기존 제 업무를 넘기게 됐는데 너무 못미더워서 고민이에요 ㅠㅠ",
+    postTime: "2024-01-10T12:00:00Z",
+    comments: [
+      { id: 1, comment: "멋져요!" },
+      { id: 2, comment: "잘 봤습니다!" },
+    ],
+    likes: 15,
+    views: 30,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    avatar: "/authImg/userImg.svg",
+    job: "UXUI",
+    experience: "주니어",
+    postTitle: "UXUI 디자인 툴별 장단점 정리",
+    postContent:
+      "4년차 주니어 디자이너입니다. 비전공자 및 신입 디자이너분들이 참고하면 좋을 UXUI디자인 툴별 장단",
+    postTime: "2024-01-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "디자이너와 개발자를 위한 플러그인 추천 10가지",
+    postContent:
+      "지난번 디자이너 실무 꿀팁 게시글에 이어 이번엔 디자이너와 개발자를 위한 여러 유용한 플러그인을 가져와",
+    postTime: "2024-01-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "UXUI 디자이너 현직에서 사용하는 업무툴 좀 알려주세요",
+    postContent:
+      "수상도 후보작도 아니지만 개인적으로 맘에 들고, 넣을만한게... 슬프게도 없네요. 굳이? 라는 생각과.. 그래도 나름 시도해봤으니 넣어야하지 않을까라는 생각 때문에 계속 고민되네요....",
+    postTime: "2024-01-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "다양한 UXUI 디자인에 관하여",
+    postContent:
+      "안녕하세요! UXUI 디자인에 대해 이야기해보려 합니다. 최근에 다양한 프로젝트를 진행하며 느낀 저만의 경험을 공유하려 합니다.",
+    postTime: "2024-01-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "UXUI 디자이너 현직에서 사용하는 업무툴 좀 알려주세요",
+    postContent:
+      "안녕하세요! UXUI 디자인에 대해 이야기해보려 합니다. 최근에 다양한 프로젝트를 진행하며 느낀 저만의 경험을 공유하려 합니다.",
+    postTime: "2023-06-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "다양한 UXUI 디자인에 관하여",
+    postContent:
+      "안녕하세요! UXUI 디자인에 대해 이야기해보려 합니다. 최근에 다양한 프로젝트를 진행하며 느낀 저만의 경험을 공유하려 합니다.",
+    postTime: "2023-06-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "다양한 UXUI 디자인에 관하여",
+    postContent:
+      "안녕하세요! UXUI 디자인에 대해 이야기해보려 합니다. 최근에 다양한 프로젝트를 진행하며 느낀 저만의 경험을 공유하려 합니다.",
+    postTime: "2023-06-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "다양한 UXUI 디자인에 관하여",
+    postContent:
+      "안녕하세요! UXUI 디자인에 대해 이야기해보려 합니다. 최근에 다양한 프로젝트를 진행하며 느낀 저만의 경험을 공유하려 합니다.",
+    postTime: "2023-06-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "다양한 UXUI 디자인에 관하여",
+    postContent:
+      "안녕하세요! UXUI 디자인에 대해 이야기해보려 합니다. 최근에 다양한 프로젝트를 진행하며 느낀 저만의 경험을 공유하려 합니다.",
+    postTime: "2023-06-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+  {
+    id: uuidv4(),
+    name: "김스팩",
+    job: "UXUI",
+    avatar: "/authImg/userImg.svg",
+    experience: "주니어",
+    postTitle: "다양한 UXUI 디자인에 관하여",
+    postContent:
+      "안녕하세요! UXUI 디자인에 대해 이야기해보려 합니다. 최근에 다양한 프로젝트를 진행하며 느낀 저만의 경험을 공유하려 합니다.",
+    postTime: "2023-06-10T15:30:00Z",
+    comments: [
+      { id: 1, comment: "정말 흥미로운 주제네요!" },
+      { id: 2, comment: "저도 관심이 많습니다." },
+    ],
+    likes: 25,
+    views: 40,
+  },
+];
