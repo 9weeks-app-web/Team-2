@@ -49,7 +49,7 @@ const SectionAllProjects = () => {
         (project) => project.memberQuota[role!] !== undefined
       );
     }
-  }, [categoryState, sortedProjects]);
+  }, [categoryState, sortedProjects, categoryRoleMap]);
 
   return (
     <Section3>

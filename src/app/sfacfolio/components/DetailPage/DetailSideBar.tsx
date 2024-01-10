@@ -18,15 +18,12 @@ import {
 } from "./Sidebar";
 import { Comments } from "./Sidebar/Comments";
 import { Proposal } from "./Sidebar/Proposal";
-import { createPortal } from "react-dom";
 import { Feedback } from "./Sidebar/Feedback";
 
 export const DetailSideBar = ({
-  sidebarTxtColor,
   $isModal,
   isClickButtonFn,
 }: {
-  sidebarTxtColor: "black" | "white";
   $isModal: boolean;
   isClickButtonFn: () => void;
 }) => {
