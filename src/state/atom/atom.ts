@@ -1,6 +1,6 @@
 // 아톰 작성 페이지
 import { atom } from "recoil";
-
+import { User } from "@/app/project/types/User";
 export const portFolioCategoryState = atom({
   key: "portFolioCategoryState",
   default: "total",
@@ -47,7 +47,15 @@ export const evaluationKeywordTagState = atom<Record<string, string[]>>({
   default: {},
 });
 
+// 유저 정보
+export const userInfoState = atom<User | object>({
+  key: "userInfoState",
+
+  default: {},
+});
+
 export const recommendKeywordTagState = atom<Record<string, string[]>>({
   key: "recommendKeywordTagState",
+
   default: {},
 });

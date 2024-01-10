@@ -5,6 +5,8 @@ import NaverProvider from "next-auth/providers/naver";
 import { NextApiRequest } from "next";
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { _user1, _user } from "@/constant/_[project]mockup";
+import { User } from "@/app/project/types/User";
 const handler = NextAuth({
   session: {
     strategy: "jwt",
@@ -18,14 +20,18 @@ const handler = NextAuth({
           email: string;
           password: string;
         };
-        if (email !== "test@example.com" && password !== "TEST123!a") {
-          return null;
+        console.log(email, password);
+        if (email !== "spec@test.com" || password !== "SPEC123!!xx") {
+          throw new Error("invalid credentials");
+        } else {
+          return {
+            // ..._user1,
+            id: 1234432424,
+            name: "김스팩",
+            email: "spac@test.com",
+          };
         }
-        return {
-          id: "1234",
-          name: "text",
-          email: "test@example.com",
-        };
+
         const authResponse = await fetch(`${process.env.AUTH_URL}/api/login`, {
           method: "POST",
           headers: {

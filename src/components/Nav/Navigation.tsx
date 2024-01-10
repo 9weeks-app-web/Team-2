@@ -7,10 +7,12 @@ import { SearchBar } from "@/components/Nav/SearchBar";
 import { colors } from "@/styles/colors";
 import { useSession, signOut } from "next-auth/react";
 export const Navigation = () => {
-  // const { data: session } = useSession();
-  // console.log(session);
-  // const userImage = "https://placehold.co/379x320/png";
-
+  const { data: session } = useSession();
+  console.log(session?.user?.image);
+  //  sns 로그인시 기본 이미지로 보여짐
+  const userImg = session?.user?.image
+    ? session?.user?.image
+    : "/authImg/userImg.svg";
   return (
     <NavContainer>
       <UlContainer>
@@ -39,39 +41,32 @@ export const Navigation = () => {
         </LinkWrapper>
       </UlContainer>
       <SearchBar />
-      {/* {session && session.user ? (
+      {session && session.user ? (
+        <UserInfo>
+          <Image src={"/authImg/bell.svg"} alt="알람" width={24} height={24} />
+          <Link href={"/mypage"}>
+            <Image src={userImg} alt="유저 이미지" width={32} height={32} />
+          </Link>
+        </UserInfo>
+      ) : (
         <>
-          <div>
-            <Image
-              src={userImage as string}
-              alt="유저 이미지"
-              width={45}
-              height={45}
-            />
-          </div>
-          <div>
-            <button onClick={() => signOut()}>로그아웃</button>
-          </div>
-        </>
-      ) : ( */}
-      <>
-        <Button
-          $bgColor={`${colors.NEUTRAL_WHITE}`}
-          $Color={`${colors.PRIMARY_80}`}
-          href="/auth/login"
-        >
-          로그인
-        </Button>
+          <Button
+            $bgColor={`${colors.NEUTRAL_WHITE}`}
+            $Color={`${colors.PRIMARY_80}`}
+            href="/auth/login"
+          >
+            로그인
+          </Button>
 
-        <Button
-          $Color={`${colors.NEUTRAL_WHITE}`}
-          $bgColor={`${colors.PRIMARY_80}`}
-          href="/auth/signup/terms"
-        >
-          회원가입
-        </Button>
-      </>
-      {/* )} */}
+          <Button
+            $Color={`${colors.NEUTRAL_WHITE}`}
+            $bgColor={`${colors.PRIMARY_80}`}
+            href="/auth/signup/terms"
+          >
+            회원가입
+          </Button>
+        </>
+      )}
     </NavContainer>
   );
 };
@@ -124,4 +119,14 @@ const Button = styled(Link)<{ $bgColor: string; $Color: string }>`
   color: ${(props) => `var(${props.$Color})`};
   margin-left: 18px;
   text-decoration: none;
+`;
+
+const UserInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 24px;
+  img {
+    border-radius: 50%;
+  }
 `;

@@ -4,11 +4,9 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { H3_SB_18 } from "@/styles/stylesComponents/typographyComponents";
 import { colors } from "@/styles/colors";
+
 import styled from "styled-components";
 const LoginButton = () => {
-  const { data: session } = useSession();
-  console.log(session);
-
   const handleSignIn = async (provider: string) => {
     try {
       await signIn(provider, { redirect: true, callbackUrl: "/" });
@@ -16,13 +14,7 @@ const LoginButton = () => {
       console.error("Error signing in:", error);
     }
   };
-  if (session && session.user) {
-    return (
-      <div>
-        <button onClick={() => signOut()}>로그아웃</button>
-      </div>
-    );
-  }
+
   return (
     <SnsBtnContainer>
       <H3_SB_18>SNS로 간편하게 시작하기</H3_SB_18>

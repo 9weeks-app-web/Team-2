@@ -8,5 +8,3 @@ export interface Member {
   workTendency?: string[]; // "통찰력있는" | "계획적인" | "주도적인" | "관찰력이뛰어난"
   skills?: string[]; // "notion" | "slack"
 }
-
-

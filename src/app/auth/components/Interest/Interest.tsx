@@ -64,7 +64,7 @@ export default function Interest() {
         label="다음으로"
         size="lg"
         variant="active"
-        $borderRadius
+        $borderRadius="10"
         $margin="88px 218px"
       ></InterestButton>
     </Container>

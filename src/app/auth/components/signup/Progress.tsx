@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { usePathname } from "next/navigation";
 
 import { colors } from "@/styles/colors";
-import { font_size, font_weight } from "@/styles/typography";
 interface ProgressTrackerProps {
   steps: string[];
   stepNames: string[];
@@ -16,11 +15,11 @@ const Progress = ({ steps, stepNames }: ProgressTrackerProps) => {
   return (
     <StepsContainer>
       {steps.map((step, index) => {
-        const isActive = pathname.includes(step);
+        const isactiv = pathname.includes(step);
         return (
-          <Step key={index} isActive={isActive}>
-            <StepNumber isActive={isActive}>{index + 1}</StepNumber>
-            <StepName isActive={isActive}>{stepNames[index]}</StepName>
+          <Step key={index}>
+            <StepNumber $isActive={isactiv}>{index + 1}</StepNumber>
+            <StepName $isActive={isactiv}>{stepNames[index]}</StepName>
             {index < steps.length - 1 && <ProgressIcon />}
           </Step>
         );
@@ -36,18 +35,18 @@ const StepsContainer = styled.div`
   padding-bottom: 18px;
 `;
 
-const Step = styled.div<{ isActive: boolean }>`
+const Step = styled.div`
   display: flex;
   align-items: center;
   flex-shrink: 0;
 `;
 
-const StepNumber = styled.div<{ isActive: boolean }>`
+const StepNumber = styled.div<{ $isActive: boolean }>`
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-color: ${(props) =>
-    props.isActive
+    props.$isActive
       ? `var(${colors.PRIMARY_70});`
       : `var(${colors.NEUTRAL_30});`};
   display: flex;
@@ -57,10 +56,10 @@ const StepNumber = styled.div<{ isActive: boolean }>`
   color: white;
 `;
 
-const StepName = styled.div<{ isActive: boolean }>`
+const StepName = styled.div<{ $isActive: boolean }>`
   font-size: 14px;
   color: ${(props) =>
-    props.isActive
+    props.$isActive
       ? `var(${colors.NEUTRAL_90});`
       : `var(${colors.NEUTRAL_30});`};
 `;

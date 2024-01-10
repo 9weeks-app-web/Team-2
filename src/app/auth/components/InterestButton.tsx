@@ -7,38 +7,43 @@ import {
   H2_M_20,
   H2_SB_20,
 } from "@/styles/stylesComponents/typographyComponents";
-
+import Image from "next/image";
 const Button = styled.button<{
   $isActive?: boolean;
   $disabled?: boolean;
   $sizeStyle?: ReturnType<typeof css>;
   $variantStyle?: ReturnType<typeof css>;
-  $borderRadius?: boolean;
+  $borderRadius?: string;
   $margin?: string;
-  $fontWeight?: boolean;
+  $fontWeight?: string | undefined;
+  imagePath?: string;
+  imageSize?: string;
 }>`
   ${(props) => props.$variantStyle};
   ${(props) => props.$sizeStyle}
   display: inline-block;
   text-align: center;
-  border-radius: ${({ $borderRadius }) => ($borderRadius ? "5px" : "50px")};
+  border-radius: ${({ $borderRadius }) => $borderRadius + "px"};
   margin: ${({ $margin }) => $margin};
 
   font-weight: ${({ $fontWeight }) =>
-    $fontWeight
+    $fontWeight === "true"
       ? `var(${font_weight.FONT_WEIGHT_600_SB})`
       : `var(${font_weight.FONT_WEIGHT_500_M})`};
 `;
 
 interface InterestButtonProps {
   label: string;
+  image?: string;
   $isActive?: boolean;
   onClick?: () => void;
   $disabled?: boolean;
-  $borderRadius?: boolean;
-  $fontWeight?: boolean;
+  $borderRadius?: string;
+  $fontWeight?: string | undefined;
   $margin?: string;
-  size: "sm" | "md" | "lg" | "ss" | "m";
+  imagePath?: string;
+  imageSize?: string;
+  size: "sm" | "md" | "lg" | "ss" | "m" | "default";
   variant: "disable" | "default" | "active";
 }
 const SIZES: { [key: string]: ReturnType<typeof css> } = {
@@ -61,6 +66,10 @@ const SIZES: { [key: string]: ReturnType<typeof css> } = {
     width: 147px;
     height: 40px;
   `,
+  default: css`
+    width: 100%;
+    padding: 14px;
+  `,
 };
 
 const VARIANTS: { [key: string]: ReturnType<typeof css> } = {
@@ -68,7 +77,6 @@ const VARIANTS: { [key: string]: ReturnType<typeof css> } = {
     border: 1px solid var(${colors.PRIMARY_50});
     color: var(${colors.PRIMARY_50});
     background-color: var(${colors.NEUTRAL_WHITE});
-    box-sizing: border-box;
   `,
   active: css`
     border: 1px solid var(${colors.PRIMARY_50});
@@ -95,6 +103,8 @@ const InterestButton: React.FC<InterestButtonProps> = ({
   variant,
   $borderRadius,
   $margin,
+  imagePath,
+  imageSize,
   $fontWeight,
 }) => {
   const sizeStyle = SIZES[size];
@@ -115,6 +125,16 @@ const InterestButton: React.FC<InterestButtonProps> = ({
     default:
       TypographyComponent = B2_M_14;
   }
+  const parsedImageSize = imageSize ? parseInt(imageSize, 10) : undefined;
+  const ImageStyle = imagePath ? (
+    <Image
+      src={imagePath}
+      alt={label}
+      width={parsedImageSize}
+      height={parsedImageSize}
+    />
+  ) : null;
+
   return (
     <>
       <Button
@@ -127,6 +147,8 @@ const InterestButton: React.FC<InterestButtonProps> = ({
         $margin={$margin}
         $fontWeight={$fontWeight}
       >
+        {ImageStyle}
+
         <TypographyComponent>{label}</TypographyComponent>
       </Button>
     </>
