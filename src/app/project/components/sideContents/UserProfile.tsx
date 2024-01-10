@@ -37,7 +37,9 @@ const UserProfile: React.FC<UserProfileProps> = ({
         <B1_M_16>{member.name}</B1_M_16>
         <B2_M_12 className="gray">{member.role}</B2_M_12>
       </TextBox>
-      <EvaluationBtn onClick={handleOpenModal}>평가하기</EvaluationBtn>
+      <EvaluationBtn onClick={handleOpenModal}>
+        <B2_M_12 className="font">평가하기</B2_M_12>
+      </EvaluationBtn>
       {isModalOpen && (
         <EvaluationModal
           onClose={handleCloseModal}
@@ -70,4 +72,7 @@ const EvaluationBtn = styled.button`
   color: var(${colors.PRIMARY_80});
   border-radius: 0.5rem;
   cursor: pointer;
+  & .font {
+    font-family: "PTD";
+  }
 `;
