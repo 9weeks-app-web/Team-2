@@ -34,15 +34,21 @@ export const TodayTerm = () => {
     <SectionContainer>
       <SectionTitle>오늘의 직무 용어</SectionTitle>
       <FlexRowCenter>
-        <Category
-          categoryInfo={categoryInfo}
-          recoilState={todayTermsCategoryState}
-        />
+        <CategoryWrapper>
+          <Category
+            categoryInfo={categoryInfo}
+            recoilState={todayTermsCategoryState}
+          />
+        </CategoryWrapper>
       </FlexRowCenter>
       <TodayTermCarousel termsInfo={terms} />
     </SectionContainer>
   );
 };
+
+const CategoryWrapper = styled.div`
+  margin-bottom: 24px;
+`;
 
 const SectionTitle = styled(H1_SB_24)`
   color: var(${colors.NEUTRAL_90});

@@ -64,17 +64,6 @@ export interface UserCardProps {
   $flexGap?: string;
 }
 
-export interface CartegoryObjProps {
-  title: string;
-  name: string;
-  id: string;
-  value: string;
-}
-export interface CartegoryProps {
-  categoryInfo: CartegoryObjProps[];
-  recoilState: RecoilState<string>;
-}
-
 export interface TodayTermCarouselProps {
   id: string;
   label: string;

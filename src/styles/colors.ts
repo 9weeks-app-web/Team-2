@@ -33,4 +33,5 @@ export const colors = {
   BACKGROUND_BLUE: "--colors-background-blue",
   SYSTEM_WARNING: "--colors-system-warning",
   SYSTEM_SUCCESS: "--colors-system-success",
+  BORDER_COLOR : "--colors-border-color"
 };

@@ -1,9 +1,7 @@
 "use client";
-import { CategoryVetical } from "@/components/Category/CategoryVetical";
 import { SectionContainer } from "@/components/Section/SectionContainer";
 import { SectionTitle } from "@/components/Section/SectionTitle";
 import { colors } from "@/styles/colors";
-
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { PopularRecruitmentCard } from "./PopularRecruitmentCard";
@@ -11,6 +9,8 @@ import { PopularRecruitmentCarousel } from "./PopularRecruitmentCarousel";
 import { RecruitmentCategoryState } from "@/state/atom/atom";
 import { useRecoilValue } from "recoil";
 import { PopularRecruitmentObjProps } from "@/types";
+import { JobcategoryVerticalList } from "@/constant/category";
+import { CategoryVertical } from "@/components/Category/CategoryVertical";
 export const PopularRecruitment = () => {
   const recruitmentValue = useRecoilValue(RecruitmentCategoryState);
   const [recruitmentInfo, setRecruitmentInfo] =
@@ -33,8 +33,8 @@ export const PopularRecruitment = () => {
       <SectionContainer>
         <SectionTitle linkUrl="#" titleB="직무별 인기 채용 공고" />
         <FlexRow>
-          <CategoryVetical
-            categoryInfo={categoryVerticalInfo}
+          <CategoryVertical
+            categoryInfo={JobcategoryVerticalList}
             recoilState={RecruitmentCategoryState}
           />
           {recruitmentInfo && (
@@ -73,29 +73,3 @@ const FlexRow = styled.div`
   display: flex;
   position: relative;
 `;
-const categoryVerticalInfo = [
-  {
-    id: "verticalButton1",
-    name: "verticalCategory",
-    title: "서비스 기획자",
-    value: "planner",
-  },
-  {
-    id: "verticalButton2",
-    name: "verticalCategory",
-    title: "디자이너",
-    value: "designer",
-  },
-  {
-    id: "verticalButton3",
-    name: "verticalCategory",
-    title: "프론트 개발자",
-    value: "frontend",
-  },
-  {
-    id: "verticalButton4",
-    name: "verticalCategory",
-    title: "백엔드 개발자",
-    value: "backend",
-  },
-];

@@ -15,14 +15,10 @@ const page = () => {
 export default page;
 
 const SignUpContainer = styled.div`
-  /* width: 1440px; */
-  /* height: 1360px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-
-  /* background-color: #333; */
 `;
 const Title = styled.div`
   padding: 30px;

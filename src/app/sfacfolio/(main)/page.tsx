@@ -49,5 +49,5 @@ export default Page;
 
 const CategoryWrapper = styled.div`
   width: 1060px;
-  margin: auto;
+  margin: 0 auto 20px;
 `;
