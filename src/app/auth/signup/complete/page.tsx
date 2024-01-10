@@ -27,7 +27,7 @@ export default function Login() {
         $margin="80px 0px 217px 0px"
         size="lg"
         label="로그인 하기"
-        $borderRadius
+        $borderRadius="10"
         onClick={handleButtonClick}
       />
     </Container>

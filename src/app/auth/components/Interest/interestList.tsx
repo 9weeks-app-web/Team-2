@@ -24,6 +24,7 @@ const InterestList: React.FC<InterestListProps> = ({
         $isActive={allSelected}
         label="전체"
         variant={allSelected ? "active" : "default"}
+        $borderRadius="50"
       />
       {interests.map((item) => (
         <li key={item}>
@@ -32,6 +33,7 @@ const InterestList: React.FC<InterestListProps> = ({
             onClick={() => handleInterestItemClick(item)}
             variant={selectedInterests.includes(item) ? "active" : "default"}
             label={item}
+            $borderRadius="50"
           />
         </li>
       ))}

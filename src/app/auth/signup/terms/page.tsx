@@ -82,7 +82,7 @@ export default function Terms() {
         size="lg"
         label="다음으로"
         variant={isButtonActive ? "active" : "disable"}
-        $borderRadius
+        $borderRadius="10"
         onClick={handleButtonClick}
       />
     </TermContainer>
@@ -96,6 +96,9 @@ const TermContainer = styled.div`
 `;
 const Title = styled.div`
   margin: 36px 0px 48px 0px;
+  h2 {
+    line-height: 140%;
+  }
 `;
 const CheckboxContainer = styled.ul`
   li:first-child {

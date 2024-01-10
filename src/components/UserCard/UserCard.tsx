@@ -9,7 +9,7 @@ import { Tag } from "../Tag";
 interface UserCardProps {
   userName: string;
   avatarSrc: string;
-  userJob: string;
+  userJob?: string;
   hotTag?: boolean;
 }
 

@@ -9,6 +9,7 @@ import MessageComponent from "../components/Message";
 import InterestButton from "../components/InterestButton";
 import SignUpSection from "../components/login/SignUpSection";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 interface FormValue {
   email: string;
   password: string;
@@ -24,23 +25,22 @@ const Login = () => {
   //로그인 회원정보 찾아서 없으면 에러처리
   const [isError, setIsError] = useState<boolean>(false);
   const watchAll = Object.values(watch());
-
+  const router = useRouter();
   const onSubmit = async (data: any) => {
     // console.log(setValue);
-    setIsError(false);
+
     const res = await signIn("credentials", {
       email: data.email,
       password: data.password,
       redirect: false,
-      callbackUrl: "/",
     });
-    if (res?.status === 401) {
-      setIsError(true);
+    console.log(res);
+    setIsError(false);
+    if (res?.ok) {
+      router.push("/mypage");
+      console.log("로그인 성공");
     } else {
-      await signIn("credentials", {
-        redirect: true,
-        callbackUrl: "/",
-      });
+      setIsError(true);
     }
   };
 
@@ -85,7 +85,12 @@ const Login = () => {
           )}
         </FieldWrapper>
         <LoginInfo />
-        <InterestButton label="로그인" size="lg" variant="active" />
+        <InterestButton
+          label="로그인"
+          size="lg"
+          variant="active"
+          $borderRadius="50"
+        />
       </LoginForm>
       <LoginButton />
       <SignUpSection />

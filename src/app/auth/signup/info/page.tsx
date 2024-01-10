@@ -126,7 +126,7 @@ const SignUp: React.FC = () => {
             <InterestButton
               label="중복확인"
               variant="active"
-              $borderRadius
+              $borderRadius="4"
               size="sm"
               $fontWeight
             />
@@ -310,7 +310,7 @@ const SignUp: React.FC = () => {
               size="m"
               label="우편번호 찾기"
               variant="active"
-              $borderRadius
+              $borderRadius="4"
               $fontWeight
             />
           </InputBtn>
@@ -328,7 +328,7 @@ const SignUp: React.FC = () => {
         size="lg"
         $fontWeight
         variant={isActive ? "active" : "disable"}
-        $borderRadius
+        $borderRadius="10"
         $margin="44px 0px 150px 0px"
         onClick={handleButtonClick}
       />

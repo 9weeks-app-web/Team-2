@@ -13,7 +13,7 @@ const Button = styled.button<{
   $disabled?: boolean;
   $sizeStyle?: ReturnType<typeof css>;
   $variantStyle?: ReturnType<typeof css>;
-  $borderRadius?: boolean;
+  $borderRadius?: string;
   $margin?: string;
   $fontWeight?: boolean;
 }>`
@@ -21,7 +21,7 @@ const Button = styled.button<{
   ${(props) => props.$sizeStyle}
   display: inline-block;
   text-align: center;
-  border-radius: ${({ $borderRadius }) => ($borderRadius ? "5px" : "50px")};
+  border-radius: ${({ $borderRadius }) => $borderRadius + "px"};
   margin: ${({ $margin }) => $margin};
 
   font-weight: ${({ $fontWeight }) =>
@@ -35,10 +35,10 @@ interface InterestButtonProps {
   $isActive?: boolean;
   onClick?: () => void;
   $disabled?: boolean;
-  $borderRadius?: boolean;
+  $borderRadius?: string;
   $fontWeight?: boolean;
   $margin?: string;
-  size: "sm" | "md" | "lg" | "ss" | "m";
+  size: "sm" | "md" | "lg" | "ss" | "m" | "default";
   variant: "disable" | "default" | "active";
 }
 const SIZES: { [key: string]: ReturnType<typeof css> } = {
@@ -61,6 +61,10 @@ const SIZES: { [key: string]: ReturnType<typeof css> } = {
     width: 147px;
     height: 40px;
   `,
+  default: css`
+    width: 100%;
+    padding: 14px;
+  `,
 };
 
 const VARIANTS: { [key: string]: ReturnType<typeof css> } = {
@@ -68,6 +72,7 @@ const VARIANTS: { [key: string]: ReturnType<typeof css> } = {
     border: 1px solid var(${colors.PRIMARY_50});
     color: var(${colors.PRIMARY_50});
     background-color: var(${colors.NEUTRAL_WHITE});
+
     box-sizing: border-box;
   `,
   active: css`

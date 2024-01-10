@@ -24,6 +24,7 @@ const InterestButtonGroup: React.FC<InterestButtonGroupProps> = ({
         const interestKey = key as InterestCategory;
         return (
           <InterestButton
+            $borderRadius="50"
             key={interestKey}
             label={interestLabels[interestKey]}
             variant={activeInterest === interestKey ? "active" : "default"}
