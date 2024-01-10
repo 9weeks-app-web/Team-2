@@ -3,31 +3,31 @@ import { v4 as uuidv4 } from "uuid";
 export const SectionMemberRecommCategoryList = [
   {
     title: "전체",
-    name: "total",
+    name: "SectionMemberRecommCategory",
     id: uuidv4(),
     value: "total",
   },
   {
     title: "기획자",
-    name: "productManager",
+    name: "SectionMemberRecommCategory",
     id: uuidv4(),
     value: "productManager",
   },
   {
     title: "디자이너",
-    name: "designer",
+    name: "SectionMemberRecommCategory",
     id: uuidv4(),
     value: "designer",
   },
   {
     title: "프론트 개발자",
-    name: "FEdeveloper",
+    name: "SectionMemberRecommCategory",
     id: uuidv4(),
     value: "FEdeveloper",
   },
   {
     title: "백엔드 개발자",
-    name: "BEdeveloper",
+    name: "SectionMemberRecommCategory",
     id: uuidv4(),
     value: "BEdeveloper",
   },
@@ -37,31 +37,31 @@ export const SectionMemberRecommCategoryList = [
 export const SectionAllProjectsCategoryList = [
   {
     title: "전체",
-    name: "total",
+    name: "SectionAllProjectsCategory",
     id: uuidv4(),
     value: "total",
   },
   {
     title: "기획자",
-    name: "productManager",
+    name: "SectionAllProjectsCategory",
     id: uuidv4(),
     value: "productManager",
   },
   {
     title: "디자이너",
-    name: "designer",
+    name: "SectionAllProjectsCategory",
     id: uuidv4(),
     value: "designer",
   },
   {
     title: "프론트 개발자",
-    name: "FEdeveloper",
+    name: "SectionAllProjectsCategory",
     id: uuidv4(),
     value: "FEdeveloper",
   },
   {
     title: "백엔드 개발자",
-    name: "BEdeveloper",
+    name: "SectionAllProjectsCategory",
     id: uuidv4(),
     value: "BEdeveloper",
   },
