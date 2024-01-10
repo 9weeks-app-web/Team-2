@@ -1,5 +1,5 @@
 "use client";
-import { UserCard } from "@/components/UserCard/UserCard";
+import { UserCard } from "@/components/User/UserCard";
 import { colors } from "@/styles/colors";
 import {
   B2_M_14,
