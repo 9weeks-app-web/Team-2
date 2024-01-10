@@ -1,28 +1,21 @@
 import React from "react";
-import { User } from "@/app/project/types/User";
 import SideContainer from "../components/SideContainer";
-import { colors } from "@/styles/colors";
 import styled from "styled-components";
-import { Tag } from "@/components/Tag";
 import Image from "next/image";
 import { flexColumn } from "@/components/Flex/flexStyle";
-
 import InterestButton from "@/app/auth/components/InterestButton";
 import {
-  B2_R_14,
-  B2_G_14,
-  H1_SB_24,
   B1_M_16,
   B2_R_12,
 } from "@/styles/stylesComponents/typographyComponents";
 import SpecChart from "../components/SpecChart";
-import { userInfoState } from "@/state/atom/atom";
-import { useRecoilValue } from "recoil";
 import UserTagGroup from "../components/UserTagGroup";
 
-const SectionSpecCard = () => {
+type Props = {};
+
+const SectionSpecCard = (props: Props) => {
   return (
-    <SideContainer $width="250px" $borderColor>
+    <SideContainer $width="250px" $borderColor $height="630px">
       <SpecCard>
         <Header>
           <Title>

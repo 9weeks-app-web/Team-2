@@ -20,12 +20,12 @@ export const SectionProfile: React.FC<Props> = () => {
     },
     {
       title: "알림 설정",
-      content: <div>알림 설정~</div>,
+      content: <div>알림 설정</div>,
     },
   ];
   return (
     <SideContainer $width="520px" $borderColor>
-      <TabMenu tabs={tabData} $padding="8px 4px" $gap="12px" $border />
+      <TabMenu tabs={tabData} $padding="8px 4px" $gap="12px" $border={false} />
     </SideContainer>
   );
 };

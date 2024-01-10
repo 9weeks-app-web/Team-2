@@ -1,5 +1,5 @@
 "use client";
-import { UserCard } from "@/components/UserCard/UserCard";
+import { UserCard } from "@/components/User/UserCard";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { RoundButton } from "../Button/RoundButton";

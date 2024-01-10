@@ -27,8 +27,6 @@ const Login = () => {
   const watchAll = Object.values(watch());
   const router = useRouter();
   const onSubmit = async (data: any) => {
-    // console.log(setValue);
-
     const res = await signIn("credentials", {
       email: data.email,
       password: data.password,
@@ -59,9 +57,8 @@ const Login = () => {
             name="email"
             register={register}
             placeholder="이메일을 입력해주세요"
-            // errorMsg={errors.email ? errors.email.message : ""}
-            error={!!errors.email}
-            borderRadius="none"
+            $error={!!errors.email}
+            $borderRadius="none"
           />
         </FieldWrapper>
 
@@ -73,10 +70,9 @@ const Login = () => {
             inputType="password"
             register={register}
             placeholder="비밀번호를 입력해주세요"
-            // errorMsg={errors.password ? errors.password.message : ""}
-            error={!!errors.password}
+            $error={!!errors.password}
             eye
-            borderRadius="none"
+            $borderRadius="none"
           />
           {isError && (
             <MessageComponent>

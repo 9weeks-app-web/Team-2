@@ -1,12 +1,15 @@
 import React from "react";
-import { UserCard } from "@/components/UserCard/UserCard";
+import { UserCard } from "@/components/User/UserCard";
+
 import { flexColumn } from "@/components/Flex/flexStyle";
 import { User } from "@/app/project/types/User";
 import { userInfoState } from "@/state/atom/atom";
 import { useRecoilValue } from "recoil";
 import {
-  B2_R_12,
+  H3_SB_18,
   B1_M_16,
+  B2_R_14,
+  B2_R_12,
 } from "@/styles/stylesComponents/typographyComponents";
 
 import styled from "styled-components";
@@ -20,9 +23,12 @@ const ProfileHeader = (props: Props) => {
     <HeaderContainer>
       <UserCardContainer>
         <UserCard
-          userName={userInfo.name}
           avatarSrc={userInfo.avatar}
-          userJob={userInfo.role}
+          avatarSize={50}
+          $flexDirection="row"
+          $flexGap="14px"
+          userName={<H3_SB_18>{userInfo.name}</H3_SB_18>}
+          userJob={<B2_R_14 className="gray">{userInfo.role}</B2_R_14>}
         />
       </UserCardContainer>
       <SocialInfoContainer>
@@ -44,14 +50,7 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  div {
-    &:nth-child(2) {
-      align-items: center;
-      div {
-        gap: 6px;
-      }
-    }
-  }
+  margin-bottom: 8px;
 `;
 
 const UserCardContainer = styled.div``;

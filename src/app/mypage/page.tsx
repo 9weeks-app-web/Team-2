@@ -57,4 +57,5 @@ const Inner = styled.div`
 const Section = styled.div`
   display: flex;
   flex-direction: column;
+  width: 790px;
 `;

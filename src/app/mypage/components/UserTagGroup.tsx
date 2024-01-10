@@ -85,6 +85,12 @@ const TagGroupStyle = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 `;
 
 const Container = styled.div`

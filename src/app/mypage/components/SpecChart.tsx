@@ -5,9 +5,8 @@ import { useRecoilValue } from "recoil";
 import { User } from "@/app/project/types/User";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 
-type Props = {};
 import styled from "styled-components";
-const SpecChart = (props: Props) => {
+const SpecChart = () => {
   const userInfo = useRecoilValue(userInfoState) as User;
 
   return (

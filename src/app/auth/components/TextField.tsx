@@ -13,10 +13,10 @@ interface IProps {
   errorMsg?: string;
   id: string;
   placeholder?: string;
-  error?: boolean;
-  border?: boolean;
+  $error?: boolean;
+  $border?: boolean;
   eye?: boolean;
-  borderRadius?: string;
+  $borderRadius?: string;
   pattern?: RegExp;
 }
 
@@ -25,16 +25,16 @@ const Input = styled.input<IProps>`
   width: 100%;
   font-size: var(${font_size.FONT_SIZE_16});
   height: 50px;
-  border: ${({ border }) => (border ? "1px solid 4D4D4D" : "none")};
-  border-radius: ${({ borderRadius }) => ({ borderRadius })};
+  border: ${({ $border }) => ($border ? "1px solid 4D4D4D" : "none")};
+  border-radius: ${({ $borderRadius }) => ({ $borderRadius })};
   transition: border-color 0.3s;
-  border-bottom: ${({ error }) =>
-    error
+  border-bottom: ${({ $error }) =>
+    $error
       ? `1px solid var(${colors.SYSTEM_WARNING})`
       : ` 1px solid var(${colors.NEUTRAL_70})`};
   &::placeholder {
-    color: ${({ error }) =>
-      error ? `var(${colors.SYSTEM_WARNING})` : `var(${colors.NEUTRAL_20})`};
+    color: ${({ $error }) =>
+      $error ? `var(${colors.SYSTEM_WARNING})` : `var(${colors.NEUTRAL_20})`};
   }
   outline: none;
 `;
@@ -60,9 +60,9 @@ const TextField: React.FC<IProps> = ({
   register,
   errorMsg,
   placeholder,
-  error,
+  $error,
   eye,
-  borderRadius,
+  $borderRadius,
   pattern,
 }) => {
   const [showPassword, setShowPassword] = useState(true);
@@ -78,7 +78,7 @@ const TextField: React.FC<IProps> = ({
     }
     return pattern || /^[A-Za-z]+$/;
   };
-  console.log(error);
+
   console.log(errorMsg);
   return (
     <>
@@ -92,8 +92,8 @@ const TextField: React.FC<IProps> = ({
           message: errorMsg,
         })}
         placeholder={placeholder}
-        error={error}
-        borderRadius={borderRadius}
+        $error={$error}
+        $borderRadius={$borderRadius}
       />
       {eye && (
         <EyeBtn type="button" onClick={togglePasswordVisibility}>
@@ -105,14 +105,9 @@ const TextField: React.FC<IProps> = ({
           />
         </EyeBtn>
       )}
-      {error && <ErrorMsg>{errorMsg}</ErrorMsg>}
+      {$error && <ErrorMsg>{errorMsg}</ErrorMsg>}
     </>
   );
 };
 
 export default TextField;
-// {...register("passwordConfirm", {
-//             required: "비밀번호를 입력해주세요",
-//             validate: (value) =>
-//               value === password || "비밀번호가 일치하지 않습니다.",
-//           })}

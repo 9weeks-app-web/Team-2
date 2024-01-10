@@ -38,7 +38,7 @@ function TabMenu({
           <Tab
             $padding={tab.$padding || $padding || "auto"}
             key={index}
-            isActive={activeTab === index}
+            $isActive={activeTab === index}
             onClick={() => setActiveTab(index)}
           >
             <B2_M_14>{tab.title}</B2_M_14>
@@ -62,12 +62,12 @@ const TabsContainer = styled.div<{
   border-bottom: ${({ $border }) => ($border ? `1px solid #EDEDED;` : `none`)};
 `;
 
-const Tab = styled.div<{ isActive: boolean; $padding: string }>`
+const Tab = styled.div<{ $isActive: boolean; $padding: string }>`
   padding: ${(props) => props.$padding};
   cursor: pointer;
-  color: ${({ isActive }) =>
-    isActive ? " #000" : `var(${colors.NEUTRAL_40})`};
-  border-bottom: ${({ isActive }) => (isActive ? "2px solid #000" : "none")};
+  color: ${({ $isActive }) =>
+    $isActive ? " #000" : `var(${colors.NEUTRAL_40})`};
+  border-bottom: ${({ $isActive }) => ($isActive ? "2px solid #000" : "none")};
 `;
 
 const TabContent = styled.div`

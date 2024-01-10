@@ -1,4 +1,4 @@
-import { UserCard } from "@/components/UserCard/UserCard";
+import { UserCard } from "@/components/User/UserCard";
 import { colors } from "@/styles/colors";
 import {
   B1_M_16,

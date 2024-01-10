@@ -44,7 +44,7 @@ const SignUp: React.FC = () => {
   const passwordConfirm = watch("passwordConfirm", "");
   const emailLocal = watch("emailLocal") || "";
   const emailDomain = watch("emailDomain") || "";
-  const [isActive, setIsActive] = useState<boolean>(false);
+  const [isactive, setIsActive] = useState<boolean>(false);
   useEffect(() => {
     if (password) {
       const regex =
@@ -64,7 +64,7 @@ const SignUp: React.FC = () => {
       setIsActive(false);
     }
   }, [watchAll]);
-  console.log(isActive);
+  console.log(isactive);
   const router = useRouter();
   const handleButtonClick = () => {
     router.replace("/auth/signup/interest");
@@ -128,7 +128,7 @@ const SignUp: React.FC = () => {
               variant="active"
               $borderRadius="4"
               size="sm"
-              $fontWeight
+              $fontWeight="true"
             />
           </InputBtn>
         </StyledLabel>
@@ -195,12 +195,7 @@ const SignUp: React.FC = () => {
               required
               placeholder="년"
               onKeyDown={handleNonNumericInput}
-              {...register("year", {
-                // pattern: {
-                //   value: /^\d{4}$/,
-                //   message: "올바른 년도 형식을 입력하세요 (예: 2023)",
-                // },
-              })}
+              {...register("year", {})}
             />
             <Input
               type="text"
@@ -208,12 +203,7 @@ const SignUp: React.FC = () => {
               maxLength={2}
               required
               onKeyDown={handleNonNumericInput}
-              {...register("month", {
-                // pattern: {
-                //   value: /^(0?[1-9]|1[0-2])$/,
-                //   message: "올바른 월 형식을 입력하세요 (1 ~ 12 사이)",
-                // },
-              })}
+              {...register("month", {})}
             />
             <Input
               type="text"
@@ -221,12 +211,7 @@ const SignUp: React.FC = () => {
               maxLength={2}
               required
               onKeyDown={handleNonNumericInput}
-              {...register("day", {
-                // pattern: {
-                //   value: /^(0?[1-9]|[1-2][0-9]|3[0-1])$/,
-                //   message: "올바른 일 형식을 입력하세요 (1 ~ 31 사이)",
-                // },
-              })}
+              {...register("day", {})}
             />
           </InputBtn>
         </StyledLabel>
@@ -277,17 +262,6 @@ const SignUp: React.FC = () => {
               value={emailDomain}
               setValue={setValue}
             />
-
-            {/* <select
-              {...register("emailDomain")}
-              value={emailDomain}
-              onChange={(e) => setValue("emailDomain", e.target.value)}
-            >
-              <option value="">직접 입력</option>
-              <option value="naver.com">naver.com</option>
-              <option value="google.com">google.com</option>
-              <option value="kakao.com">kakao.com</option>
-            </select> */}
           </InputBtn>
           <RBox>
             <Input
@@ -311,7 +285,7 @@ const SignUp: React.FC = () => {
               label="우편번호 찾기"
               variant="active"
               $borderRadius="4"
-              $fontWeight
+              $fontWeight="true"
             />
           </InputBtn>
           <Input
@@ -326,8 +300,8 @@ const SignUp: React.FC = () => {
       <InterestButton
         label="다음으로"
         size="lg"
-        $fontWeight
-        variant={isActive ? "active" : "disable"}
+        $fontWeight="true"
+        variant={isactive ? "active" : "disable"}
         $borderRadius="10"
         $margin="44px 0px 150px 0px"
         onClick={handleButtonClick}

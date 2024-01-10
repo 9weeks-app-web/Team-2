@@ -53,8 +53,8 @@ export default function Terms() {
   };
 
   useEffect(() => {
-    const isActive = areEssentialAgreementsChecked();
-    setButtonActive(isActive);
+    const isactive = areEssentialAgreementsChecked();
+    setButtonActive(isactive);
   }, [areEssentialAgreementsChecked]);
   return (
     <TermContainer>
