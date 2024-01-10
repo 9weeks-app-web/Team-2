@@ -20,18 +20,20 @@ const Sort = () => {
   };
   return (
     <ButtonGropContainer>
-      <ButtonContainer
-        $selected={selected === "mating"}
-        onClick={handleMatingClick}
-      >
-        <B2_M_14>• 매칭률</B2_M_14>
-      </ButtonContainer>
-      <ButtonContainer
-        $selected={selected === "deadline"}
-        onClick={handleDeadlineClick}
-      >
-        <B2_M_14>• 마감순</B2_M_14>
-      </ButtonContainer>
+      <Warp>
+        <ButtonContainer
+          $selected={selected === "mating"}
+          onClick={handleMatingClick}
+        >
+          <B2_M_14>• 매칭률</B2_M_14>
+        </ButtonContainer>
+        <ButtonContainer
+          $selected={selected === "deadline"}
+          onClick={handleDeadlineClick}
+        >
+          <B2_M_14>• 마감순</B2_M_14>
+        </ButtonContainer>
+      </Warp>
     </ButtonGropContainer>
   );
 };
@@ -40,10 +42,15 @@ export default Sort;
 
 const ButtonGropContainer = styled.div`
   display: flex;
+  align-items: start;
+`;
+
+const Warp = styled.div`
+  display: flex;
   gap: 0.25rem;
   cursor: pointer;
-  & {
-  }
+  align-items: center;
+  padding: 0.25rem;
 `;
 
 const ButtonContainer = styled.div<{ $selected: boolean }>`

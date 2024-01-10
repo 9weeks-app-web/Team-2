@@ -93,7 +93,7 @@ const SeeMoreLink = styled(Link)`
 
 const MenuPanelContainer = styled.div`
   /* height: 100%; */
-  margin: 1.62rem 0;
+  margin-top: 1.62rem;
   display: flex;
   justify-content: space-between;
 `;

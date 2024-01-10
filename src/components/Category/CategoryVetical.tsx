@@ -11,14 +11,14 @@ interface CartegoryObjProps {
 }
 interface CartegoryProps {
   categoryInfo: CartegoryObjProps[];
-  recoilState: RecoilState<string>;
+  recoilState?: RecoilState<string>;
 }
 
 export const CategoryVetical = ({
   categoryInfo,
   recoilState,
 }: CartegoryProps) => {
-  const [selectedValue, setSelectedValue] = useRecoilState(recoilState);
+  const [selectedValue, setSelectedValue] = useRecoilState(recoilState!);
   // const [selectedValue, setSelectedValue] = useState<string>("planner");
 
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {

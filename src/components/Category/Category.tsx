@@ -71,6 +71,7 @@ const Label = styled.label<{ $selected: boolean; radius?: string }>`
   border-radius: ${(props) => props.radius || "50px"};
   margin-right: 8px;
   cursor: pointer;
+  margin-bottom: 24px;
 `;
 
 const RadioButton = styled.input.attrs({ type: "radio" })`
