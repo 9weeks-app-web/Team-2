@@ -63,8 +63,8 @@ const SignUp: React.FC = () => {
     } else {
       setIsActive(false);
     }
-  }, [watchAll]);
-  console.log(isactive);
+  }, [watchAll, passwordMatch, passwordConfirm]);
+
   const router = useRouter();
   const handleButtonClick = () => {
     router.replace("/auth/signup/interest");

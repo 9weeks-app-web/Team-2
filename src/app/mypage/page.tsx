@@ -1,5 +1,4 @@
 "use client";
-
 import { userInfoState } from "@/state/atom/atom";
 import { useRecoilState } from "recoil";
 import React, { useEffect } from "react";
@@ -10,23 +9,25 @@ import SectionProfile from "./Section/SectionProfile";
 import SectionFeedBack from "./Section/SectionFeedBack";
 import { useSession } from "next-auth/react";
 import SectionTab from "./Section/SectionTab";
-export const ProjectPage = () => {
+
+const Page = () => {
   const { data: session } = useSession();
   const [userInfo, setUserInfo] = useRecoilState(userInfoState);
-  // 로그인한 사용자 정보를 userInfoState로 설정하는 함수
-  const getUserInfo = () => {
-    if (session?.user?.name === _user1.name) {
-      setUserInfo(_user1); // _user1과 일치하는 경우 userInfoState 업데이트
-    } else if (session?.user?.name === _user.name) {
-      setUserInfo(_user); // _user와 일치하는 경우 userInfoState 업데이트
-    } else {
-      setUserInfo(_user1); // 기본값으로 _user1을 설정
-    }
-  };
 
   useEffect(() => {
+    const getUserInfo = () => {
+      if (session?.user?.name === _user1.name) {
+        setUserInfo(_user1);
+      } else if (session?.user?.name === _user.name) {
+        setUserInfo(_user);
+      } else {
+        setUserInfo(_user1);
+      }
+    };
+
     getUserInfo();
-  }, []);
+  }, [session?.user?.name, setUserInfo]);
+
   return (
     <Container>
       <SectionSpecCard />
@@ -41,7 +42,7 @@ export const ProjectPage = () => {
   );
 };
 
-export default ProjectPage;
+export default Page;
 
 const Container = styled.div`
   display: flex;
