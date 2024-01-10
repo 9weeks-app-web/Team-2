@@ -20,9 +20,13 @@ const RecommenMemberModal: React.FC<RecommenMemberModalProps> = ({
     "idle"
   );
 
+  const handleModalContentClick = (e: React.MouseEvent) => {
+    e.stopPropagation(); // 이벤트 버블링을 막음
+  };
+
   return (
-    <ModalBackground>
-      <ModalContent>
+    <ModalBackground onClick={onClose}>
+      <ModalContent onClick={handleModalContentClick}>
         {pageStatus === "idle" && (
           <Idel onClose={onClose} setPageStatus={setPageStatus} />
         )}
