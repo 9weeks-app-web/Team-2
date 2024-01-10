@@ -21,6 +21,10 @@ export const RecruitmentCategoryState = atom({
   default: "planner",
 });
 
+export const pfPageCategoryState = atom({
+  key: "pfPageCategoryState",
+  default: "total",
+});
 export const SectionMemberRecommCategoryState = atom({
   key: "SectionMemberRecommCategoryState",
   default: "total",

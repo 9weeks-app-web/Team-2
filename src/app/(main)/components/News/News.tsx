@@ -33,7 +33,7 @@ export const News = () => {
       <SectionTitle
         titleA="기업 · 에이전시 NEW 소식"
         titleB="관심있는 곳의 최신 경향을 확인해 보세요!"
-        linkPath="#"
+        linkUrl="#"
       />
       <Body>
         {notices.map((notice, index) => (

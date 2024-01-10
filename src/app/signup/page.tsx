@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { SignupForm } from "./components/SignupForm";
 
-export const SignUp = () => {
+const page = () => {
   return (
     <SignUpContainer>
       <Title>회원가입</Title>
@@ -12,7 +12,7 @@ export const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default page;
 
 const SignUpContainer = styled.div`
   display: flex;

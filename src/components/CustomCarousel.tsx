@@ -23,6 +23,5 @@ export const CustomCarousel = () => {
 const CarouseWrapper = styled(Carousel)`
   width: 1060px;
   margin: auto;
-  margin-top: 36px;
   margin-bottom: 36px;
 `;

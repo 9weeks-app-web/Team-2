@@ -3,23 +3,19 @@ import styled from "styled-components";
 import Link from "next/link";
 interface CardContainerProps {
   children: React.ReactNode;
-  linkPath?: string;
+  linkUrl?: string;
   $width: string;
   $borderColor?: string;
 }
 export const CardContainer = ({
   children,
-  linkPath,
+  linkUrl,
   $width,
   $borderColor,
 }: CardContainerProps) => {
-  if (linkPath) {
+  if (linkUrl) {
     return (
-      <ContainerLink
-        href={linkPath}
-        $width={$width}
-        $borderColor={$borderColor}
-      >
+      <ContainerLink href={linkUrl} $width={$width} $borderColor={$borderColor}>
         {children}
       </ContainerLink>
     );
@@ -35,7 +31,8 @@ export const CardContainer = ({
 const Container = styled.div<{ $width: string; $borderColor?: string }>`
   display: inline-block;
   width: ${(props) => props.$width};
-  border: 1px solid ${(props) => `var(${props.$borderColor})`};
+  border: ${(props) =>
+    props.$borderColor ? `1px solid var(${props.$borderColor})` : ""};
   border-radius: 8px;
   z-index: 1;
 `;

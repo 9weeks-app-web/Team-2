@@ -1,8 +1,8 @@
 "use client";
-import { SearchOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useRouter, usePathname } from "next/navigation";
+import SearchIconGrey from "../../../public/Icon/Icon_searchGrey.svg";
 export const SearchBar = () => {
   const [query, setQuery] = useState<string>("");
   const router = useRouter();
@@ -21,7 +21,10 @@ export const SearchBar = () => {
         type="text"
         onChange={(e) => setQuery(e.target.value)}
       />
-      <SearchButton onClick={handleSearch} />
+      {/* <SearchButton onClick={handleSearch} /> */}
+      <SearchButton>
+        <SearchIconGrey />
+      </SearchButton>
     </SearchBarWrapper>
   );
 };
@@ -31,15 +34,7 @@ const SearchBarWrapper = styled.div`
   margin-left: auto;
 `;
 
-const SearchButton = styled(SearchOutlined)`
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  right: 18px;
-  top: 8px;
-`;
-
-const Input = styled.input`
+const Input = styled.input.attrs({ type: "text" })`
   width: 403px;
   height: 38px;
   border-radius: 50px;
@@ -50,4 +45,12 @@ const Input = styled.input`
   &:focus {
     outline: none;
   }
+`;
+const SearchButton = styled.button`
+  position: absolute;
+  right: 18px;
+  top: 8px;
+  cursor: pointer;
+  border: 0;
+  background-color: inherit;
 `;
