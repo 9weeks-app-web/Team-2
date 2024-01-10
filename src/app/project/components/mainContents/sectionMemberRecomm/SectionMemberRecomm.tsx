@@ -8,7 +8,7 @@ import { Member } from "../../../types/Member";
 import { User } from "../../../types/User";
 import { SectionMemberRecommCategoryState } from "../../../../../state/atom/atom";
 import { SectionMemberRecommCategoryList } from "../../../../../constant/category";
-import RecommendedTeamBanner from "./RecommendedTeamBanner";
+import RecommendedTeamBanner from "../../../../../components/RecommendedMember/RecommendedTeamBanner";
 
 // 한 페이지에 보여질 카드의 수
 const CARDS_PER_PAGE = 3;

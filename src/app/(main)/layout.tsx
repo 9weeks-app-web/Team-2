@@ -1,6 +1,8 @@
 import { CustomCarousel } from "@/components/CustomCarousel";
 import { FindMyTeam } from "@/app/(main)/components/FindMyTeam";
 import { TodayTerm } from "./components/TodayTerm/TodayTerm";
+import RecommendedTeamBanner from "@/components/RecommendedMember/RecommendedTeamBanner";
+import styled from "styled-components";
 export default function Layout({
   children,
   PopularPortfoilo,
@@ -20,7 +22,7 @@ export default function Layout({
     <div>
       <CustomCarousel />
       {PopularPortfoilo}
-      <FindMyTeam url="" />
+      <FindMyTeam />
       {PopularProject}
       <TodayTerm />
       {PopularTopic}

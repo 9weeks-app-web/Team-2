@@ -1,3 +1,4 @@
+"use client";
 import Button from "@/components/Button";
 import { flexColumn } from "@/components/Flex/flexStyle";
 import { colors } from "@/styles/colors";
@@ -8,10 +9,16 @@ import {
 import React, { useState } from "react";
 import styled from "styled-components";
 import RecommenMemberModal from "./RecommenMemberModal";
-import { useRecoilValue } from "recoil";
 import { _user } from "@/constant/_[project]mockup";
+interface RecommendedTeamBannerProps {
+  width: string;
+  title: string;
+}
 
-const RecommendedTeamBanner = () => {
+const RecommendedTeamBanner: React.FC<RecommendedTeamBannerProps> = ({
+  width = "49.375rem;",
+  title = "업무 성향 재설문",
+}) => {
   const userName = _user.name;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,33 +30,30 @@ const RecommendedTeamBanner = () => {
   };
 
   return (
-    <Container>
+    <Container $width={width}>
       {isModalOpen && (
         <RecommenMemberModal onClose={closeModal} userName={userName} />
       )}
-
-      <ImgWrap src="/icons/recommend/Recommend_Icon.svg"></ImgWrap>
-      <TextWrap>
-        <H3_R_18>내가 원하는 팀원의 업무 성향이 바뀌었나요?</H3_R_18>
-        <H3_SB_18>
-          1분 업무 성향 테스트하고 , 프로젝트 팀원을 새로 추천 받아보세요!
-        </H3_SB_18>
-      </TextWrap>
-      <Button
-        title={"업무 성향 재설정"}
-        width={"9.4375rem"}
-        onClick={openModal}
-      />
+      <RowWarp>
+        <ImgWrap src="/icons/recommend/Recommend_Icon.svg"></ImgWrap>
+        <TextWrap>
+          <H3_R_18>내가 원하는 팀원의 업무 성향이 바뀌었나요?</H3_R_18>
+          <H3_SB_18>
+            1분 업무 성향 테스트하고 , 프로젝트 팀원을 새로 추천 받아보세요!
+          </H3_SB_18>
+        </TextWrap>
+      </RowWarp>
+      <Button title={title} width={"9.4375rem"} onClick={openModal} />
     </Container>
   );
 };
 export default RecommendedTeamBanner;
 
-const Container = styled.div`
+const Container = styled.div<{ $width: string }>`
   display: flex;
   margin-top: 2.25rem;
 
-  width: 49.375rem;
+  width: ${(props) => props.$width};
   height: 6.875rem;
   padding: 1.25rem;
   justify-content: space-between;
@@ -60,6 +64,12 @@ const Container = styled.div`
   border-radius: 0.625rem;
   border: 1.5px solid var(${colors.PRIMARY_20});
   background: var(${colors.BACKGROUND_BLUE});
+`;
+const RowWarp = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
 `;
 
 const ImgWrap = styled.img`
