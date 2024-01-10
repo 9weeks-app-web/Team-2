@@ -6,10 +6,6 @@ import ClientComponentContainer from "./ClientComponentContainer";
 import { NavTabs } from "@/components/Nav/NavTabs";
 import { Navigation } from "@/components/Nav/Navigation";
 import Providers from "./auth/components/Providers";
-// const pretendard = localFont({
-//   src: "../../public/PretendardVariable.woff2",
-//   display: "swap",
-// });
 
 // 메타데이터
 export const metadata: Metadata = {
@@ -29,6 +25,8 @@ export default function RootLayout({
           <ClientComponentContainer>
             <RootContainer>
               <Providers>
+                <div id="modal" />
+                <div id="backdrop" />
                 <NavTabs />
                 <Navigation />
                 {children}

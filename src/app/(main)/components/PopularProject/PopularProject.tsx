@@ -17,9 +17,7 @@ export const PopularProject = () => {
 
   useEffect(() => {
     const fetchFn = async () => {
-      const response = await fetch(
-        `http://localhost:3000/api/main/popularproject/${projectValue}`
-      );
+      const response = await fetch(`/api/main/popularproject/${projectValue}`);
       if (!response.ok) {
         throw Error("something went wrong, please check again portfolio value");
       }
@@ -33,12 +31,14 @@ export const PopularProject = () => {
       <SectionTitle
         titleA="곧 마감!"
         titleB="실시간 인기 프로젝트"
-        linkPath="#"
+        linkUrl="#"
       />
-      <Category
-        categoryInfo={categoryInfo}
-        recoilState={projectCategoryState}
-      />
+      <CategoryWrapper>
+        <Category
+          categoryInfo={categoryInfo}
+          recoilState={projectCategoryState}
+        />
+      </CategoryWrapper>
       <Body>
         {!projectInfo && (
           <>
@@ -55,6 +55,10 @@ export const PopularProject = () => {
     </SectionContainer>
   );
 };
+
+const CategoryWrapper = styled.div`
+  margin-bottom: 24px;
+`;
 
 export const Body = styled.div`
   display: flex;
@@ -96,41 +100,5 @@ const categoryInfo = [
     name: "prjCategory",
     id: "prjRadio6",
     value: "etc",
-  },
-];
-
-const projectInfoMock = [
-  {
-    tag: ["D-17", "6주"],
-    heading: "GEN AI 해커톤 참가",
-    category: "develop",
-    label: "개발",
-    description:
-      "경력 상관없이 인공지능 관심 있으신 분들, 책임감 있으신 분들 같이 6주 동안 해커톤 준비해봐요~!",
-    recruitmentMembers: ["개발자 3"],
-    imageUrl: "image-url-1",
-    deadline: "2024-02-01",
-  },
-  {
-    tag: ["D-17", "6주"],
-    heading: "메타버스 브랜딩 프로젝트",
-    category: "UXUI",
-    label: "UX/UI",
-    description:
-      "MZ 세대를 타깃으로 메타버스 플랫폼 브랜딩 해 주실 기획자 분, 기획서 디자인 해주실 디자이너 분들 모십니다!",
-    recruitmentMembers: ["기획자 3", "디자이너 5"],
-    imageUrl: "image-url-1",
-    deadline: "2024-02-01",
-  },
-  {
-    tag: ["D-17", "6주"],
-    heading: "웹 서비스 디자인 프로젝트",
-    category: "design",
-    label: "기획",
-    description:
-      "5주 동안 웹 서비스 기획하고 디자인 같이 해서 포트폴리오 제작하는 프로젝트입니다.",
-    recruitmentMembers: ["기획자 3", "디자이너 5"],
-    imageUrl: "image-url-1",
-    deadline: "2024-02-01",
   },
 ];

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { HeartOutlined } from "@ant-design/icons";
 import {
   B1_M_16,
-  B2_L_12,
+  B2_R_12,
   B2_M_14,
   B2_R_14,
   H3_M_18,
@@ -220,7 +220,7 @@ const TextContainerSub = styled.div`
   transition: opacity 0.3s ease-in-out;
 `;
 
-const LabelSub = styled(B2_L_12)`
+const LabelSub = styled(B2_R_12)`
   width: fit-content;
   color: var(${colors.NEUTRAL_WHITE});
 `;
@@ -253,7 +253,7 @@ const DivSub = styled.div`
   height: 20px;
 `;
 
-const SpanSub = styled(B2_L_12)`
+const SpanSub = styled(B2_R_12)`
   color: var(${colors.NEUTRAL_WHITE});
   margin-left: 4px;
 `;

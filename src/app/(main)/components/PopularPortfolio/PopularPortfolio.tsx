@@ -6,11 +6,10 @@ import { Category } from "@/components/Category/Category";
 import { PopularPortfolioImages } from "./PopularPortfolioImages";
 import { useRecoilValue } from "recoil";
 import { portFolioCategoryState } from "@/state/atom/atom";
-import {
-  PopularPortfolioImagesObjProps,
-  PopularPortfolioImagesProps,
-} from "@/types";
+import { PopularPortfolioImagesObjProps } from "@/types";
 import { PopularPFImagesSkeleton } from "./PopularPFImagesSkeleton";
+import { popularPortfolioCategoryList } from "@/constant/category";
+import styled from "styled-components";
 
 export const PopularPortfolio = () => {
   const [imagesInfo, setImagesInfo] =
@@ -20,7 +19,7 @@ export const PopularPortfolio = () => {
   useEffect(() => {
     const fetchFn = async () => {
       const response = await fetch(
-        `http://localhost:3000/api/main/popularportfolio/${portfolioValue}`
+        `/api/main/popularportfolio/${portfolioValue}`
       );
       if (!response.ok) {
         throw Error("something went wrong, please check again portfolio value");
@@ -36,52 +35,20 @@ export const PopularPortfolio = () => {
       <SectionTitle
         titleA="2023년 1월"
         titleB="이 달의 BEST 포트폴리오"
-        linkPath="#"
+        linkUrl="#"
       />
-      <Category
-        categoryInfo={categoryInfo}
-        recoilState={portFolioCategoryState}
-      />
+      <CategoryWrapper>
+        <Category
+          categoryInfo={popularPortfolioCategoryList}
+          recoilState={portFolioCategoryState}
+        />
+      </CategoryWrapper>
       {imagesInfo && <PopularPortfolioImages imagesInfo={imagesInfo} />}
       {!imagesInfo && <PopularPFImagesSkeleton />}
     </SectionContainer>
   );
 };
-const categoryInfo = [
-  {
-    title: "전체",
-    name: "pfCategory",
-    id: "pfRadio1",
-    value: "total",
-  },
-  {
-    title: "서비스 기획",
-    name: "pfCategory",
-    id: "pfRadio2",
-    value: "serviceplan",
-  },
-  {
-    title: "웹 기획",
-    name: "pfCategory",
-    id: "pfRadio3",
-    value: "webplan",
-  },
-  {
-    title: "앱 기획",
-    name: "pfCategory",
-    id: "pfRadio4",
-    value: "appplan",
-  },
-  {
-    title: "웹 디자인",
-    name: "pfCategory",
-    id: "pfRadio5",
-    value: "webdesign",
-  },
-  {
-    title: "앱 디자인",
-    name: "pfCategory",
-    id: "pfRadio6",
-    value: "appdesign",
-  },
-];
+
+const CategoryWrapper = styled.div`
+  margin-bottom: 24px;
+`;

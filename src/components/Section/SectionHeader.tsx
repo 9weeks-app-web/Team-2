@@ -7,8 +7,8 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import PageNavController from "./PageNavController";
-import Filter from "@/app/project/components/Filter";
-import Sort from "@/app/project/components/Sort";
+import Filter from "@/app/project/components/common/Filter";
+import Sort from "@/app/project/components/common/Sort";
 import { Category } from "../Category/Category";
 import { SectionHeaderProps } from "@/app/project/types/SectionHeader.props";
 
@@ -93,7 +93,7 @@ const SeeMoreLink = styled(Link)`
 
 const MenuPanelContainer = styled.div`
   /* height: 100%; */
-  margin: 1.62rem 0;
+  margin-top: 1.62rem;
   display: flex;
   justify-content: space-between;
 `;

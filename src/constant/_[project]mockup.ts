@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Project } from "../app/project/types/Project";
 import { MyProject } from "../app/project/types/MyProject";
 import { Member } from "../app/project/types/Member";
-import { Keyword } from "../\btypes/Keyword";
+import { Keyword } from "../types/Keyword";
 import { User } from "../app/project/types/User";
 
 export const _myProjects: MyProject[] = [

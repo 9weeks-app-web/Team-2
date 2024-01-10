@@ -21,6 +21,10 @@ export const RecruitmentCategoryState = atom({
   default: "planner",
 });
 
+export const pfPageCategoryState = atom({
+  key: "pfPageCategoryState",
+  default: "total",
+});
 export const SectionMemberRecommCategoryState = atom({
   key: "SectionMemberRecommCategoryState",
   default: "total",
@@ -46,5 +50,12 @@ export const evaluationKeywordTagState = atom<Record<string, string[]>>({
 // 유저 정보
 export const userInfoState = atom<User | object>({
   key: "userInfoState",
+
+  default: {},
+});
+
+export const recommendKeywordTagState = atom<Record<string, string[]>>({
+  key: "recommendKeywordTagState",
+
   default: {},
 });

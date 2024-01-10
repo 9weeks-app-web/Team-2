@@ -25,13 +25,15 @@ const PageNavController: React.FC<PageNavControllerProps> = ({
 }) => {
   return (
     <PageNavContainer>
-      <Btn onClick={goToPrevPage}>{"<"}</Btn>
-      <TextBox>
-        <B2_M_14>{currentPage + 1}</B2_M_14>
-        <B2_R_14 className="gray">/</B2_R_14>
-        <B2_R_14 className="gray">{totalPage}</B2_R_14>
-      </TextBox>
-      <Btn onClick={goToNextPage}>{">"}</Btn>
+      <Wrap>
+        <Btn onClick={goToPrevPage}>{"<"}</Btn>
+        <TextBox>
+          <B2_M_14>{currentPage + 1}</B2_M_14>
+          <B2_R_14 className="gray">/</B2_R_14>
+          <B2_R_14 className="gray">{totalPage}</B2_R_14>
+        </TextBox>
+        <Btn onClick={goToNextPage}>{">"}</Btn>
+      </Wrap>
     </PageNavContainer>
   );
 };
@@ -40,8 +42,13 @@ export default PageNavController;
 
 const PageNavContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: start;
+`;
+
+const Wrap = styled.div`
+  display: flex;
   gap: 1.5rem;
+  align-items: center;
 `;
 
 const Btn = styled.div`

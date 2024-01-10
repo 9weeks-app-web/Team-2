@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import { colors } from "@/styles/colors";
 import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
-import { RecoilState, atom, useRecoilState } from "recoil";
+import { RecoilState, useRecoilState } from "recoil";
 import styled from "styled-components";
 interface CartegoryObjProps {
   title: string;
@@ -71,6 +72,7 @@ const Label = styled.label<{ $selected: boolean; radius?: string }>`
   border-radius: ${(props) => props.radius || "50px"};
   margin-right: 8px;
   cursor: pointer;
+  margin-bottom: 24px;
 `;
 
 const RadioButton = styled.input.attrs({ type: "radio" })`

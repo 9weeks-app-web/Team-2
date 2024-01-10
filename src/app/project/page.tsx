@@ -2,17 +2,16 @@
 
 import React from "react";
 import styled from "styled-components";
-import SideContents from "./components/SideContents";
-import MainContents from "./components/MainContents";
+import SideContents from "./components/sideContents/SideContents";
+import MainContents from "./components/mainContents/MainContents";
 import { _user } from "../../constant/_[project]mockup";
-import FloatingBtn from "./components/FloatingBtn";
+import FloatingBtn from "./components/common/FloatingBtn";
 export const ProjectPage = () => {
   return (
     <>
       <Inner>
         <SideContents user={_user} />
         <MainContents user={_user} />
-        <FloatingBtn title={"새 프로젝트 업로드"} />
       </Inner>
     </>
   );

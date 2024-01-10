@@ -11,5 +11,7 @@ export const SectionContainer = ({
 
 const Container = styled.section`
   width: 1060px;
+  height: fit-content;
   margin: 0 auto 40px;
+  position: relative;
 `;
