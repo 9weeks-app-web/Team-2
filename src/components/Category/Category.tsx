@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import { colors } from "@/styles/colors";
 import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
-import { RecoilState, atom, useRecoilState } from "recoil";
+import { RecoilState, useRecoilState } from "recoil";
 import styled from "styled-components";
 interface CartegoryObjProps {
   title: string;

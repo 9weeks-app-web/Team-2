@@ -8,27 +8,17 @@ import {
   B2_M_12,
   B2_M_14,
 } from "@/styles/stylesComponents/typographyComponents";
+import { NewsCardProps } from "@/types";
 
-interface NewCardProps {
-  imageUrl: string;
-  label: string;
-  heading: string;
-  company: string;
-  time: string;
-}
 export const NewsCard = ({
   imageUrl,
   label,
   heading,
   company,
   time,
-}: NewCardProps) => {
+}: NewsCardProps) => {
   return (
-    <CardContainer
-      linkPath={"#"}
-      $width="340px"
-      $borderColor={colors.PRIMARY_5}
-    >
+    <CardContainer linkUrl={"#"} $width="340px" $borderColor={colors.PRIMARY_5}>
       <div>
         <StyledImage
           unoptimized

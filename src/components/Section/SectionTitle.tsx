@@ -10,25 +10,25 @@ import { RightOutlined } from "@ant-design/icons";
 /**
  *
  * @param titleA  optional props
- * @param linkPath  optional props
+ * @param linkUrl  optional props
  *
  */
 export const SectionTitle = ({
   titleA,
   titleB,
-  linkPath,
+  linkUrl,
 }: {
   titleA?: string;
   titleB: string;
-  linkPath?: string;
+  linkUrl?: string;
 }) => {
   return (
     <TitleContainer>
       {titleA && <H1_L_24>{titleA}</H1_L_24>}
       <TitleBContainer>
         <H1_SB_24>{titleB}</H1_SB_24>
-        {linkPath && (
-          <SeeMoreLink href={linkPath}>
+        {linkUrl && (
+          <SeeMoreLink href={linkUrl}>
             더보기
             <RightOutlined />
           </SeeMoreLink>

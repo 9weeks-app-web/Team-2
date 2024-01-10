@@ -2,7 +2,7 @@ import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
-
+// 미완성
 export const ScrollingNav = () => {
   return (
     <Container>
@@ -44,7 +44,7 @@ export const ScrollingNav = () => {
   );
 };
 const Container = styled.div`
-  z-index: 100;
+  z-index: 10;
   width: 138px;
   height: 191px;
   position: fixed;

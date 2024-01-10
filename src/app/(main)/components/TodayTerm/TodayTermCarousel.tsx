@@ -11,14 +11,7 @@ import {
   H1_SB_24,
 } from "@/styles/stylesComponents/typographyComponents";
 import Image from "next/image";
-
-interface TodayTermCarouselProps {
-  id: string;
-  label: string;
-  category: string;
-  title: string;
-  description: string;
-}
+import { TodayTermCarouselProps } from "@/types";
 
 export const TodayTermCarousel = ({
   termsInfo,
@@ -32,7 +25,7 @@ export const TodayTermCarousel = ({
   };
   return (
     <Div>
-      <SwiperFixed
+      <StyledSwiper
         modules={[Navigation]}
         spaceBetween={0}
         slidesPerView={3}
@@ -71,7 +64,7 @@ export const TodayTermCarousel = ({
             </CardContainer>
           </SwiperSlide>
         ))}
-      </SwiperFixed>
+      </StyledSwiper>
       <CustomButton className="custom-button-prev">&lt;</CustomButton>
       <CustomButton className="custom-button-next">&gt;</CustomButton>
     </Div>
@@ -98,7 +91,7 @@ const Div = styled.div`
   }
 `;
 
-const SwiperFixed = styled(Swiper)`
+const StyledSwiper = styled(Swiper)`
   .swiper-slide {
     display: flex;
     justify-content: center;

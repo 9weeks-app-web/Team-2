@@ -5,8 +5,10 @@ import { colors } from "@/styles/colors";
 import { UserCard } from "@/components/User/UserCard";
 import { Tag, TagWrapper } from "@/components/Tag";
 import styled from "styled-components";
-import { B1_M_16 } from "@/styles/stylesComponents/typographyComponents";
-import { HeartOutlined, MessageOutlined } from "@ant-design/icons";
+import {
+  B1_M_16,
+  B2_M_14,
+} from "@/styles/stylesComponents/typographyComponents";
 import { font_size, font_weight } from "@/styles/typography";
 import { dateDiff } from "@/utils/utils";
 interface PopularTopicCardProps {
@@ -35,14 +37,23 @@ export const PopularTopicCard = ({
   const convertedDate = dateDiff(createdAt);
 
   return (
-    <CardContainer linkPath="#" $width="340px" $borderColor={colors.STROKE_10}>
+    <CardContainer linkUrl="#" $width="340px" $borderColor={colors.STROKE_10}>
       <CardTextContainer $BgColor={colors.NEUTRAL_WHITE}>
-        <UserCard
-          avatarSrc={userImageUrl}
-          userJob={userJob}
-          userName={userName}
-          hotTag
-        />
+        <UserContainer>
+          <UserCard
+            avatarSrc={userImageUrl}
+            avatarSize={55}
+            $flexDirection="row"
+            $flexGap="12px"
+            userName={<UserName>{userName}</UserName>}
+            userJob={<UserJob>{userJob}</UserJob>}
+          />
+          <TagWrapper style={{ alignItems: "flex-start" }}>
+            <Tag $setColor="--Red-500, #FB5151" $setBgColor="--Red-50, #FFEFEF">
+              HOT
+            </Tag>
+          </TagWrapper>
+        </UserContainer>
         <TagWrapper>
           {tag.map((el, idx) => (
             <Tag
@@ -58,9 +69,9 @@ export const PopularTopicCard = ({
         <CardDescription>{description}</CardDescription>
         <FlexContainer>
           <FlexRow>
-            <HeartOutlined />
+            <HeartIcon width={16} height={16} stroke="black" />
             <Span>{likes}</Span>
-            <MessageOutlined style={{ marginLeft: "12px" }} />
+            <CommentIcon style={{ marginLeft: "12px" }} fill="black" />
             <Span>{comments}</Span>
           </FlexRow>
           <DateWrapper>{convertedDate}</DateWrapper>
@@ -69,6 +80,19 @@ export const PopularTopicCard = ({
     </CardContainer>
   );
 };
+const UserName = styled(B1_M_16)`
+  color: var(${colors.NEUTRAL_90});
+`;
+const UserJob = styled(B2_M_14)`
+  color: var(${colors.NEUTRAL_40});
+`;
+
+const UserContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+`;
+
 const FlexContainer = styled.div`
   height: 20px;
   display: flex;

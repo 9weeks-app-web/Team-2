@@ -26,7 +26,7 @@ export const Navigation = () => {
           </CustomLink>
         </LogoWrapper>
         <LinkWrapper>
-          <CustomLink href="#">스팩폴리오</CustomLink>
+          <CustomLink href="/sfacfolio">스팩폴리오</CustomLink>
         </LinkWrapper>
         <LinkWrapper>
           <CustomLink href="/project">프로젝트</CustomLink>
@@ -82,6 +82,7 @@ const NavContainer = styled.nav`
   width: 1060px;
   height: 68px;
   margin: auto;
+  margin-bottom: 36px;
 `;
 const UlContainer = styled.ul`
   display: flex;

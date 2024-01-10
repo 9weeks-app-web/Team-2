@@ -25,6 +25,8 @@ export default function RootLayout({
           <ClientComponentContainer>
             <RootContainer>
               <Providers>
+                <div id="modal" />
+                <div id="backdrop" />
                 <NavTabs />
                 <Navigation />
                 {children}
