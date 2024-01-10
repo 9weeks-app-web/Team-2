@@ -44,7 +44,7 @@ export const Proposal = () => {
 
 const ProposalContainer = styled.div`
   position: absolute;
-  right: 130px;
+  right: 140px;
   bottom: 10px;
   display: flex;
   width: 358px;

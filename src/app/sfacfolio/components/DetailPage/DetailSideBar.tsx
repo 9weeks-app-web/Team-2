@@ -84,7 +84,13 @@ export const DetailSideBar = ({
           $BorderColor={colors.BACKGROUND_GRAY}
           $color={colors.NEUTRAL_90}
           onClick={() => {
-            setIsClick((prev) => ({ ...prev, comments: !prev.comments }));
+            setIsClick((prev) => ({
+              ...prev,
+              comments: !prev.comments,
+              feedback: false,
+              proposal: false,
+              tools: false,
+            }));
           }}
         >
           <CommentsIcon fill={isClick.comments ? "#FFFFFF" : "#1A1A1A"} />
@@ -98,7 +104,13 @@ export const DetailSideBar = ({
           $BorderColor={colors.BACKGROUND_GRAY}
           $color={colors.NEUTRAL_90}
           onClick={() =>
-            setIsClick((prev) => ({ ...prev, feedback: !prev.feedback }))
+            setIsClick((prev) => ({
+              ...prev,
+              feedback: !prev.feedback,
+              comments: false,
+              proposal: false,
+              tools: false,
+            }))
           }
         >
           <FeedbackIcon fill={isClick.feedback ? "#FFFFFF" : "#1A1A1A"} />
@@ -125,7 +137,13 @@ export const DetailSideBar = ({
           $BorderColor={colors.BACKGROUND_GRAY}
           $color={colors.NEUTRAL_90}
           onClick={() =>
-            setIsClick((prev) => ({ ...prev, proposal: !prev.proposal }))
+            setIsClick((prev) => ({
+              ...prev,
+              proposal: !prev.proposal,
+              comments: false,
+              feedback: false,
+              tools: false,
+            }))
           }
         >
           <ProposalIcon fill={isClick.proposal ? "#FFFFFF" : "#1A1A1A"} />
@@ -156,6 +174,12 @@ const FlexCol = styled.div`
   position: relative;
 `;
 
+const MoveToHeader = styled.div`
+  position: absolute;
+  top: -85px;
+  left: -120px;
+`;
+
 const DetailSideBarText = styled.p<{ $isModal: boolean }>`
   //임시 수정예정
   color: ${(props) => (props.$isModal ? "#ffffff" : "#000000")};
@@ -173,20 +197,28 @@ const DetailSideBarText = styled.p<{ $isModal: boolean }>`
       </FlexCol> */
 }
 {
-  /* <FlexCol>
-        {isClick.tools && <Tools />}
-        <RoundButton
-          $BgColor={isClick.tools ? colors.PRIMARY_70 : colors.NEUTRAL_WHITE}
-          $BorderColor={colors.BACKGROUND_GRAY}
-          $color={colors.NEUTRAL_90}
-          onClick={() =>
-            setIsClick((prev) => ({ ...prev, tools: !prev.tools }))
-          }
-        >
-          <ToolsIcon stroke={isClick.tools ? "#FFFFFF" : "#1A1A1A"} />
-        </RoundButton>
-        <DetailSideBarText $isModal={isModal}>사용 툴</DetailSideBarText>
-      </FlexCol> */
+  //   <MoveToHeader>
+  //   <FlexCol>
+  //     {isClick.tools && <Tools />}
+  //     <RoundButton
+  //       $BgColor={isClick.tools ? colors.PRIMARY_70 : colors.NEUTRAL_WHITE}
+  //       $BorderColor={colors.BACKGROUND_GRAY}
+  //       $color={colors.NEUTRAL_90}
+  //       onClick={() =>
+  //         setIsClick((prev) => ({
+  //           ...prev,
+  //           tools: !prev.tools,
+  //           comments: false,
+  //           feedback: false,
+  //           proposal: false,
+  //         }))
+  //       }
+  //     >
+  //       <ToolsIcon stroke={isClick.tools ? "#FFFFFF" : "#1A1A1A"} />
+  //     </RoundButton>
+  //     {/* <DetailSideBarText $isModal={$isModal}>사용 툴</DetailSideBarText> */}
+  //   </FlexCol>
+  // </MoveToHeader>
 }
 
 {

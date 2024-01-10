@@ -17,7 +17,7 @@ export const Feedback = () => {
 
 const FeedBackContainer = styled.div`
   position: absolute;
-  right: 130px;
+  right: 140px;
   bottom: -200px;
   display: flex;
   width: 358px;

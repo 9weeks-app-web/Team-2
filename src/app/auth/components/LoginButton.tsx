@@ -2,9 +2,6 @@
 import React from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-import google from "../../../../public/authImg/google.svg";
-import naver from "../../../../public/authImg/naver.svg";
-import kakao from "../../../../public/authImg/kakao.svg";
 import { H3_SB_18 } from "@/styles/stylesComponents/typographyComponents";
 import { colors } from "@/styles/colors";
 
@@ -23,13 +20,28 @@ const LoginButton = () => {
       <H3_SB_18>SNS로 간편하게 시작하기</H3_SB_18>
       <div>
         <button onClick={() => handleSignIn("kakao")}>
-          <Image src={kakao} alt="카카오톡 로그인" />
+          <Image
+            src={"/authImg/kakao.svg"}
+            alt="카카오톡 로그인"
+            width={58}
+            height={58}
+          />
         </button>
         <button onClick={() => handleSignIn("naver")}>
-          <Image src={naver} alt="네이버 로그인" />
+          <Image
+            src={"/authImg/naver.svg"}
+            alt="네이버 로그인"
+            width={58}
+            height={58}
+          />
         </button>
         <button onClick={() => handleSignIn("google")}>
-          <Image src={google} alt="구글 로그인" />
+          <Image
+            src={"/authImg/google.svg"}
+            alt="구글 로그인"
+            width={58}
+            height={58}
+          />
         </button>
       </div>
     </SnsBtnContainer>
