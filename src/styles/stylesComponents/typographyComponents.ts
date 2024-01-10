@@ -68,6 +68,9 @@ export const B1_R_16 = styled.p`
   font-size: var(${font_size.FONT_SIZE_16});
   font-weight: var(${font_weight.FONT_WEIGHT_400_R});
   line-height: var(${line_height.LINE_HEIGHT_100});
+  &.gray {
+    color: var(${colors.NEUTRAL_40});
+  }
 `;
 
 export const B2_M_14 = styled.p`
