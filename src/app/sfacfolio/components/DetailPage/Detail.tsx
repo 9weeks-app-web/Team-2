@@ -1,6 +1,6 @@
 "use client";
 import { SectionContainer } from "@/components/Section/SectionContainer";
-import { Tag, TagWrapper } from "@/components/Tag";
+import { Tag } from "@/components/Tag";
 import { UserCard } from "@/components/UserCard/UserCard";
 import { colors } from "@/styles/colors";
 import {
@@ -15,8 +15,10 @@ import { DetailCarousel } from "./DetailCarousel";
 import { DetailSideBar } from "./DetailSideBar";
 import { DetailBadge } from "./DetailBadge";
 import HeartIcon from "../../../../../public/Icon/Icon_heart.svg";
-import RemoveIcon from "../../../../../public/Icon/Icon_remove.svg";
 import { useRouter } from "next/navigation";
+import { CaptureButton } from "./Sidebar/CaptureButton";
+import { RoundButton } from "../Button/RoundButton";
+import { Tools, ToolsIcon } from "./Sidebar";
 export const Detail = ({ isModal }: { isModal: boolean }) => {
   const router = useRouter();
   const [isClick, setIsClick] = useState(false); // 맨밑 좋아요 버튼 상태관리
@@ -37,6 +39,7 @@ export const Detail = ({ isModal }: { isModal: boolean }) => {
       />
       <Container $isModal={isModal} $isClickSidebar={isClickSidebar}>
         <UserContainerRow>
+          <CaptureButton />
           <FlexRow>
             <UserCard
               avatarSize={64}
@@ -48,12 +51,19 @@ export const Detail = ({ isModal }: { isModal: boolean }) => {
             />
             <Chip>팔로우</Chip>
           </FlexRow>
-          <IconWrapper onClick={() => router.back()}>
-            {/* 모달종료버튼 라우터 뒤로가기 적용 */}
-            <RemoveIcon />
-          </IconWrapper>
+          <ToolsContainer>
+            <RoundButton
+              $BgColor={colors.PRIMARY_70}
+              $BorderColor={colors.BACKGROUND_GRAY}
+              $color={colors.NEUTRAL_90}
+            >
+              <ToolsIcon stroke={"#FFFFFF"} />
+            </RoundButton>
+            <ToolsBoxWrapper>
+              <Tools />
+            </ToolsBoxWrapper>
+          </ToolsContainer>
         </UserContainerRow>
-
         {Array.from({ length: 4 }, () => {}).map((el, idx) => (
           <StyledImage
             key={idx}
@@ -121,6 +131,7 @@ const Container = styled.div<{ $isModal: boolean; $isClickSidebar: boolean }>`
 `;
 
 const UserContainerRow = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   padding: 18px 80px 18px 80px;
@@ -132,15 +143,6 @@ const UserContainerRow = styled.div`
 const FlexRow = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const IconWrapper = styled.div`
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const StyledImage = styled(Image)`
@@ -206,15 +208,12 @@ const HeartButton = styled.button<{ $isClick: boolean }>`
       : `var(${colors.NEUTRAL_80})`};
   border: 0;
   cursor: pointer;
+  margin-bottom: 12px;
 `;
-
-const BackDrop = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 5;
-  border-radius: 6px;
+const ToolsContainer = styled.div``;
+const ToolsBoxWrapper = styled.div`
+  display: none;
+  ${ToolsContainer}:hover & {
+    display: block;
+  }
 `;
