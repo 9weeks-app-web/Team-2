@@ -3,18 +3,18 @@ import { flexColumn } from "@/components/Flex/flexStyle";
 import { colors } from "@/styles/colors";
 import React from "react";
 import styled from "styled-components";
-import Avatar from "./Avatar";
+import Avatar from "../../../../components/User/Avatar";
 import {
   B2_M_12,
   H3_R_18,
   H3_SB_18,
 } from "@/styles/stylesComponents/typographyComponents";
-import KeywordCard from "./KeywordCard";
+import KeywordCard from "../common/KeywordCard";
 import { _evaluationKeywordList } from "@/constant/_[project]mockup";
 import { useRecoilValue } from "recoil";
 import { evaluationKeywordTagState } from "@/state/atom/atom";
 import { font_weight } from "@/styles/typography";
-import { Member } from "../types/Member";
+import { Member } from "../../types/Member";
 interface EvaluationModalProps {
   projectName: string;
   member: Member;

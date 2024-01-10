@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import BigCard from "../Section1Card";
-import SectionHeader from "../../../../components/Section/SectionHeader";
-import { _myProjects } from "../../../../constant/_[project]mockup";
+import BigCard from "./Section1Card";
+import SectionHeader from "../../../../../components/Section/SectionHeader";
+import { _myProjects } from "../../../../../constant/_[project]mockup";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
 
@@ -11,7 +11,7 @@ import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { User } from "../../types/User";
+import { User } from "../../../types/User";
 
 const SectionProgressProjects: React.FC<{ user: User }> = ({ user }) => {
   return (

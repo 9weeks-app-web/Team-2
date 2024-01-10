@@ -2,9 +2,9 @@ import { colors } from "@/styles/colors";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { _evaluationKeywordList } from "@/constant/_[project]mockup";
-import Idel from "./modal/Idel";
-import Loading from "./modal/Loading";
-import Complete from "./modal/Complete";
+import Idel from "../../common/modal/Idel";
+import Loading from "../../common/modal/Loading";
+import Complete from "../../common/modal/Complete";
 import { flexColumn } from "@/components/Flex/flexStyle";
 interface RecommenMemberModalProps {
   userName: string;

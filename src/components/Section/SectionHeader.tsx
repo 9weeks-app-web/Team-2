@@ -7,8 +7,8 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import PageNavController from "./PageNavController";
-import Filter from "@/app/project/components/Filter";
-import Sort from "@/app/project/components/Sort";
+import Filter from "@/app/project/components/common/Filter";
+import Sort from "@/app/project/components/common/Sort";
 import { Category } from "../Category/Category";
 import { SectionHeaderProps } from "@/app/project/types/SectionHeader.props";
 

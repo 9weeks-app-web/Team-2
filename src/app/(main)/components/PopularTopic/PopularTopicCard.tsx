@@ -2,7 +2,7 @@ import React from "react";
 import { CardContainer } from "@/components/Card/CardContainer";
 import { CardTextContainer } from "@/components/Card/CardTextContainer";
 import { colors } from "@/styles/colors";
-import { UserCard } from "@/components/UserCard/UserCard";
+import { UserCard } from "@/components/User/UserCard";
 import { Tag, TagWrapper } from "@/components/Tag";
 import styled from "styled-components";
 import { B1_M_16 } from "@/styles/stylesComponents/typographyComponents";

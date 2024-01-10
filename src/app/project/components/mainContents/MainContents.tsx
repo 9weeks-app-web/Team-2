@@ -2,11 +2,11 @@ import { flexColumn } from "@/components/Flex/flexStyle";
 
 import React from "react";
 import styled from "styled-components";
-import SectionProgressProjects from "./Section/SectionProgressProjects";
-import SectionMemberRecomm from "./Section/SectionMemberRecomm";
-import SectionAllProjects from "./Section/SectionAllProjects";
-import { User } from "../types/User";
-import FloatingBtn from "./FloatingBtn";
+import SectionProgressProjects from "./sectionProgressProjects/SectionProgressProjects";
+import SectionMemberRecomm from "./sectionMemberRecomm/SectionMemberRecomm";
+import SectionAllProjects from "./sectionAllProjects/SectionAllProjects";
+import { User } from "../../types/User";
+import FloatingBtn from "../common/FloatingBtn";
 
 export const MainContents: React.FC<{ user: User }> = ({ user }) => {
   return (

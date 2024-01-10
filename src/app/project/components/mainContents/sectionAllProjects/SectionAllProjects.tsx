@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import SectionHeader from "../../../../components/Section/SectionHeader";
-import Section3Card from "../ProjectCard";
-import { _allprojects } from "../../../../constant/_[project]mockup";
+import SectionHeader from "../../../../../components/Section/SectionHeader";
+import Section3Card from "./ProjectCard";
+import { _allprojects } from "../../../../../constant/_[project]mockup";
 import { useRecoilValue } from "recoil";
 import {
   SectionAllProjectsCategoryState,
   sortState,
-} from "../../../../state/atom/atom";
-import { SectionAllProjectsCategoryList } from "../../../../constant/category";
+} from "../../../../../state/atom/atom";
+import { SectionAllProjectsCategoryList } from "../../../../../constant/category";
 const SectionAllProjects = () => {
   // Recoil 정렬 상태에 따라 프로젝트 목록 정렬
   const sortOrder = useRecoilValue(sortState);

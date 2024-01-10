@@ -5,10 +5,10 @@ import {
   B2_M_12,
 } from "@/styles/stylesComponents/typographyComponents";
 import styled from "styled-components";
-import Avatar from "./Avatar";
+import Avatar from "../../../../components/User/Avatar";
 import { useState } from "react";
 import EvaluationModal from "./EvaluationModal";
-import { Member } from "../types/Member";
+import { Member } from "../../types/Member";
 
 interface UserProfileProps {
   projectName: string;

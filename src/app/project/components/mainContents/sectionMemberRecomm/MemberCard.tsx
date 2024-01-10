@@ -4,9 +4,9 @@ import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
-import Tag from "./Tag";
-import Avatar from "./Avatar";
-import { Member } from '../types/Member';
+import Tag from "../../common/Tag";
+import Avatar from "../../../../../components/User/Avatar";
+import { Member } from "../../../types/Member";
 
 // 한 번에 보여질 최대 스킬 수
 const MAX_SKILLS_DISPLAY = 3;

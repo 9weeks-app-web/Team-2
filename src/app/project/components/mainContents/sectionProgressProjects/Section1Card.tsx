@@ -6,8 +6,8 @@ import {
 } from "@/styles/stylesComponents/typographyComponents";
 import React from "react";
 import styled from "styled-components";
-import Avatar from "./Avatar";
-import { MyProject } from '../types/MyProject';
+import Avatar from "../../../../../components/User/Avatar";
+import { MyProject } from "../../../types/MyProject";
 const Section1Card: React.FC<{ project: MyProject }> = ({ project }) => {
   return (
     <CardContainer style={{ backgroundImage: `url(${project.coverImg})` }}>

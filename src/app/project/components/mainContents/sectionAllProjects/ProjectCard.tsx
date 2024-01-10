@@ -1,12 +1,12 @@
 import { CardRadius } from "@/styles/stylesComponents/cardStyle";
 import React from "react";
 import styled from "styled-components";
-import Tag from "./Tag";
+import Tag from "../../common/Tag";
 import { font_size, font_weight, line_height } from "@/styles/typography";
 import { colors } from "@/styles/colors";
 import { B2_M_12 } from "@/styles/stylesComponents/typographyComponents";
 import { flexColumn } from "@/components/Flex/flexStyle";
-import { Project } from '../types/Project';
+import { Project } from "../../../types/Project";
 
 const Section3Card: React.FC<{ project: Project }> = ({ project }) => {
   // D-Day 계산 함수
