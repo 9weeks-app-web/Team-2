@@ -4,11 +4,11 @@ import { useRecoilState } from "recoil";
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { _user1, _user } from "../../constant/_[project]mockup";
-import SectionSpecCard from "./Section/SectionSpecCard";
-import SectionProfile from "./Section/SectionProfile";
-import SectionFeedBack from "./Section/SectionFeedBack";
+import SectionSpecCard from "./components/Section/SectionSpecCard";
+import SectionProfile from "./components/Section/SectionProfile";
+import SectionFeedBack from "./components/Section/SectionFeedBack";
 import { useSession } from "next-auth/react";
-import SectionTab from "./Section/SectionTab";
+import TabBody from "./components/Section/TabLayout/TabBody";
 
 const Page = () => {
   const { data: session } = useSession();
@@ -36,7 +36,7 @@ const Page = () => {
           <SectionProfile />
           <SectionFeedBack />
         </Inner>
-        <SectionTab></SectionTab>
+        <TabBody />
       </Section>
     </Container>
   );
