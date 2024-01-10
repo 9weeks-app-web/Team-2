@@ -76,6 +76,11 @@ export const B2_M_14 = styled.p`
   line-height: var(${line_height.LINE_HEIGHT_100});
 `;
 
+export const B2_G_14 = styled.span`
+  font-size: var(${font_size.FONT_SIZE_14});
+  font-weight: var(${font_weight.FONT_WEIGHT_500_M});
+  line-height: var(${line_height.LINE_HEIGHT_140});
+`;
 export const B2_R_14 = styled.p`
   font-size: var(${font_size.FONT_SIZE_14});
   font-weight: var(${font_weight.FONT_WEIGHT_400_R});
@@ -91,6 +96,14 @@ export const B2_M_12 = styled.p`
   }
 `;
 
+export const B2_R_12 = styled.p`
+  font-size: var(${font_size.FONT_SIZE_12});
+  font-weight: var(${font_weight.FONT_WEIGHT_400_R});
+  line-height: var(${line_height.LINE_HEIGHT_100});
+  &.gray {
+    color: var(${colors.NEUTRAL_40});
+  }
+`;
 export const B2_L_12 = styled.p`
   font-size: var(${font_size.FONT_SIZE_12});
   font-weight: var(${font_weight.FONT_WEIGHT_300_L});
