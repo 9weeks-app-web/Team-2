@@ -1,8 +1,8 @@
 import React from "react";
-import SideContainer from "../components/SideContainer";
-import ButtonGroup from "../components/ButtonGroup";
-import ProfileHeader from "../components/ProfileHeader";
-import SocialTags from "../components/SocialTags";
+import SideContainer from "../../components/SideContainer";
+import ButtonGroup from "../../components/ButtonGroup";
+import ProfileHeader from "../../components/ProfileHeader";
+import SocialTags from "../../components/SocialTags";
 import TabMenu from "@/components/TabMenu";
 type Props = {};
 

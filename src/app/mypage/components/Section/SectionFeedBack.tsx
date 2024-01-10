@@ -9,7 +9,7 @@ import {
   H1_SB_24,
   B2_R_12,
 } from "@/styles/stylesComponents/typographyComponents";
-import SideContainer from "../components/SideContainer";
+import SideContainer from "../../components/SideContainer";
 import { Tag } from "@/components/Tag";
 import styled from "styled-components";
 type Props = {

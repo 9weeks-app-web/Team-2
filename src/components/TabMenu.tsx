@@ -2,13 +2,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { colors } from "@/styles/colors";
-import {
-  B2_M_14,
-  B2_G_14,
-  H1_SB_24,
-  B2_R_12,
-} from "@/styles/stylesComponents/typographyComponents";
-
+import { B2_M_14 } from "@/styles/stylesComponents/typographyComponents";
+import TabHeader from "@/app/mypage/components/Section/TabLayout/TabHeader";
 type TabItem = {
   title: string;
   content: React.ReactNode;
@@ -21,6 +16,7 @@ type TabMenuProps = {
   tabs: TabItem[];
   $border?: boolean;
   $gap?: string;
+  header?: boolean;
 };
 
 function TabMenu({
@@ -28,6 +24,7 @@ function TabMenu({
   $padding,
   $gap,
   $border,
+  header,
 }: TabMenuProps & { $padding?: string; $gap: string; $border: boolean }) {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -45,7 +42,10 @@ function TabMenu({
           </Tab>
         ))}
       </TabsContainer>
-      <TabContent>{tabs[activeTab].content}</TabContent>
+      <TabContent>
+        {header && <TabHeader title={tabs[activeTab].title} />}
+        {tabs[activeTab].content}
+      </TabContent>
     </>
   );
 }

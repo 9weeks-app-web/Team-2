@@ -11,7 +11,7 @@ export const Container = ({
 }) => {
   return (
     <ContainerSection>
-      <h1>{title}</h1>
+      <Title>{title}</Title>
       {children}
     </ContainerSection>
   );
@@ -20,13 +20,14 @@ export const Container = ({
 const ContainerSection = styled.section`
   width: 520px;
   margin: 0 auto;
-  h1 {
-    text-align: center;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 100%;
-    letter-spacing: -0.64px;
-    margin: 80px 0px;
-  }
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.64px;
+  margin: 80px 0px;
 `;

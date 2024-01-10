@@ -54,7 +54,8 @@ const SnsBtnContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 16px;
-  margin: 32px 0px 74px 0px;
+  padding: 32px 0px;
+  border-bottom: 1px solid #f3f3f3;
   h3 {
     color: var(${colors.NEUTRAL_70});
   }

@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import InterestButton from "../../components/InterestButton";
 import { useRouter } from "next/navigation";
-import bg from "../../../../../public/authImg/bg.svg";
 import {
   H1_SB_24,
   H2_M_20,
@@ -19,7 +18,12 @@ export default function Login() {
 
   return (
     <Container>
-      <Image src={bg} alt="회원가입 완료!" />
+      <Image
+        src={"/authImg/bg.svg"}
+        alt="회원가입 완료!"
+        width={330}
+        height={276}
+      />
       <H1_SB_24>회원가입이 완료되었습니다!</H1_SB_24>
       <H2_M_20>지금 바로 다양한 작업들을 감상해보세요.</H2_M_20>
       <InterestButton
@@ -44,6 +48,6 @@ const Container = styled.section`
 
   img {
     display: block;
-    margin: 60px 0px 15px 0px;
+    margin: 60px 0px 23px 0px;
   }
 `;

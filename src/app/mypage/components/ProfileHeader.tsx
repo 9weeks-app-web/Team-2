@@ -1,6 +1,5 @@
 import React from "react";
 import { UserCard } from "@/components/User/UserCard";
-
 import { flexColumn } from "@/components/Flex/flexStyle";
 import { User } from "@/app/project/types/User";
 import { userInfoState } from "@/state/atom/atom";

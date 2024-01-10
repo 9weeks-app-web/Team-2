@@ -4,19 +4,6 @@ import Link from "next/link";
 import { colors } from "@/styles/colors";
 import { font_size, font_weight } from "@/styles/typography";
 import { H3_R_18 } from "@/styles/stylesComponents/typographyComponents";
-const StyledDiv = styled.div`
-  display: flex;
-  width: 520px;
-  height: 71px;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
-  border-radius: 10px;
-  margin-bottom: 60px;
-  background: var(${colors.BACKGROUND_BLUE});
-`;
 
 const SignUpLink = styled.p`
   color: var(${colors.PRIMARY_80});
@@ -36,3 +23,18 @@ const SignUpSection = () => {
 };
 
 export default SignUpSection;
+
+const StyledDiv = styled.div`
+  display: flex;
+  width: 520px;
+  height: 71px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  margin-bottom: 60px;
+  background: var(${colors.BACKGROUND_BLUE});
+  margin: 36px 0px 60px 0px;
+`;

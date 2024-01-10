@@ -1,5 +1,5 @@
 import React from "react";
-import SideContainer from "../components/SideContainer";
+import SideContainer from "../../components/SideContainer";
 import styled from "styled-components";
 import Image from "next/image";
 import { flexColumn } from "@/components/Flex/flexStyle";
@@ -8,8 +8,8 @@ import {
   B1_M_16,
   B2_R_12,
 } from "@/styles/stylesComponents/typographyComponents";
-import SpecChart from "../components/SpecChart";
-import UserTagGroup from "../components/UserTagGroup";
+import SpecChart from "../../components/SpecChart";
+import UserTagGroup from "../../components/UserTagGroup";
 
 type Props = {};
 
