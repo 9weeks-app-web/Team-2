@@ -6,7 +6,8 @@ import SideContents from "./components/sideContents/SideContents";
 import MainContents from "./components/mainContents/MainContents";
 import { _user } from "../../constant/_[project]mockup";
 import FloatingBtn from "./components/common/FloatingBtn";
-export const ProjectPage = () => {
+
+function page() {
   return (
     <>
       <Inner>
@@ -15,9 +16,9 @@ export const ProjectPage = () => {
       </Inner>
     </>
   );
-};
+}
 
-export default ProjectPage;
+export default page;
 
 const Inner = styled.div`
   margin: 2.25rem 11.88rem;
