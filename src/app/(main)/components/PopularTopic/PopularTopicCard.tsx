@@ -11,6 +11,8 @@ import {
 } from "@/styles/stylesComponents/typographyComponents";
 import { font_size, font_weight } from "@/styles/typography";
 import { dateDiff } from "@/utils/utils";
+import HeartIcon from "../../../../../public/Icon/Icon_heart.svg";
+import CommentIcon from "../../../../../public/Icon/Icon_comments.svg";
 interface PopularTopicCardProps {
   userName: string;
   userJob: string;
