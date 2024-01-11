@@ -22,7 +22,7 @@ export const PopularPortfolioImages = ({
         imagesInfo.slice(0, 1).map((el, idx) => {
           return (
             <ImagesContainer key={idx}>
-              <CustomLinkMain href="#">
+              <CustomLinkMain href="/sfacfolio/detail/a1b1">
                 <Badge>
                   <Div>
                     <HeartOutlined style={{ color: "white" }} />
@@ -60,7 +60,7 @@ export const PopularPortfolioImages = ({
       <ImagesContainerSub>
         {imagesInfo &&
           imagesInfo.slice(1).map((el, idx) => (
-            <CustomLink href="#" key={idx}>
+            <CustomLink href="/sfacfolio/detail/a1b1" key={idx}>
               <BadgeSub>
                 <DivSub>
                   <HeartOutlined style={{ color: "white" }} />

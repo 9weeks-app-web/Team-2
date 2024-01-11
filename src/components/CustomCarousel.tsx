@@ -7,15 +7,17 @@ export const CustomCarousel = () => {
   const onChange = (currentSlide: number) => {};
   return (
     <CarouseWrapper afterChange={onChange} autoplay>
-      <div>
-        <Image width={1060} height={160} src={"/bannerImage.png"} alt="image" />
-      </div>
-      <div>
-        <Image width={1060} height={160} src={"/bannerImage.png"} alt="image" />
-      </div>
-      <div>
-        <Image width={1060} height={160} src={"/bannerImage.png"} alt="image" />
-      </div>
+      {Array.from({ length: 4 }, () => {}).map((el, idx) => (
+        <div key={idx}>
+          <Image
+            unoptimized
+            width={1060}
+            height={160}
+            src={`/mainCarouselImg/mainCarousel-${idx + 1}.png`}
+            alt={`배너 이미지 ${idx + 1}`}
+          />
+        </div>
+      ))}
     </CarouseWrapper>
   );
 };

@@ -22,7 +22,7 @@ export const RecommendImage = ({
   src,
 }: PopularPortfolioImagesObjProps) => {
   return (
-    <CustomLinkMain href="/sfacfolio/detail/a1b1">
+    <CustomLinkMain href="/sfacfolio/detail/abc">
       <Badge>
         <Div>
           <HeartIcon width={20} height={20} stroke="white" />

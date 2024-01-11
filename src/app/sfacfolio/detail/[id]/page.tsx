@@ -1,8 +1,7 @@
-"use client";
 import { Detail } from "@/app/sfacfolio/components/DetailPage/Detail";
-import { DetailSideBar } from "../../components/DetailPage/DetailSideBar";
 
 const page = () => {
+  // const { id } = params; { params }: { params: { id: string } }
   return (
     <>
       <Detail isModal={false} />
@@ -11,3 +10,7 @@ const page = () => {
 };
 
 export default page;
+
+// export async function generateStaticParams() {
+//   return [{ id: "a1b1" }];
+// }

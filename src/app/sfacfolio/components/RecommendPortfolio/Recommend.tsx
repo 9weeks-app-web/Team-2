@@ -16,9 +16,10 @@ export const Recommend = () => {
         linkUrl="#"
       />
       <PfImageContainer>
-        {portfolioRecommendData.map((el) => (
-          <RecommendImage key={el.id} {...el} />
-        ))}
+        {portfolioRecommendData &&
+          portfolioRecommendData.map((el) => (
+            <RecommendImage key={el.id} {...el} />
+          ))}
       </PfImageContainer>
     </SectionContainer>
   );
