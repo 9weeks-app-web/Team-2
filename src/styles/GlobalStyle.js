@@ -78,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'PTD';
         font-weight: 600;
         font-style: normal;
-        src: url('/fonts/Pretendard-semiBold.otf') format('opentype');
+        src: url('/fonts/Pretendard-SemiBold.otf') format('opentype');
     }
     @font-face {
         font-family: 'PTD';
