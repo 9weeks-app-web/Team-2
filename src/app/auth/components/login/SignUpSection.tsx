@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
   background: var(${colors.BACKGROUND_BLUE});
 `;
 
-const SignUpLink = styled.span`
+const SignUpLink = styled.p`
   color: var(${colors.PRIMARY_80});
   font-size: var(${font_size.FONT_SIZE_18});
   font-weight: var(${font_weight.FONT_WEIGHT_600_SB});
