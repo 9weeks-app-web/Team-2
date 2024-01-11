@@ -9,7 +9,8 @@ import styled from "styled-components";
 const LoginButton = () => {
   const handleSignIn = async (provider: string) => {
     try {
-      await signIn(provider, { redirect: true, callbackUrl: "/" });
+      const callbackUrl = process.env.NEXTAUTH_URL as string;
+      await signIn(provider, { redirect: true, callbackUrl });
     } catch (error) {
       console.error("Error signing in:", error);
     }
