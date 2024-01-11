@@ -46,8 +46,9 @@ export default Page;
 
 const Container = styled.div`
   display: flex;
-  margin: 36px 190px;
+  margin: auto;
   gap: 20px;
+  width: fit-content;
 `;
 
 const Inner = styled.div`
