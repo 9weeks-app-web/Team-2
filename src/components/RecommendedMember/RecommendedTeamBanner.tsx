@@ -11,8 +11,8 @@ import styled from "styled-components";
 import RecommenMemberModal from "./RecommenMemberModal";
 import { _user } from "@/constant/_[project]mockup";
 interface RecommendedTeamBannerProps {
-  width: string;
-  title: string;
+  width?: string;
+  title?: string;
 }
 
 const RecommendedTeamBanner: React.FC<RecommendedTeamBannerProps> = ({
