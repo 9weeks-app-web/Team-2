@@ -21,14 +21,14 @@ const handler = NextAuth({
           password: string;
         };
         console.log(email, password);
-        if (email !== "spec@test.com" || password !== "SPEC123!!xx") {
+        if (email !== "sfac@test.com" || password !== "SFAC123!!xx") {
           throw new Error("invalid credentials");
         } else {
           return {
             // ..._user1,
             id: 1234432424,
             name: "김스팩",
-            email: "spac@test.com",
+            email: "sfac@test.com",
           };
         }
 

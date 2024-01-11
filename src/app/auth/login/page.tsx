@@ -35,7 +35,7 @@ const Login = () => {
     console.log(res);
     setIsError(false);
     if (res?.ok) {
-      router.push("/mypage");
+      router.push("/");
       console.log("로그인 성공");
     } else {
       setIsError(true);
