@@ -33,7 +33,6 @@ export const Detail = ({ isModal }: { isModal: boolean }) => {
     <SectionContainer>
       {/* {isClickSidebar && <BackDrop onClick={handleSidebarButtonClick} />} */}
       <DetailSideBar
-        sidebarTxtColor="black"
         $isModal={isModal}
         isClickButtonFn={handleSidebarButtonClick}
       />
