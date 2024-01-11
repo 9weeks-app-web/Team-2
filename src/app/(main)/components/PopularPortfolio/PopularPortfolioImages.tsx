@@ -12,7 +12,8 @@ import {
 } from "@/styles/stylesComponents/typographyComponents";
 import { colors } from "@/styles/colors";
 import { PopularPortfolioImagesProps } from "@/types";
-
+import HeartIcon from "../../../../../public/Icon/Icon_heart.svg";
+import BookmarkIcon from "../../../../../public/Icon/Icon_sidebar/Icon_bookmark.svg";
 export const PopularPortfolioImages = ({
   imagesInfo,
 }: PopularPortfolioImagesProps) => {
@@ -25,11 +26,11 @@ export const PopularPortfolioImages = ({
               <CustomLinkMain href="/sfacfolio/detail/a1b1">
                 <Badge>
                   <Div>
-                    <HeartOutlined style={{ color: "white" }} />
+                    <HeartIcon width={20} height={20} stroke="white" />
                     <Span>{el.likes}</Span>
                   </Div>
                   <Div>
-                    <HeartOutlined style={{ color: "white" }} />
+                    <BookmarkIcon width={20} height={20} fill="white" />
                     <Span>{el.bookmark}</Span>
                   </Div>
                 </Badge>
@@ -63,11 +64,11 @@ export const PopularPortfolioImages = ({
             <CustomLink href="/sfacfolio/detail/a1b1" key={idx}>
               <BadgeSub>
                 <DivSub>
-                  <HeartOutlined style={{ color: "white" }} />
+                  <HeartIcon width={16} height={16} stroke="white" />
                   <SpanSub>{el.likes}</SpanSub>
                 </DivSub>
                 <DivSub>
-                  <HeartOutlined style={{ color: "white" }} />
+                  <BookmarkIcon width={16} height={16} fill="white" />
                   <SpanSub>{el.bookmark}</SpanSub>
                 </DivSub>
               </BadgeSub>
